@@ -12,24 +12,42 @@
   </a>
   <div class="container" style="max-width: 1100px;">
     <header>
-      <h1>Unit 1: Algebra & Functions</h1>
-      <p>Overview & Resources</p>
+      <h1>Unit 1: Unit Circle</h1>
+      <p>Overview</p>
     </header>
     <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-      <nav style="min-width: 220px; flex: 1;">
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li><a class="nav-btn" href="overview.html"><span class="unit-label">Overview</span></a></li>
-          <li><a class="nav-btn" href="practice.html"><span class="unit-label">Practice</span></a></li>
-          <li><a class="nav-btn" href="formulas.html"><span class="unit-label">Formula Sheet</span></a></li>
-          <li><a class="nav-btn" href="tips.html"><span class="unit-label">Tips & Tricks</span></a></li>
-          <li><a class="nav-btn" href="test.html"><span class="unit-label">Unit Test</span></a></li>
-        </ul>
-      </nav>
+
       <main style="flex: 3; min-width: 260px;">
         <!-- Add your subject content here -->
         <section class="question-card">
-          <h2>Welcome to Unit 1 Overview</h2>
-          <p>This section will contain an introduction, key concepts, and resources for Algebra & Functions.</p>
+          <h2>Definition of Unit Circle</h2>
+          <p>The unit circle with a radius of 1, centred at the origin (0,0) of the cordinate plane.</p>
+          <span>x<sup>2</sup> + y<sup>2</sup> = 1</span>
+          <p>Every point P(x, y) that lies on the circle satisfies this equation. The unit circle forms the foundation for defining the trigonometric functions sine, cosine and tangent</p>
+        </section>
+        <section class="question-card">
+          <h2>Angles & Radians</h2>
+          <p>Angles can be measured in degrees or radians</p>
+          <ul>
+            <li>Degrees divide a circle into 360 equal parts</li>
+            <li>Radians measure angles in terms of the arc length of the circle</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Visual Aids</h2>
+          <p>Diagrams, charts, and other visual resources to help you understand the Unit Circle.</p>
+        </section>
+        <section class="question-card">
+          <h2>Practice Problems</h2>
+          <p>Try out a variety of practice questions to test your understanding.</p>
+        </section>
+        <section class="question-card">
+          <h2>Common Mistakes</h2>
+          <p>Learn about frequent errors and how to avoid them in this unit.</p>
+        </section>
+        <section class="question-card">
+          <h2>Extra Resources</h2>
+          <p>Links to videos, worksheets, and further reading for deeper learning.</p>
         </section>
       </main>
     </div>
@@ -47,5 +65,33 @@
       &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
     </div>
   </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+      <span class="toggle-handle"></span>
+    </button>
+  <script>
+  // Light/Dark Mode Toggle (Switch Style)
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeBtn.classList.add('on');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.classList.remove('on');
+    }
+    localStorage.setItem('theme', mode);
+  }
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  themeBtn.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+  </script>
 </body>
 </html>
