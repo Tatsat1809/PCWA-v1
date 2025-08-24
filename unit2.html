@@ -11,9 +11,9 @@
 		<span class="logo-text">PC40S</span>
 	</a>
 	<div class="container">
-		<header>
-			<h1>Unit 2: Transformations</h1>
-			<p>Explore concepts, practice, and resources for Unit 2</p>
+			<header>
+				<h1>Unit 2: Transformations</h1>
+				<p>Explore concepts, practice, and resources for Unit 2: Transformations</p>
 		</header>
 		<nav class="unit-nav-grid" aria-label="Unit Navigation" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom:2rem;">
 			<button class="nav-btn" onclick="scrollToSection('overview')">Unit Overview</button>
@@ -26,29 +26,29 @@
 			<button class="nav-btn" onclick="scrollToSection('accessibility')">Accessible Features</button>
 		</nav>
 
-		<section id="overview">
-			<h2>Unit Overview</h2>
-			<p>Brief summary of Transformations topics and learning objectives.</p>
+			<section id="overview">
+				<h2>Unit Overview</h2>
+				<p>Brief summary of Transformations topics and learning objectives.</p>
 		</section>
-		<section id="practice">
-			<h2>Practice Questions</h2>
-			<p>Practice MCQs and short/long answer questions for this unit.</p>
+			<section id="practice">
+				<h2>Practice Questions</h2>
+				<p>Practice MCQs and short/long answer questions for Transformations.</p>
 		</section>
-		<section id="formula">
-			<h2>Formula Sheet</h2>
-			<p>Key formulas for Transformations. <a href="#">Download PDF</a></p>
+			<section id="formula">
+				<h2>Formula Sheet</h2>
+				<p>Key formulas for Transformations. <a href="#">Download PDF</a></p>
 		</section>
-		<section id="tips">
-			<h2>Tips &amp; Tricks</h2>
-			<p>Common mistakes, exam tips, and shortcuts for this unit.</p>
+			<section id="tips">
+				<h2>Tips &amp; Tricks</h2>
+				<p>Common mistakes, exam tips, and shortcuts for Transformations.</p>
 		</section>
-		<section id="test">
-			<h2>Unit Test</h2>
-			<p>Timed test for Unit 2. <button>Start Test</button></p>
+			<section id="test">
+				<h2>Unit Test</h2>
+				<p>Timed test for Unit 2: Transformations. <button>Start Test</button></p>
 		</section>
-		<section id="resources">
-			<h2>Printable Resources</h2>
-			<p><a href="#">Download summary notes</a>, <a href="#">extra worksheets</a>.</p>
+			<section id="resources">
+				<h2>Printable Resources</h2>
+				<p><a href="#">Download summary notes</a>, <a href="#">extra worksheets</a> for Transformations.</p>
 		</section>
 		<section id="navigation">
 			<h2>Responsive Navigation</h2>
@@ -73,6 +73,9 @@
 			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
 		</div>
 	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+      <span class="toggle-handle"></span>
+    </button>
 	<script>
 		function scrollToSection(id) {
 			document.getElementById(id).scrollIntoView({behavior: 'smooth'});
@@ -82,6 +85,29 @@
 			btn.addEventListener('click', function() {
 				this.blur();
 			});
+		});
+		// Light/Dark Mode Toggle (Switch Style)
+		const themeBtn = document.getElementById('themeToggleBtn');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const savedTheme = localStorage.getItem('theme');
+		function setTheme(mode) {
+			if (mode === 'dark') {
+				document.documentElement.setAttribute('data-theme', 'dark');
+				themeBtn.classList.add('on');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+				themeBtn.classList.remove('on');
+			}
+			localStorage.setItem('theme', mode);
+		}
+		if (savedTheme) {
+			setTheme(savedTheme);
+		} else {
+			setTheme(prefersDark ? 'dark' : 'light');
+		}
+		themeBtn.addEventListener('click', function() {
+			const current = document.documentElement.getAttribute('data-theme');
+			setTheme(current === 'dark' ? 'light' : 'dark');
 		});
 	</script>
 </body>

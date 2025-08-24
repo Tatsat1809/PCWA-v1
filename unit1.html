@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Unit 1: Algebra & Functions | PC40S</title>
+        <title>Unit 1: Unit Circle | PC40S</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -14,54 +14,17 @@
     </a>
     <div class="container">
         <header>
-            <h1>Unit 1: Algebra &amp; Functions</h1>
-            <p>Explore concepts, practice, and resources for Unit 1</p>
+                <h1>Unit 1: Unit Circle</h1>
+                <p>Explore concepts, practice, and resources for Unit 1: Unit Circle</p>
         </header>
-        <nav class="unit-nav-grid" aria-label="Unit Navigation"
-            style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom:2rem;">
+        <nav class="unit-nav-vertical" aria-label="Unit Navigation">
             <a class="nav-btn" href="unit1/overview.html">Unit Overview</a>
             <button class="nav-btn" onclick="scrollToSection('practice')">Practice Questions</button>
             <button class="nav-btn" onclick="scrollToSection('formula')">Formula Sheet</button>
             <button class="nav-btn" onclick="scrollToSection('tips')">Tips &amp; Tricks</button>
             <button class="nav-btn" onclick="scrollToSection('test')">Unit Test</button>
-            <button class="nav-btn" onclick="scrollToSection('resources')">Printable Resources</button>
-            <button class="nav-btn" onclick="scrollToSection('navigation')">Responsive Navigation</button>
-            <button class="nav-btn" onclick="scrollToSection('accessibility')">Accessible Features</button>
         </nav>
 
-        <section id="overview">
-            <h2>Unit Overview</h2>
-            <p>Brief summary of Algebra &amp; Functions topics and learning objectives.</p>
-        </section>
-        <section id="practice">
-            <h2>Practice Questions</h2>
-            <p>Practice MCQs and short/long answer questions for this unit.</p>
-        </section>
-        <section id="formula">
-            <h2>Formula Sheet</h2>
-            <p>Key formulas for Algebra &amp; Functions. <a href="#">Download PDF</a></p>
-        </section>
-        <section id="tips">
-            <h2>Tips &amp; Tricks</h2>
-            <p>Common mistakes, exam tips, and shortcuts for this unit.</p>
-        </section>
-        <section id="test">
-            <h2>Unit Test</h2>
-            <p>Timed test for Unit 1. <button>Start Test</button></p>
-        </section>
-        <section id="resources">
-            <h2>Printable Resources</h2>
-            <p><a href="#">Download summary notes</a>, <a href="#">extra worksheets</a>.</p>
-        </section>
-        <section id="navigation">
-            <h2>Responsive Navigation</h2>
-            <button onclick="location.href='unit2.html'">Next Unit &rarr;</button>
-            <button onclick="location.href='index.html'">&larr; Home</button>
-        </section>
-        <section id="accessibility">
-            <h2>Accessible Features</h2>
-            <p>Font size toggle, high contrast mode, and keyboard navigation supported.</p>
-        </section>
     </div>
     <footer class="footer-bar">
         <div class="footer-resources">
@@ -74,6 +37,9 @@
             &copy; 2025 PC40S. All rights reserved.
         </div>
     </footer>
+    <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <span class="toggle-handle"></span>
+    </button>
     <script>
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
@@ -82,6 +48,30 @@
             btn.addEventListener('click', function () {
                 this.blur();
             });
+        });
+
+        // Light/Dark Mode Toggle (Switch Style)
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        function setTheme(mode) {
+            if (mode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeBtn.classList.add('on');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.classList.remove('on');
+            }
+            localStorage.setItem('theme', mode);
+        }
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+        themeBtn.addEventListener('click', function() {
+            const current = document.documentElement.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
         });
     </script>
 
