@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 6: Rational Expressions | PC40S</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container">
+    <header>
+      <h1>Unit 6: Rational Expressions</h1>
+      <p>Explore concepts, practice, and resources for Unit 6</p>
+    </header>
+    <nav class="unit-nav-grid" aria-label="Unit Navigation" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom:2rem;">
+      <button class="nav-btn" onclick="scrollToSection('overview')">Unit Overview</button>
+      <button class="nav-btn" onclick="scrollToSection('practice')">Practice Questions</button>
+      <button class="nav-btn" onclick="scrollToSection('formula')">Formula Sheet</button>
+      <button class="nav-btn" onclick="scrollToSection('tips')">Tips &amp; Tricks</button>
+      <button class="nav-btn" onclick="scrollToSection('test')">Unit Test</button>
+      <button class="nav-btn" onclick="scrollToSection('resources')">Printable Resources</button>
+      <button class="nav-btn" onclick="scrollToSection('navigation')">Responsive Navigation</button>
+      <button class="nav-btn" onclick="scrollToSection('accessibility')">Accessible Features</button>
+    </nav>
+
+    <section id="overview">
+      <h2>Unit Overview</h2>
+      <p>Brief summary of Rational Expressions topics and learning objectives.</p>
+    </section>
+    <section id="practice">
+      <h2>Practice Questions</h2>
+      <p>Practice MCQs and short/long answer questions for this unit.</p>
+    </section>
+    <section id="formula">
+      <h2>Formula Sheet</h2>
+      <p>Key formulas for Rational Expressions. <a href="#">Download PDF</a></p>
+    </section>
+    <section id="tips">
+      <h2>Tips &amp; Tricks</h2>
+      <p>Common mistakes, exam tips, and shortcuts for this unit.</p>
+    </section>
+    <section id="test">
+      <h2>Unit Test</h2>
+      <p>Timed test for Unit 6. <button>Start Test</button></p>
+    </section>
+    <section id="resources">
+      <h2>Printable Resources</h2>
+      <p><a href="#">Download summary notes</a>, <a href="#">extra worksheets</a>.</p>
+    </section>
+    <section id="navigation">
+      <h2>Responsive Navigation</h2>
+      <button onclick="location.href='unit7.html'">Next Unit &rarr;</button>
+      <button onclick="location.href='index.html'">&larr; Home</button>
+    </section>
+    <section id="accessibility">
+      <h2>Accessible Features</h2>
+      <p>Font size toggle, high contrast mode, and keyboard navigation supported.</p>
+    </section>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+      <a class="resource-link" href="#" download>Past Exam Paper</a>
+      <a class="resource-link" href="#" download>Summary Notes</a>
+    </div>
+    <div class="footer-text">
+      Empowering Manitoba students to succeed in Pre-Calculus 40S.
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    }
+    // Remove focus from nav buttons after click so hover works again
+    document.querySelectorAll('.unit-nav-grid .nav-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.blur();
+      });
+    });
+  </script>
+</body>
+</html>
