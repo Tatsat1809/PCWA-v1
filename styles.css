@@ -1,5 +1,5 @@
-/* Center the Unit Overview button in vertical nav */
-.unit-nav-vertical .nav-btn:first-child {
+/* Center ALL nav buttons in vertical nav */
+.unit-nav-vertical .nav-btn {
     justify-content: center;
     text-align: center;
 }

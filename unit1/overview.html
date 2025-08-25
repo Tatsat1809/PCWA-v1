@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Unit 1 Overview | Pre-Calc 40S</title>
   <link rel="stylesheet" href="../styles.css">
+  <!-- MathJax for beautiful math rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <a href="../index.html" class="logo-link" aria-label="Go to homepage">
@@ -20,34 +23,143 @@
       <main style="flex: 3; min-width: 260px;">
         <!-- Add your subject content here -->
         <section class="question-card">
-          <h2>Definition of Unit Circle</h2>
-          <p>The unit circle with a radius of 1, centred at the origin (0,0) of the cordinate plane.</p>
-          <span>x<sup>2</sup> + y<sup>2</sup> = 1</span>
-          <p>Every point P(x, y) that lies on the circle satisfies this equation. The unit circle forms the foundation for defining the trigonometric functions sine, cosine and tangent</p>
+          <h2>Introduction: Why Study the Unit Circle?</h2>
+          <p>The unit circle is the foundation of trigonometry in Pre-Calculus 40S. It connects geometry, algebra, and real-world applications. Mastery of the unit circle will help you understand trigonometric functions, solve equations, and analyze periodic phenomena in science and engineering.</p>
         </section>
         <section class="question-card">
-          <h2>Angles & Radians</h2>
-          <p>Angles can be measured in degrees or radians</p>
-          <ul>
-            <li>Degrees divide a circle into 360 equal parts</li>
-            <li>Radians measure angles in terms of the arc length of the circle</li>
+          <h2>Visual Guide: The Unit Circle</h2>
+          <p>The unit circle is a circle of radius 1 centered at the origin (0,0) in the coordinate plane.</p>
+          <div style="text-align:center; margin:1em 0;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Unit_circle_angles_color.svg" alt="Unit Circle Diagram" style="max-width:320px;width:100%;border-radius:10px;box-shadow:0 2px 8px #bbb;">
+          </div>
+          <ul style="margin-left: 1.5em;">
+            <li><b>Equation:</b> x<sup>2</sup> + y<sup>2</sup> = 1</li>
+            <li>Each point (x, y) on the circle corresponds to (cos θ, sin θ) for some angle θ.</li>
+            <li>Angles are measured from the positive x-axis, counterclockwise.</li>
           </ul>
         </section>
         <section class="question-card">
-          <h2>Visual Aids</h2>
-          <p>Diagrams, charts, and other visual resources to help you understand the Unit Circle.</p>
+          <h2>Degrees, Radians, and Key Angles</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>360° = 2π radians</li>
+            <li>Common angles: 0°, 30°, 45°, 60°, 90°, ... up to 360°</li>
+          </ul>
+          <div style="display: flex; flex-wrap: wrap; gap: 2.5em; align-items: flex-start; margin: 1em 0 0 1.5em;">
+            <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; min-width: 220px;">
+              <b>Degrees to Radians:</b><br>
+              <span style="font-size: 1.3em; display: block; margin: 0.5em 0; color:#222;">
+                $$\text{radians} = \frac{\text{degrees} \times \pi}{180}$$
+              </span>
+            </div>
+            <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; min-width: 220px;">
+              <b>Radians to Degrees:</b><br>
+              <span style="font-size: 1.3em; display: block; margin: 0.5em 0; color:#222;">
+                $$\text{degrees} = \frac{\text{radians} \times 180}{\pi}$$
+              </span>
+            </div>
+          </div>
         </section>
         <section class="question-card">
-          <h2>Practice Problems</h2>
-          <p>Try out a variety of practice questions to test your understanding.</p>
+          <h2>Key Trigonometric Values on the Unit Circle</h2>
+          <table style="width:100%;max-width:420px;margin:0 auto 1em auto;text-align:center;border-collapse:collapse;">
+            <tr style="background:#f0f4ff;"><th>Angle</th><th>Radians</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
+            <tr><td>0°</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+            <tr><td>30°</td><td>π/6</td><td>1/2</td><td>√3/2</td><td>1/√3</td></tr>
+            <tr><td>45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+            <tr><td>60°</td><td>π/3</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+            <tr><td>90°</td><td>π/2</td><td>1</td><td>0</td><td>undefined</td></tr>
+          </table>
+          <p>Use symmetry and reference angles to find values for other quadrants.</p>
+        </section>
+
+        <section class="question-card">
+          <h2>Coterminal Angles</h2>
+          <p>
+            <b>Coterminal angles</b> are angles that share the same initial and terminal sides, but may have different measures. You can find coterminal angles by adding or subtracting full rotations.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 2.5em; align-items: flex-start; margin: 1em 0 0 1.5em;">
+            <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; min-width: 220px;">
+              <b>In Degrees:</b><br>
+              <span style="font-size: 1.2em; display: block; margin: 0.5em 0; color:#222;">
+                $$\text{coterminal angle} = \theta + 360^\circ \times k$$
+              </span>
+              <span style="font-size: 0.98em; color: #3949ab;">where <b>k</b> is any integer</span>
+            </div>
+            <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; min-width: 220px;">
+              <b>In Radians:</b><br>
+              <span style="font-size: 1.2em; display: block; margin: 0.5em 0; color:#222;">
+                $$\text{coterminal angle} = \theta + 2\pi k$$
+              </span>
+              <span style="font-size: 0.98em; color: #3949ab;">where <b>k</b> is any integer</span>
+            </div>
+          </div>
+          <ul style="margin-left: 1.5em; margin-top:1em;">
+            <li>To find a positive coterminal angle, add 360° (or 2π) as many times as needed.</li>
+            <li>To find a negative coterminal angle, subtract 360° (or 2π) as many times as needed.</li>
+          </ul>
+        </section>
+
+        <section class="question-card">
+          <h2>Trigonometric Equations</h2>
+          <p>Trigonometric equations involve unknown angles and trigonometric functions. To solve them, isolate the trig function and use inverse operations, considering all possible solutions in the given interval.</p>
+          <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; margin: 1em 0;">
+            <b>Example:</b><br>
+            <span style="font-size: 1.1em; color:#222;">Solve for \(\theta\) in \([0^\circ, 360^\circ]\):</span><br>
+            <span style="font-size: 1.3em; display: block; margin: 0.5em 0; color:#3949ab;">$$5\cos\theta + 7 = 4$$</span>
+            <ol style="margin-left: 1.5em;">
+              <li>Isolate \(\cos\theta\):<br>
+                $$5\cos\theta = 4 - 7 = -3$$<br>
+                $$\cos\theta = \frac{-3}{5}$$
+              </li>
+              <li>Find all \(\theta\) such that \(\cos\theta = -0.6\) in \([0^\circ, 360^\circ]\):<br>
+                $$\theta = \cos^{-1}(-0.6)$$
+                <br>Calculator gives: \(\theta_1 \approx 126.87^\circ\)
+              </li>
+              <li>Since cosine is negative in Quadrants II and III, the second solution is:<br>
+                $$\theta_2 = 360^\circ - 126.87^\circ = 233.13^\circ$$
+              </li>
+            </ol>
+            <b>Final Answers:</b><br>
+            <span style="font-size:1.1em; color:#1976d2;">\(\boxed{\theta \approx 126.87^\circ,\ 233.13^\circ}\)</span>
+          </div>
+          <p>Always check the interval and consider all possible solutions for the trigonometric function.</p>
         </section>
         <section class="question-card">
-          <h2>Common Mistakes</h2>
-          <p>Learn about frequent errors and how to avoid them in this unit.</p>
+          <h2>Key Formulas & Identities</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Pythagorean Identity: sin<sup>2</sup>θ + cos<sup>2</sup>θ = 1</li>
+            <li>sin(−θ) = −sin θ, cos(−θ) = cos θ</li>
+            <li>sin(π − θ) = sin θ, cos(π − θ) = −cos θ</li>
+            <li>tan θ = sin θ / cos θ</li>
+          </ul>
         </section>
         <section class="question-card">
-          <h2>Extra Resources</h2>
-          <p>Links to videos, worksheets, and further reading for deeper learning.</p>
+          <h2>Finding the Length of an Arc on a Circle</h2>
+          <p>The length of an arc (a portion of the circumference) depends on the angle at the center and the radius of the circle.</p>
+          <ul style="margin-left: 1.5em;">
+            <li><b>If the angle is in degrees:</b><br>
+              <span style="display:inline-block;margin-top:0.3em;margin-bottom:0.3em;background:#f8fafc;padding:0.3em 0.7em;border-radius:6px;box-shadow:0 1px 4px #eee;">
+                <b>Arc Length = (Angle / 360) × 2πr</b>
+              </span>
+              <br>where r = radius, angle in degrees
+            </li>
+            <li style="margin-top:1em;"><b>If the angle is in radians:</b><br>
+              <span style="display:inline-block;margin-top:0.3em;margin-bottom:0.3em;background:#f8fafc;padding:0.3em 0.7em;border-radius:6px;box-shadow:0 1px 4px #eee;">
+                <b>Arc Length = r × θ</b>
+              </span>
+              <br>where r = radius, θ = angle in radians
+            </li>
+          </ul>
+          <p style="margin-top:1em;">These formulas are essential for solving problems involving sectors and arcs in trigonometry and geometry.</p>
+        </section>
+        <section class="question-card">
+          <h2>Common Mistakes & How to Avoid Them</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Confusing degrees and radians—always check units!</li>
+            <li>Forgetting the signs of trig functions in different quadrants.</li>
+            <li>Not using reference angles for non-standard positions.</li>
+            <li>Mixing up sine and cosine coordinates.</li>
+          </ul>
         </section>
       </main>
     </div>
