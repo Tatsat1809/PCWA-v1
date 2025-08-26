@@ -1,0 +1,351 @@
+[
+  {
+    "type": "short_answer",
+    "question": "Determine the coordinates of a point (x, y) on the unit circle if you are given θ = 30°, where θ is in standard position.",
+    "answer": "(√3/2, 1/2)",
+    "solution": "On the unit circle, x = cos(30°) = √3/2, y = sin(30°) = 1/2. So, (x, y) = (√3/2, 1/2)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine the coordinates of a point (x, y) on the unit circle if you are given θ = 120°, where θ is in standard position.",
+    "answer": "(-1/2, √3/2)",
+    "solution": "x = cos(120°) = -1/2, y = sin(120°) = √3/2. So, (x, y) = (-1/2, √3/2)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine the coordinates of a point (x, y) on the unit circle if you are given θ = 225°, where θ is in standard position.",
+    "answer": "(-√2/2, -√2/2)",
+    "solution": "x = cos(225°) = -√2/2, y = sin(225°) = -√2/2. So, (x, y) = (-√2/2, -√2/2)."
+  },
+  {
+    "type": "mcq",
+    "question": "The point P(θ) lies on the unit circle. What are the coordinates of the point if θ = 300°?",
+    "choices": [
+      "(1/2, -√3/2)",
+      "(√3/2, 1/2)",
+      "(-1/2, √3/2)",
+      "(-√3/2, -1/2)"
+    ],
+    "answer": 0,
+    "solution": "x = cos(300°) = 1/2, y = sin(300°) = -√3/2. So, (x, y) = (1/2, -√3/2)."
+  },
+  {
+    "type": "mcq",
+    "question": "The point P(θ) lies on the unit circle. What are the coordinates of the point if θ = 150°?",
+    "choices": [
+      "(-√3/2, 1/2)",
+      "(1/2, √3/2)",
+      "(-1/2, √3/2)",
+      "(√3/2, -1/2)"
+    ],
+    "answer": 0,
+    "solution": "x = cos(150°) = -√3/2, y = sin(150°) = 1/2. So, (x, y) = (-√3/2, 1/2)."
+  },
+  {
+    "type": "short_answer",
+    "question": "A central angle of a circle subtends an arc length of 5π cm. Given the circle has a radius of 9 cm, find the measure of the central angle in degrees.",
+    "answer": "100°",
+    "solution": "Arc length (s) = (θ/360) × 2πr. 5π = (θ/360) × 2π × 9 ⇒ 5π = (θ/360) × 18π ⇒ 5 = (θ/360) × 18 ⇒ 5 × 360 = θ × 18 ⇒ θ = 1800/18 = 100°."
+  },
+  {
+    "type": "short_answer",
+    "question": "A circle has a radius of 7 cm. If a central angle of 72° subtends an arc, what is the length of the arc? (Give your answer in terms of π)",
+    "answer": "2.8π cm",
+    "solution": "Arc length = (θ/360) × 2πr = (72/360) × 2π × 7 = (1/5) × 14π = 2.8π cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "Find the measure of the central angle in radians if an arc of length 8 cm is subtended in a circle of radius 4 cm.",
+    "answer": "2 radians",
+    "solution": "Arc length (s) = rθ (θ in radians). 8 = 4θ ⇒ θ = 2 radians."
+  },
+  {
+    "type": "short_answer",
+    "question": "A central angle of 2.5 radians in a circle of radius 10 cm subtends an arc. What is the length of the arc?",
+    "answer": "25 cm",
+    "solution": "Arc length = rθ = 10 × 2.5 = 25 cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "A circle has a radius of 12 cm. What is the length of the arc subtended by a central angle of 60°? (Give your answer in terms of π)",
+    "answer": "4π cm",
+    "solution": "Arc length = (θ/360) × 2πr = (60/360) × 2π × 12 = (1/6) × 24π = 4π cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "If the arc length is 15 cm and the radius is 6 cm, what is the measure of the central angle in radians?",
+    "answer": "2.5 radians",
+    "solution": "Arc length = rθ ⇒ 15 = 6θ ⇒ θ = 2.5 radians."
+  },
+  {
+    "type": "short_answer",
+    "question": "A central angle of 135° in a circle of radius 8 cm subtends an arc. What is the length of the arc? (Give your answer in terms of π)",
+    "answer": "6π cm",
+    "solution": "Arc length = (θ/360) × 2πr = (135/360) × 2π × 8 = (3/8) × 16π = 6π cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "For θ = 11π/6, find the values of sin(θ), cos(θ), and tan(θ).",
+    "answer": "sin(11π/6) = -1/2, cos(11π/6) = √3/2, tan(11π/6) = -1/√3 or -√3/3",
+    "solution": "sin(11π/6) = sin(330°) = -1/2; cos(11π/6) = cos(330°) = √3/2; tan(11π/6) = sin(11π/6)/cos(11π/6) = (-1/2)/(√3/2) = -1/√3 = -√3/3."
+  },
+  {
+    "type": "mcq",
+    "question": "Find all values of θ in [0, 2π) where cos(θ) = -1/2.",
+    "choices": [
+      "2π/3, 4π/3",
+      "π/3, 5π/3",
+      "π/2, 3π/2",
+      "π/6, 11π/6"
+    ],
+    "answer": 0,
+    "solution": "cos(θ) = -1/2 at θ = 2π/3 and 4π/3 in [0, 2π)."
+  },
+  {
+    "type": "mcq",
+    "question": "Determine all values of θ in [0, 2π) for which sin(θ) = √2/2.",
+    "choices": [
+      "π/4, 3π/4",
+      "π/6, 5π/6",
+      "π/3, 2π/3",
+      "π/2, 3π/2"
+    ],
+    "answer": 0,
+    "solution": "sin(θ) = √2/2 at θ = π/4 and 3π/4 in [0, 2π)."
+  },
+  {
+    "type": "short_answer",
+    "question": "The point P(-√3/2, -1/2) lies on the unit circle. Determine θ in radians in the interval (0, 2π).",
+    "answer": "7π/6 or 11π/6",
+    "solution": "cos(θ) = -√3/2, sin(θ) = -1/2. These values occur at θ = 7π/6 and 11π/6."
+  },
+  {
+    "type": "short_answer",
+    "question": "Find the value of cos(θ) if sin(θ) = 3/5 and θ is in Quadrant II.",
+    "answer": "-4/5",
+    "solution": "In Quadrant II, cos(θ) is negative. sin²(θ) + cos²(θ) = 1 ⇒ (3/5)² + cos²(θ) = 1 ⇒ 9/25 + cos²(θ) = 1 ⇒ cos²(θ) = 16/25 ⇒ cos(θ) = -4/5."
+  },
+  {
+    "type": "short_answer",
+    "question": "If cos(θ) = -4/5 and θ is in Quadrant III, determine sin(θ).",
+    "answer": "-3/5",
+    "solution": "In Quadrant III, sin(θ) is negative. sin²(θ) + cos²(θ) = 1 ⇒ sin²(θ) + (16/25) = 1 ⇒ sin²(θ) = 9/25 ⇒ sin(θ) = -3/5."
+  },
+  {
+    "type": "short_answer",
+    "question": "Explain why cos(θ) = 2 has no solution.",
+    "answer": "cos(θ) can only take values between -1 and 1.",
+    "solution": "The range of the cosine function is [-1, 1]. Since 2 is outside this range, there is no solution."
+  },
+  {
+  "type": "short_answer",
+    "question": "Determine a positive coterminal angle in radians for -π/3.",
+    "answer": "5π/3",
+    "solution": "Add 2π to -π/3: -π/3 + 2π = 5π/3."
+  },
+  {
+    "type": "short_answer",
+    "question": "Find the principal angle (0 ≤ θ < 2π) coterminal with 19π/6.",
+    "answer": "7π/6",
+    "solution": "Subtract 2π (12π/6) from 19π/6: 19π/6 - 12π/6 = 7π/6."
+  },
+  {
+    "type": "short_answer",
+    "question": "Reduce 765 degrees to its principal angle between 0 and 360 degrees.",
+    "answer": "45°",
+    "solution": "765 ÷ 360 = 2 remainder 45. So, principal angle is 45°."
+  },
+  {
+    "type": "short_answer",
+    "question": "Express -11π/4 as a coterminal angle in the interval [0, 2π).",
+    "answer": "5π/4",
+    "solution": "Add 3 × 2π (6π/2 = 12π/4) to -11π/4: -11π/4 + 12π/4 = π/4. But π/4 is in [0, 2π), so the answer is π/4. (Alternatively, -11π/4 + 3×2π = 5π/4)."
+  },
+  {
+    "type": "mcq",
+    "question": "Determine the quadrant in which the terminal side of 100 degrees lies and state the coordinates of the corresponding point on the unit circle.",
+    "choices": [
+      "Quadrant II, (cos(100°), sin(100°))",
+      "Quadrant I, (cos(100°), sin(100°))",
+      "Quadrant III, (cos(100°), sin(100°))",
+      "Quadrant IV, (cos(100°), sin(100°))"
+    ],
+    "answer": 0,
+    "solution": "100° is in Quadrant II. The coordinates are (cos(100°), sin(100°))."
+  },
+  {
+    "type": "short_answer",
+    "question": "Express 1 radian in degrees, rounded to the nearest tenth of a degree.",
+    "answer": "57.3°",
+    "solution": "1 radian = 180/π ≈ 57.3°."
+  },
+  {
+    "type": "short_answer",
+    "question": "Find two coterminal angles of 70 degrees: one positive and one negative.",
+    "answer": "430°, -290°",
+    "solution": "Positive: 70° + 360° = 430°. Negative: 70° - 360° = -290°."
+  },
+  {
+    "type": "short_answer",
+    "question": "Write the exact radian measure of an angle that is coterminal with 300 degrees but less than 0.",
+    "answer": "-60° or -π/3",
+    "solution": "300° - 360° = -60°. In radians: 300° × π/180 = 5π/3; 5π/3 - 2π = -π/3."
+  },
+  {
+    "type": "mcq",
+    "question": "Solve √3 cos(θ) + sin(θ) = 0 for 0 ≤ θ < 2π.",
+    "choices": [
+      "θ = 2π/3, 5π/3",
+      "θ = π/3, 4π/3",
+      "θ = π/6, 7π/6",
+      "θ = π/2, 3π/2"
+    ],
+    "answer": 0,
+    "solution": "Divide both sides by cos(θ): √3 + tan(θ) = 0 ⇒ tan(θ) = -√3. tan(θ) = -√3 at θ = 2π/3, 5π/3."
+  },
+  {
+    "type": "mcq",
+    "question": "Solve sin(θ) + cos(θ) = 0 for 0 ≤ θ < 2π.",
+    "choices": [
+      "θ = 3π/4, 7π/4",
+      "θ = π/4, 5π/4",
+      "θ = π/2, 3π/2",
+      "θ = π/3, 4π/3"
+    ],
+    "answer": 0,
+    "solution": "sin(θ) + cos(θ) = 0 ⇒ sin(θ) = -cos(θ) ⇒ tan(θ) = -1. tan(θ) = -1 at θ = 3π/4, 7π/4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve 2cos(θ) + √2 = 0 for 0 ≤ θ < 2π.",
+    "answer": "θ = 3π/4, 5π/4",
+    "solution": "2cos(θ) + √2 = 0 ⇒ cos(θ) = -√2/2. cos(θ) = -√2/2 at θ = 3π/4, 5π/4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve sin(θ/2) = √2/2 for 0 ≤ θ < 4π.",
+    "answer": "θ = π/2, 3π/2, 5π/2, 7π/2",
+    "solution": "sin(θ/2) = √2/2 ⇒ θ/2 = π/4, 3π/4, 9π/4, 7π/4 ⇒ θ = π/2, 3π/2, 9π/2, 7π/2. But in [0, 4π): θ = π/2, 3π/2, 5π/2, 7π/2."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve cos(θ) = cos(π/6) for 0 ≤ θ < 2π.",
+    "answer": "θ = π/6, 11π/6",
+    "solution": "cos(θ) = cos(π/6) ⇒ θ = π/6, 2π - π/6 = 11π/6."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve 1 + sin(θ) = 0 for 0 ≤ θ < 2π.",
+    "answer": "θ = 3π/2",
+    "solution": "sin(θ) = -1 at θ = 3π/2."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve 2sin²(θ) - 1 = 0 for 0 ≤ θ < 2π.",
+    "answer": "θ = π/4, 3π/4, 5π/4, 7π/4",
+    "solution": "2sin²(θ) - 1 = 0 ⇒ sin²(θ) = 1/2 ⇒ sin(θ) = ±√2/2. θ = π/4, 3π/4, 5π/4, 7π/4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve sin(3θ) = 0 for 0 ≤ θ < 2π.",
+    "answer": "θ = 0, π/3, 2π/3, π, 4π/3, 5π/3",
+    "solution": "sin(3θ) = 0 ⇒ 3θ = nπ ⇒ θ = nπ/3 for n = 0, 1, 2, 3, 4, 5."
+  },
+  {
+    "type": "short_answer",
+    "question": "A circle has a radius of 5 cm. Find the arc length subtended by a central angle of 60 degrees.",
+    "answer": "(5π/3) cm",
+    "solution": "Arc length = (θ/360) × 2πr = (60/360) × 2π × 5 = (1/6) × 10π = 5π/3 cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine the arc length on the unit circle for θ = π/3.",
+    "answer": "π/3 units",
+    "solution": "Arc length = rθ = 1 × π/3 = π/3 units."
+  },
+  {
+    "type": "short_answer",
+    "question": "A wheel of radius 0.7 m rotates through an angle of 120 degrees. Find the distance a point on the rim travels.",
+    "answer": "1.47 m",
+    "solution": "Arc length = (θ/360) × 2πr = (120/360) × 2π × 0.7 = (1/3) × 1.4π ≈ 1.47 m."
+  },
+  {
+    "type": "short_answer",
+    "question": "A circle has a radius of 10 cm. Find the arc length subtended by a central angle of 300 degrees.",
+    "answer": "(50π/3) cm",
+    "solution": "Arc length = (θ/360) × 2πr = (300/360) × 2π × 10 = (5/6) × 20π = 50π/3 cm."
+  },
+  {
+    "type": "short_answer",
+    "question": "On a circle of radius 4 m, an arc of length 2 m is subtended. Determine the central angle in both radians and degrees.",
+    "answer": "0.5 radians, 28.6°",
+    "solution": "Arc length = rθ ⇒ 2 = 4θ ⇒ θ = 0.5 radians. In degrees: θ = 0.5 × 180/π ≈ 28.6°."
+  },
+  {
+    "type": "short_answer",
+    "question": "State the formula for arc length when θ is given in degrees. Use it to find the arc length for radius 3 m and central angle 45 degrees.",
+    "answer": "(3π/4) m",
+    "solution": "Arc length = (θ/360) × 2πr. For θ = 45°, r = 3: (45/360) × 2π × 3 = (1/8) × 6π = 3π/4 m."
+  },
+  {
+    "type": "short_answer",
+    "question": "A circle has a radius of 12 m. An arc length of 6π m is subtended. Find the central angle in both radians and degrees.",
+    "answer": "0.5π radians, 90°",
+    "solution": "Arc length = rθ ⇒ 6π = 12θ ⇒ θ = 0.5π radians. In degrees: θ = 0.5π × 180/π = 90°."
+  },
+  {
+    "type": "short_answer",
+    "question": "A Ferris wheel with radius 12 m rotates through 3/4 of a full revolution. Find the arc length traveled by a point on the rim.",
+    "answer": "18π m",
+    "solution": "Arc length = 2πr × (3/4) = 2π × 12 × 3/4 = 24π × 3/4 = 18π m."
+  },
+  {
+    "type": "short_answer",
+    "question": "A point on the unit circle is (-4/5, 3/5).\na. Determine sin(θ), cos(θ), and tan(θ).\nb. State the quadrant of θ.\nc. Give one coterminal angle of θ in (-π, π].",
+    "answer": "a. sin(θ) = 3/5, cos(θ) = -4/5, tan(θ) = -3/4; b. Quadrant II; c. θ = arccos(-4/5) ≈ 2.498 radians.",
+    "solution": "a. sin(θ) = 3/5, cos(θ) = -4/5, tan(θ) = -3/4.\nb. Since x < 0, y > 0, θ is in Quadrant II.\nc. One coterminal angle in (-π, π] is arccos(-4/5) ≈ 2.498 radians."
+  },
+  {
+    "type": "short_answer",
+    "question": "If sin(θ) = -√3/2 and θ is in Quadrant III, determine θ in radians in the interval [0, 2π).",
+    "answer": "4π/3",
+    "solution": "sin(θ) = -√3/2 in Quadrant III at θ = 4π/3."
+  },
+  {
+    "type": "short_answer",
+    "question": "Verify the identity sin²(θ) + cos²(θ) = 1 by substituting θ = 2π/3.",
+    "answer": "1",
+    "solution": "sin(2π/3) = √3/2, cos(2π/3) = -1/2. (√3/2)² + (-1/2)² = 3/4 + 1/4 = 1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve cos(θ) = sin(π/3 - θ) for 0 ≤ θ < 2π.",
+    "answer": "θ = π/6, 5π/6",
+    "solution": "cos(θ) = sin(π/3 - θ) ⇒ cos(θ) = cos(π/2 - (π/3 - θ)) = cos(π/6 + θ). So, θ = π/6, 5π/6."
+  },
+  {
+    "type": "short_answer",
+    "question": "A rotating beacon has an angular speed of π/6 radians per second.\na. How many radians does it rotate through in 10 seconds?\nb. Express this angle in degrees.\nc. If the light is 2 m from the axis of rotation, what arc length does it trace in 10 seconds?",
+    "answer": "a. 5π radians; b. 900°; c. 10π m",
+    "solution": "a. θ = (π/6) × 10 = 5π radians.\nb. 5π × 180/π = 900°.\nc. Arc length = rθ = 2 × 5π = 10π m."
+  },
+  {
+    "type": "short_answer",
+    "question": "On the unit circle, sketch and label the terminal points for angles -π/3, 5π/6, and 4π/3. State the exact coordinates of each point.",
+    "answer": "(-π/3): (1/2, -√3/2); (5π/6): (-√3/2, 1/2); (4π/3): (-1/2, -√3/2)",
+    "solution": "-π/3: cos(-π/3) = 1/2, sin(-π/3) = -√3/2.\n5π/6: cos(5π/6) = -√3/2, sin(5π/6) = 1/2.\n4π/3: cos(4π/3) = -1/2, sin(4π/3) = -√3/2."
+  },
+  {
+    "type": "mcq",
+    "question": "For θ = 450°,\na. Express θ in radians in [0, 2π).\nb. Determine the exact values of sin(θ) and cos(θ).\nc. Find the arc length subtended on a circle of radius 7 cm.",
+    "choices": [
+      "a. 5π/2; b. sin(450°) = 1, cos(450°) = 0; c. 35π/2 cm",
+      "a. π/2; b. sin(450°) = 1, cos(450°) = 0; c. 7π/2 cm",
+      "a. 3π/2; b. sin(450°) = -1, cos(450°) = 0; c. 21π/2 cm",
+      "a. 2π; b. sin(450°) = 0, cos(450°) = 1; c. 14π cm"
+    ],
+    "answer": 0,
+    "solution": "a. 450° = 5π/2 radians.\nb. sin(450°) = sin(90°) = 1, cos(450°) = cos(90°) = 0.\nc. Arc length = (450/360) × 2π × 7 = (5/4) × 14π = 35π/2 cm."
+  }
+]
+
