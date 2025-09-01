@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 3 Overview | Pre-Calc 40S</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- MathJax for beautiful math rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container" style="max-width: 1100px;">
+    <header>
+      <h1>Unit 3: Radicals & Rationals</h1>
+      <p>Overview</p>
+    </header>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+      <main style="flex: 3; min-width: 260px;">
+        <section class="question-card">
+          <h2>What are Radicals and Rationals?</h2>
+          <ul style="margin-left: 1.5em;">
+            <li><b>Radical expressions</b> contain roots: <b>\(\sqrt{x}\)</b> (square root), <b>\(\sqrt[3]{x}\)</b> (cube root), and n-th roots.</li>
+            <li>Even roots (\(\sqrt{\phantom{x}}\), 4th root, ...) require the radicand \(\geq 0\) for real values.</li>
+            <li>Odd roots (cube root, 5th root, ...) accept all real radicands.</li>
+            <li><b>Rational functions</b> are quotients of polynomials: <b>R(x) = P(x)/Q(x)</b>.</li>
+            <li>Domain excludes x where Q(x) = 0 (non-permissible values), which cause vertical asymptotes or holes.</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Graphing Radical Functions</h2>
+          <ul style="margin-left: 1.5em;">
+            <li><b>y = \(\sqrt{x}\):</b> Starts at (0,0), increases gently to the right. Range [0, ∞).</li>
+            <li><b>y = \(\sqrt[3]{x}\):</b> Passes through origin, increases for all x. Domain and range: all reals.</li>
+          </ul>
+          <ol style="margin-left: 1.5em;">
+            <li>Identify domain (radicand \(\geq 0\) for even roots). Find left-most endpoint if any.</li>
+            <li>Make a table of easy x-values (e.g., 0,1,4,9 for sqrt) and compute y-values.</li>
+            <li>Plot points and connect smoothly; keep correct end-behaviour.</li>
+            <li>Label domain and range clearly on the graph.</li>
+          </ol>
+        </section>
+        <section class="question-card">
+          <h2>Graphing Rational Functions</h2>
+          <ol style="margin-left: 1.5em;">
+            <li>Factor numerator and denominator completely. Identify domain and non-permissible values.</li>
+            <li>Simplify if possible to reveal holes (cancelled factors). Mark hole coordinates exactly.</li>
+            <li>Find vertical asymptotes: remaining zeros of denominator after cancellation.</li>
+            <li>Determine horizontal/slant asymptote using degree rules and polynomial division if needed.</li>
+            <li>Find x-intercepts (zeros of numerator after cancellation) and y-intercept (evaluate R(0) if permissible).</li>
+            <li>Do sign analysis or use test points in each interval between vertical asymptotes and holes.</li>
+            <li>Sketch using asymptotes as guides; plot a few additional points to ensure correct curvature. Label holes and asymptotes.</li>
+          </ol>
+        </section>
+        <section class="question-card">
+          <h2>Transformations: Master Form & Mapping</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Use <b>y = a f(b(x + c)) + d</b> for all transformations (f = parent: sqrt, cuberoot, 1/x, etc).</li>
+            <li>Mapping: If (x, y) is on y = f(x), then on transformed graph:<br>
+              <span style="font-size:1.1em; color:#1976d2;">$$(x_{new}, y_{new}) = (x / b - c,\ a y + d)$$</span></li>
+            <li><b>a</b>: vertical stretch/compression/reflection; <b>b</b>: horizontal stretch/compression/reflection; <b>c</b>: horizontal shift; <b>d</b>: vertical shift.</li>
+            <li>For radicals: domain for y = a sqrt(b(x + c)) + d is b(x + c) \(\geq 0\) (solve for x, flip if b < 0).</li>
+            <li>For rationals: domain excludes zeros of denominator; holes if factors cancel.</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Describing Transformations in Words</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>"Vertical stretch by 2, up 3" → y = 2 f(x) + 3</li>
+            <li>"Compressed horizontally by 1/3, left 4" → y = f(3(x + 4))</li>
+            <li>"Reflected in x-axis, right 2, up 1" → y = -f(x - 2) + 1</li>
+            <li>For radicals: "Standard sqrt curve shifted right h, up k, stretched by a" → y = a sqrt(x - h) + k (watch sign inside!)</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Finding Equations from Domain & Range</h2>
+          <ol style="margin-left: 1.5em;">
+            <li>Identify parent (sqrt or cuberoot) from shape and domain.</li>
+            <li>Translate domain/endpoint to find c (horizontal shift).</li>
+            <li>Translate range starting value to find d (vertical shift).</li>
+            <li>Use known points to solve for a and b if needed.</li>
+            <li>Check domain requirement for even roots: b(x + c) \(\geq 0\).</li>
+          </ol>
+          <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; margin: 1em 0;">
+            <b>Example:</b> Domain [2, ∞), range [3, ∞), shape of sqrt(x):<br>
+            Candidate: y = sqrt(x - 2) + 3. If steeper, y = 2 sqrt(x - 2) + 3. Verify with a point.
+          </div>
+        </section>
+        <section class="question-card">
+          <h2>Making \(y = \sqrt{f(x)}\) from \(f(x)\)</h2>
+          <ol style="margin-left: 1.5em;">
+            <li>Domain: only where \(f(x) \geq 0\).</li>
+            <li>For x where \(f(x) = 0\), y = 0. For x where \(f(x) > 0\), \(y = \sqrt{f(x)}\).</li>
+            <li>Remove parts where \(f(x) < 0\). Plot transformed points and connect smoothly.</li>
+            <li>Range: [0, \(\sqrt{\max(f(x))}\)] if \(f(x) \geq 0\).</li>
+            <li>Invariant points: where \(f(x) = 0\) or \(f(x) = 1\) (since \(\sqrt{0} = 0\), \(\sqrt{1} = 1\)).</li>
+          </ol>
+        </section>
+        <section class="question-card">
+          <h2>Solving Radical Equations</h2>
+          <ol style="margin-left: 1.5em;">
+            <li>Isolate the radical.</li>
+            <li>Raise both sides to the necessary power.</li>
+            <li>Solve the resulting equation.</li>
+            <li>Check all solutions in the original (discard extraneous roots).</li>
+          </ol>
+          <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; margin: 1em 0;">
+            <b>Example:</b> Solve sqrt(x + 3) = x - 1.<br>
+            Domain: x - 1 \(\geq 0\) → x \(\geq 1\).<br>
+            Square: x + 3 = (x - 1)^2 = x^2 - 2x + 1.<br>
+            Rearrange: 0 = x^2 - 3x - 2. Solve: x = (3 ± sqrt(17))/2.<br>
+            Check which satisfy original and domain.
+          </div>
+        </section>
+        <section class="question-card">
+          <h2>Rational Functions: Asymptotes, Holes, and Domain</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Non-permissible values: x where denominator = 0.</li>
+            <li>Vertical asymptote: denominator zero, numerator nonzero (uncancelled factor).</li>
+            <li>Hole: denominator and numerator zero, factor cancels. Find y by plugging x into simplified function.</li>
+            <li>Horizontal asymptote: degree rules:<br>
+              n &lt; m: y = 0<br>
+              n = m: y = leading coeffs<br>
+              n = m + 1: slant asymptote (use division)<br>
+              n &gt; m + 1: no horizontal asymptote, use division for end behavior.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+      <a class="resource-link" href="#" download>Past Exam Paper</a>
+      <a class="resource-link" href="#" download>Summary Notes</a>
+    </div>
+    <div class="footer-text">
+      Empowering Manitoba students to succeed in Pre-Calculus 40S.
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+    </div>
+  </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+      <span class="toggle-handle"></span>
+    </button>
+  <script>
+  // Light/Dark Mode Toggle (Switch Style)
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeBtn.classList.add('on');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.classList.remove('on');
+    }
+    localStorage.setItem('theme', mode);
+  }
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  themeBtn.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+  </script>
+</body>
+</html>
