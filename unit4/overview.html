@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 4 Overview | Pre-Calc 40S</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- MathJax for beautiful math rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container" style="max-width: 1100px;">
+    <header>
+      <h1>Unit 4: Exponents & Logarithms</h1>
+      <p>Overview</p>
+    </header>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+      <main style="flex: 3; min-width: 260px;">
+        <section class="question-card">
+          <h2>Exponents vs Logarithms: The Basics</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Exponential: \(b^e = N\) means "base b to the power e equals N". Example: \(3^2 = 9\).</li>
+            <li>Logarithm: \(\log_b(N) = e\) means "log base b of N equals exponent e". Example: \(\log_3(9) = 2\).</li>
+            <li>Logs are the inverse of exponentials.</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Domain & Range: Exponential vs Logarithmic</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Exponential \(y = b^x\) (b > 0, b ≠ 1): Domain: all real x; Range: (0, ∞)</li>
+            <li>Logarithmic \(y = \log_b(x)\): Domain: (0, ∞); Range: all real y</li>
+            <li>Inverse mapping: If exponential has (x, y), log has (y, x). So domain(log) = range(exp), range(log) = domain(exp).</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Acceptable Bases & Growth/Decay</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Base b must be b > 0 and b ≠ 1.</li>
+            <li>b > 1: exponential growth; 0 < b < 1: exponential decay.</li>
+            <li>Negative bases are not used for real-valued exponentials/logs in grade 12.</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Triple A for Exponential Graphs</h2>
+          <ul style="margin-left: 1.5em;">
+            <li><b>Anchor point:</b> (0, 1) since \(b^0 = 1\)</li>
+            <li><b>Asymptote:</b> y = 0 for parent \(y = b^x\) (shifts with vertical translation)</li>
+            <li><b>Another point:</b> (1, b) since \(b^1 = b\)</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Exponential Graph Behavior</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>b > 1: increasing (rises to right). Example: \(y = 2^x\)</li>
+            <li>0 < b < 1: decreasing (decay). Example: \(y = (1/2)^x\)</li>
+            <li>Parent \(y = b^x\) has HA: y = 0. For \(y = a b^{k(x + c)} + d\), HA is y = d.</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Transforming Exponential Graphs</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>General form: \(y = a b^{k(x + c)} + d\)</li>
+            <li>a: vertical stretch/compression, reflect x-axis if a < 0</li>
+            <li>k: horizontal compression/stretch, reflect y-axis if k < 0</li>
+            <li>c: horizontal shift (left +c, right -c)</li>
+            <li>d: vertical shift (up +d, down -d)</li>
+            <li>Mapping: (0,1) → (−c, a + d), (1, b) → (1/k − c, a b + d), HA: y = d</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Graphing Logarithmic Functions</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Parent: \(y = \log_b(x)\)</li>
+            <li>Anchor: (1, 0) since \(\log_b(1) = 0\)</li>
+            <li>Asymptote: x = 0 (vertical)</li>
+            <li>Another point: (b, 1) since \(\log_b(b) = 1\)</li>
+            <li>Transformed: \(y = a \log_b(k(x + c)) + d\), VA: x = -c</li>
+            <li>Mapping: (1,0) → (1/k − c, d), (b,1) → (b/k − c, a + d)</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Estimating Logs (1 Decimal Place)</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Change of base: \(\log_b(x) = \frac{\ln(x)}{\ln(b)}\) or \(\frac{\log_{10}(x)}{\log_{10}(b)}\)</li>
+            <li>No calculator: find two nearby powers of b, interpolate</li>
+            <li>Example: \(\log_2(10)\) is between 3 and 4 (since \(2^3 = 8\), \(2^4 = 16\)), estimate ≈ 3.3</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Logarithm Properties</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Product: \(\log_b(MN) = \log_b(M) + \log_b(N)\)</li>
+            <li>Quotient: \(\log_b(M/N) = \log_b(M) - \log_b(N)\)</li>
+            <li>Power: \(\log_b(M^p) = p \log_b(M)\)</li>
+            <li>Change of base: \(\log_b(A) = \frac{\ln(A)}{\ln(b)}\)</li>
+            <li>Equality: \(\log_b(M) = \log_b(N) \implies M = N\) (M, N > 0)</li>
+            <li>Exponential equality: \(b^u = b^v \implies u = v\) (b > 0, b ≠ 1)</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Solving Exponential & Log Equations</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Exponential to log: \(b^x = A \implies x = \log_b(A) = \frac{\ln(A)}{\ln(b)}\)</li>
+            <li>Log to exponential: \(\log_b(E) = v \implies E = b^v\)</li>
+            <li>Combine logs: \(\log_b(M) + \log_b(N) = k \implies MN = b^k\)</li>
+            <li>Exponential with linear exponent: \(A b^{kt} = C \implies t = \frac{1}{k} \log_b(C/A)\)</li>
+            <li>Always check domain: log arguments > 0; exponentials, check range if needed</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Word Problems: Growth, Decay, and Models</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Discrete: \(A(t) = A_0 b^t\), doubling time: \(T_{double} = \log_b(2)\)</li>
+            <li>Continuous: \(A(t) = A_0 e^{kt}\), doubling: \(T_{double} = \frac{\ln(2)}{k}\), half-life: \(T_{half} = \frac{-\ln(2)}{k}\)</li>
+            <li>Translate words to formula, substitute, solve for unknown using logs, check units, interpret</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Asymptotes & Shifts</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Exponential parent \(y = b^x\): HA y = 0. For \(y = a b^{k(x + c)} + d\), HA is y = d</li>
+            <li>Log parent \(y = \log_b(x)\): VA x = 0. For \(y = a \log_b(k(x + c)) + d\), VA is x = -c</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Quick Mapping Rules</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>Exponential: (x_p, y_p) on parent \(y_p = b^{x_p}\), transformed: x = x_p/k - c, y = a y_p + d</li>
+            <li>Log: (x_p, y_p) on parent \(y_p = \log_b(x_p)\), transformed: x = x_p/k - c, y = a y_p + d</li>
+            <li>Inverse: if exponential has (x, y), log has (y, x) (reflect across y = x)</li>
+          </ul>
+        </section>
+        <section class="question-card">
+          <h2>Common Exam Traps & Tips</h2>
+          <ul style="margin-left: 1.5em;">
+            <li>State domain restrictions before solving log equations (argument > 0)</li>
+            <li>For exponentials, use logs to solve; for logs, convert to exponentials</li>
+            <li>Use exact forms (ln, log, fractions), round only final answers</li>
+            <li>Label asymptotes and anchor points on graphs</li>
+            <li>For word problems, write the model, identify units, show algebraic steps</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+      <a class="resource-link" href="#" download>Past Exam Paper</a>
+      <a class="resource-link" href="#" download>Summary Notes</a>
+    </div>
+    <div class="footer-text">
+      Empowering Manitoba students to succeed in Pre-Calculus 40S.
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+    </div>
+  </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+      <span class="toggle-handle"></span>
+    </button>
+  <script>
+  // Light/Dark Mode Toggle (Switch Style)
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeBtn.classList.add('on');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.classList.remove('on');
+    }
+    localStorage.setItem('theme', mode);
+  }
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  themeBtn.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+  </script>
+</body>
+</html>
+ 
