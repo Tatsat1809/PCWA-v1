@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 5 Formula Sheet | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">Unit 5: Polynomial Functions</h1>
+			<p style="text-align:center;">Formula Sheet</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>Core Definitions</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Polynomial: \( f(x) = a_n x^n + a_{n-1} x^{n-1} + \ldots + a_1 x + a_0 \), exponents are whole numbers, coefficients are real.</li>
+						<li>Degree: highest exponent with non-zero coefficient.</li>
+						<li>Leading term / coefficient: highest-degree term and its coefficient.</li>
+						<li>Constant term: \( a_0 \).</li>
+						<li>Zero/root: \( r \) such that \( f(r) = 0 \).</li>
+						<li>Multiplicity: \( k \) if \( (x - r)^k \) is a factor.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>End Behaviour (Leading-Term Test)</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>For large \( |x| \), \( f(x) \approx a_n x^n \).</li>
+					</ul>
+					<div style="display: flex; flex-wrap: wrap; gap: 1.5em;">
+						<div style="text-align:center;">
+							<b>Even n, \( a_n > 0 \)</b><br>
+							<svg width="60" height="40"><path d="M5,35 Q30,0 55,35" stroke="#1976d2" stroke-width="2" fill="none"/></svg><br>Both ends up
+						</div>
+						<div style="text-align:center;">
+							<b>Even n, \( a_n < 0 \)</b><br>
+							<svg width="60" height="40"><path d="M5,5 Q30,40 55,5" stroke="#d32f2f" stroke-width="2" fill="none"/></svg><br>Both ends down
+						</div>
+						<div style="text-align:center;">
+							<b>Odd n, \( a_n > 0 \)</b><br>
+							<svg width="60" height="40"><path d="M5,35 Q30,20 55,5" stroke="#388e3c" stroke-width="2" fill="none"/></svg><br>Left down, right up
+						</div>
+						<div style="text-align:center;">
+							<b>Odd n, \( a_n < 0 \)</b><br>
+							<svg width="60" height="40"><path d="M5,5 Q30,20 55,35" stroke="#fbc02d" stroke-width="2" fill="none"/></svg><br>Left up, right down
+						</div>
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Typical Visuals by Degree</h2>
+					<div style="display: flex; flex-wrap: wrap; gap: 1em;">
+						<div style="text-align:center;">
+							<b>Linear (n = 1)</b><br>
+							<svg width="50" height="40"><line x1="5" y1="35" x2="45" y2="5" stroke="#1976d2" stroke-width="2"/></svg>
+						</div>
+						<div style="text-align:center;">
+							<b>Quadratic (n = 2)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q25,5 45,35" stroke="#388e3c" stroke-width="2" fill="none"/></svg>
+						</div>
+						<div style="text-align:center;">
+							<b>Cubic (n = 3)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q15,20 25,20 Q35,20 45,5" stroke="#d32f2f" stroke-width="2" fill="none"/></svg>
+						</div>
+						<div style="text-align:center;">
+							<b>Quartic (n = 4)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q15,5 25,35 Q35,5 45,35" stroke="#fbc02d" stroke-width="2" fill="none"/></svg>
+						</div>
+						<div style="text-align:center;">
+							<b>Quintic (n = 5)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q10,20 15,20 Q20,20 25,35 Q30,5 35,20 Q40,35 45,5" stroke="#1976d2" stroke-width="2" fill="none"/></svg>
+						</div>
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Zero Behaviour (Multiplicity Rules)</h2>
+					<div style="display: flex; flex-wrap: wrap; gap: 1em;">
+						<div style="text-align:center;">
+							<b>Simple root (k = 1)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q25,5 45,35" stroke="#1976d2" stroke-width="2" fill="none"/><circle cx="25" cy="20" r="3" fill="#1976d2"/></svg><br>Crosses x-axis
+						</div>
+						<div style="text-align:center;">
+							<b>Double root (k = 2)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q25,5 45,35" stroke="#388e3c" stroke-width="2" fill="none"/><rect x="22" y="17" width="6" height="6" fill="#388e3c"/></svg><br>Bounces
+						</div>
+						<div style="text-align:center;">
+							<b>Triple root (k = 3)</b><br>
+							<svg width="50" height="40"><path d="M5,35 Q15,5 25,20 Q35,35 45,5" stroke="#d32f2f" stroke-width="2" fill="none"/><ellipse cx="25" cy="20" rx="5" ry="3" fill="#d32f2f"/></svg><br>Flattens through
+						</div>
+					</div>
+					<ul style="margin-left: 1.5em;">
+						<li>Odd k: crosses; higher odd k = flatter crossing.</li>
+						<li>Even k: bounces.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Intercepts & Quick Compute</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>x-intercepts: solve \( f(x) = 0 \). If factored, set each factor to zero.<br>
+							Example: \( f(x) = (x-2)^2(x+1) \) → \( x = 2 \) (mult 2, bounce), \( x = -1 \) (mult 1, cross).</li>
+						<li>y-intercept: \( f(0) \).<br>
+							Example: \( f(0) = (−2)^2 \cdot 1 = 4 \) → (0, 4).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Graphing Checklist (Exam Ready)</h2>
+					<ol style="margin-left: 1.5em;">
+						<li>Put \( f(x) \) in factored or easily evaluable form.</li>
+						<li>Find: degree \( n \), LC, end behaviour.</li>
+						<li>Find all real zeros and their multiplicities.</li>
+						<li>Compute y-intercept \( f(0) \).</li>
+						<li>Plot key points; mark bounce/cross at each root.</li>
+						<li>Sketch with correct end arrows and smooth curves (polynomials are continuous and smooth).</li>
+						<li>Turning points ≤ \( n-1 \). Add extra points if shape is unclear.</li>
+					</ol>
+				</section>
+				<section class="question-card">
+					<h2>Quick Facts to Remember</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Domain: all real numbers.</li>
+						<li>Number of real zeros ≤ degree.</li>
+						<li>If LC > 0 and n even → global min exists; if LC < 0 and n even → global max exists.</li>
+						<li>Odd degree: range is all real numbers.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Polynomial Division</h2>
+					<ul style="margin-left: 1.5em;">
+						<li><b>Long division:</b> works for any divisor. Align terms, divide, multiply, subtract, repeat.<br>
+							Result: \( f(x) = \text{divisor} \cdot \text{quotient} + \text{remainder} \).</li>
+						<li><b>Synthetic division:</b> only for divisors \( x-a \). Use a, write coefficients, bring down, multiply, add, repeat.<br>
+							Use for linear divisors.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Remainder & Factor Theorems</h2>
+					<ul style="margin-left: 1.5em;">
+						<li><b>Remainder Theorem:</b> remainder of dividing \( f(x) \) by \( x-a \) equals \( f(a) \).</li>
+						<li><b>Factor Theorem:</b> \( x-a \) is a factor of \( f(x) \) iff \( f(a) = 0 \).</li>
+						<li>Multiplicity: if \( f(a) = 0 \) and synthetic division by \( x-a \) leaves remainder 0 repeatedly k times, then \( (x-a)^k \mid f(x) \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Mini Workflows (Speed Patterns)</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Testing root \( a \): compute \( f(a) \). If 0, factor \( x-a \) using synthetic division.</li>
+						<li>Building factorization: repeat synthetic division to peel off \( x-a \) factors (tracks multiplicity).</li>
+						<li>End behaviour: read degree parity and LC sign; draw arrows first, then fit curve through intercepts with correct bounce/cross.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Compact Example (All Steps)</h2>
+					<div style="margin-left: 1.5em;">
+						\( f(x) = - (x-1)^2 (x+2) (x-3) \)<br>
+						Degree: 4 (even), LC −1 → both ends down.<br>
+						Zeros: \( x = 1 \) (mult 2, bounce), \( x = -2 \) (mult 1, cross), \( x = 3 \) (mult 1, cross).<br>
+						y-int: \( f(0) = 6 \) → (0, 6).<br>
+						Sketch: plot three intercepts with behaviours, add (0, 6), draw smooth curve with both ends ↓ and ≤ 3 turning points.
+					</div>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+			<span class="toggle-handle"></span>
+		</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>
