@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 6 Formula Sheet | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">
+				Unit 6: Permutations, Combinations &<br>
+				Binomial Theorem
+			</h1>
+			<p style="text-align:center;">Formula Sheet</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>Factorials & Basic Facts</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Definition: \( n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1 \), for \( n \geq 1 \).</li>
+						<li>Convention: \( 0! = 1 \).</li>
+						<li>Fast cancellations: \( \frac{(n+2)!}{n!} = (n+2)(n+1) \), \( \frac{n!}{(n-2)!} = n(n-1) \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Counting Principle</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>If Task A has \( m \) ways and for each, Task B has \( n \) ways, then A then B has \( m \cdot n \) ways.</li>
+						<li>Extend by multiplication for more steps.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Permutations vs Combinations</h2>
+					<table class="formula-table" style="width:100%;margin-bottom:1em;text-align:center;">
+						<thead>
+							<tr><th>Feature</th><th>Permutation</th><th>Combination</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Order matters?</td><td>Yes</td><td>No</td></tr>
+							<tr><td>Formula</td><td>\( P(n, k) = \frac{n!}{(n-k)!} \)</td><td>\( C(n, k) = \frac{n!}{k!(n-k)!} \)</td></tr>
+							<tr><td>Example</td><td>\( P(4,3) = 24 \)</td><td>\( C(5,2) = 10 \)</td></tr>
+							<tr><td>Relation</td><td colspan="2">\( P(n,k) = C(n,k) \cdot k! \)</td></tr>
+							<tr><td>Symmetry</td><td colspan="2">\( C(n,k) = C(n,n-k) \)</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section class="question-card">
+					<h2>Useful Combinatorial Identities</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( C(n,k) = C(n,n-k) \)</li>
+						<li>Pascal: \( C(n,k) = C(n-1,k-1) + C(n-1,k) \)</li>
+						<li>\( P(n,k) = C(n,k) \cdot k! \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Quick Reference: Factorial Simplifications</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( \frac{(n+a)!}{n!} = (n+a)(n+a-1)\ldots(n+1) \)</li>
+						<li>Cancel common factorial factors before expanding to simplify algebraic solving.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Arranging People/Objects in a Line</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>No restrictions: \( n! \)</li>
+						<li>Two together: \( (n-1)! \cdot 2 \)</li>
+						<li>Three together: \( (n-2)! \cdot 3! \)</li>
+						<li>Two NOT together: \( n! - (n-1)! \cdot 2 \)</li>
+						<li>Alternating boys/girls (equal m): \( 2 \cdot m! \cdot m! \)</li>
+						<li>Boy–girl couples (fixed): \( 5! \cdot 2^5 = 3,840 \)</li>
+						<li>Boy–girl couples (any pairing): \( 5! \cdot 5! \cdot 2^5 = 460,800 \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Block & Complement Techniques</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Block method: group required-adjacent persons as one “super-person”; multiply by internal arrangements.</li>
+						<li>Complement method: count total arrangements then subtract arrangements that violate the restriction.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Solving Factorial, P, C Expressions</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Evaluate \( P \) and \( C \) by canceling factorials first.</li>
+						<li>Examples: \( P(7,3)=210 \), \( C(8,3)=56 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Solving Equations with Factorials, P, C</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Reduce factorial ratios to a polynomial in \( n \); solve integer solutions.</li>
+						<li>Example: \( C(n,2)=15 \Rightarrow n=6 \).</li>
+						<li>Example: \( P(n,4)=840 \Rightarrow n=7 \).</li>
+						<li>Example: \( \frac{(n+2)!}{n!}=56 \Rightarrow n=6 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Binomial Coefficients & Pascal’s Triangle</h2>
+					<div style="margin-bottom:1em; text-align:center;">
+						<div style="font-size:1.15em; font-weight:600; margin-bottom:0.5em;">Pascal's Triangle (Rows 0–4)</div>
+						<div style="font-family: 'Consolas', 'Courier New', monospace; font-size: 1.15em; line-height: 1.7; display: inline-block; text-align: center;">
+							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">1&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;1</div>
+						</div>
+					</div>
+					<ul style="margin-left: 1.5em;">
+						<li>Row \( n \) gives coefficients \( C(n,0), C(n,1), \ldots, C(n,n) \).</li>
+						<li>Coefficients for \( (a+b)^n \) are row \( n \) of Pascal's triangle.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Binomial Theorem — Expansion Formula</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( (a+b)^n = \sum_{k=0}^n C(n,k) a^{n-k} b^k \)</li>
+						<li>General term: \( T_{k+1} = C(n,k) a^{n-k} b^k \)</li>
+						<li>First term: \( k=0 \Rightarrow a^n \). Last term: \( k=n \Rightarrow b^n \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Finding Particular Terms</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>For \( (x+1)^n \): \( T_{k+1} = C(n,k) x^{n-k} \). Term with \( x^r \): \( k=n-r \).</li>
+						<li>Coefficient of \( x^r \) is \( C(n, r) \).</li>
+						<li>Constant term: \( r=0 \Rightarrow k=n \Rightarrow 1 \).</li>
+						<li>For \( (x^p+x^q)^n \): exponent on \( x \) in \( T_{k+1} \): \( E = p(n-k) + qk \).</li>
+						<li>For \( (x^3+x^2)^n \): \( E = 3n-k \). To find \( x^r \): \( k=3n-r \).</li>
+						<li>Constant term: solve \( pn+k(q-p)=0 \).</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+			<span class="toggle-handle"></span>
+		</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>

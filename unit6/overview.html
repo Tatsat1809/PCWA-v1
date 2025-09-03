@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 6 Overview | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">
+				Unit 6: Permutations, Combinations &<br>
+				Binomial Theorem
+			</h1>
+			<p style="text-align:center;">Overview</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>What are Factorials?</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1 \), for \( n \geq 1 \).</li>
+						<li>Convention: \( 0! = 1 \).</li>
+						<li>Example: \( 5! = 120 \), \( 6! = 720 \).</li>
+						<li>Counts the number of ways to order \( n \) distinct objects.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Counting Principle</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>If task A can be done in \( m \) ways and for each, task B can be done in \( n \) ways, then A then B can be done in \( m \cdot n \) ways.</li>
+						<li>For several independent steps, multiply the number of options for each step.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Permutations vs Combinations</h2>
+					<table class="formula-table" style="width:100%;margin-bottom:1em;text-align:center;">
+						<thead>
+							<tr><th>Feature</th><th>Permutation</th><th>Combination</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>Order matters?</td><td>Yes</td><td>No</td></tr>
+							<tr><td>Formula</td><td>\( P(n, k) = \frac{n!}{(n-k)!} \)</td><td>\( C(n, k) = \frac{n!}{k!(n-k)!} \)</td></tr>
+							<tr><td>Example</td><td>3-letter arrangements from 4: \( P(4,3) = 24 \)</td><td>2-person committees from 5: \( C(5,2) = 10 \)</td></tr>
+							<tr><td>Relation</td><td colspan="2">\( P(n,k) = C(n,k) \cdot k! \)</td></tr>
+						</tbody>
+					</table>
+				</section>
+						<section class="question-card">
+							<h2>Key Formulas & Identities</h2>
+							<ul style="margin-left: 1.5em;">
+								<li style="margin-bottom:0.35em;">\( n! \): arrangements of \( n \) distinct objects</li>
+								<li style="margin-bottom:0.35em;">\( P(n, k) = \frac{n!}{(n-k)!} \)</li>
+								<li style="margin-bottom:0.35em;">\( C(n, k) = \frac{n!}{k!(n-k)!} \)</li>
+								<li style="margin-bottom:0.35em;">Symmetry: \( C(n, k) = C(n, n-k) \)</li>
+								<li style="margin-bottom:0.35em;">Pascal identity: \( C(n, k) = C(n-1, k-1) + C(n-1, k) \)</li>
+								<li>Relation: \( P(n, k) = C(n, k) \cdot k! \)</li>
+							</ul>
+						</section>
+				<section class="question-card">
+					<h2>Arranging People: Standard Cases</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>No restrictions: \( n! \) ways. Example: 6 people → \( 6! = 720 \).</li>
+						<li>Alternate seating (equal boys/girls): \( 2 \cdot m! \cdot m! \) ways. Example: 5 boys & 5 girls → \( 2 \cdot 5! \cdot 5! = 28,800 \).</li>
+						<li>Two together: \( (n-1)! \cdot 2 \). Example: 6 people, A & B together → \( 5! \cdot 2 = 240 \).</li>
+						<li>Three together: \( (n-2)! \cdot 3! \). Example: 6 people, A,B,C together → \( 4! \cdot 6 = 144 \).</li>
+						<li>Boy–girl couples (fixed): \( 5! \cdot 2^5 = 3,840 \).</li>
+						<li>Boy–girl couples (any pairing): \( 5! \cdot 5! \cdot 2^5 = 460,800 \).</li>
+						<li>Two not together: \( n! - (n-1)! \cdot 2 \). Example: 6 people, A & B not adjacent → \( 720 - 240 = 480 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Binomial Theorem & Pascal's Triangle</h2>
+											<div style="margin-bottom:1em; text-align:center;">
+												<div style="font-size:1.15em; font-weight:600; margin-bottom:0.5em;">Pascal's Triangle (Rows 0–4)</div>
+												<div style="font-family: 'Consolas', 'Courier New', monospace; font-size: 1.15em; line-height: 1.7; display: inline-block; text-align: center;">
+													<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+													<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+													<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</div>
+													<div style="margin-bottom:2px;">&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</div>
+													<div style="margin-bottom:2px;">1&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;1</div>
+												</div>
+											</div>
+					<ul style="margin-left: 1.5em;">
+						<li>Binomial coefficients: \( C(n, k) \) = entry in row \( n \), position \( k \).</li>
+						<li>Coefficients of \( (a+b)^n \) are row \( n \) of Pascal's triangle.</li>
+					</ul>
+				</section>
+						<section class="question-card">
+							<h2>Binomial Theorem (Expansion Formula)</h2>
+							<ul style="margin-left: 1.5em;">
+								<li style="margin-bottom:0.35em;">General: \( (a+b)^n = \sum_{k=0}^n C(n,k) a^{n-k} b^k \)</li>
+								<li style="margin-bottom:0.35em;">General term: \( T_{k+1} = C(n,k) a^{n-k} b^k \)</li>
+								<li>Example: \( (x+2)^3 = x^3 + 6x^2 + 12x + 8 \)</li>
+							</ul>
+						</section>
+				<section class="question-card">
+					<h2>Finding Particular Terms & Degrees</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>General term in \( (x+1)^n \): \( T_{k+1} = C(n,k) x^{n-k} \)</li>
+						<li>Term with \( x^r \): set \( k = n-r \).</li>
+						<li>Example: coefficient of \( x^3 \) in \( (x+1)^5 \): \( k=2 \), coefficient = \( C(5,2) = 10 \).</li>
+						<li>Constant term: \( k=n \), coefficient = 1.</li>
+						<li>General term in \( (x^3+x^2)^n \): \( T_{k+1} = C(n,k) x^{3n-k} \)</li>
+						<li>To find \( x^r \): solve \( 3n-k = r \Rightarrow k=3n-r \).</li>
+						<li>Example: term with \( x^{10} \) in \( (x^3+x^2)^5 \): \( k=5 \), coefficient = \( C(5,5) = 1 \).</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+			<span class="toggle-handle"></span>
+		</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>
