@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 7 Formula Sheet | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">
+				Unit 7: Trigonometric Identities
+			</h1>
+			<p style="text-align:center;">Formula Sheet</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>Addition & Subtraction Formulas</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( \sin(A + B) = \sin A \cos B + \cos A \sin B \)</li>
+						<li>\( \sin(A - B) = \sin A \cos B - \cos A \sin B \)</li>
+						<li>\( \cos(A + B) = \cos A \cos B - \sin A \sin B \)</li>
+						<li>\( \cos(A - B) = \cos A \cos B + \sin A \sin B \)</li>
+						<li>\( \tan(A + B) = \frac{\tan A + \tan B}{1 - \tan A \tan B} \)</li>
+						<li>\( \tan(A - B) = \frac{\tan A - \tan B}{1 + \tan A \tan B} \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Exact Values Using Identities</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Break angle into sum/difference of special angles (30°, 45°, 60°, 90°).</li>
+						<li>Apply the correct identity and substitute known values.</li>
+						<li>Use ASTC rule to confirm the sign.</li>
+					</ul>
+					<div class="example-block">
+						<b>Example:</b> \( \sin 15^\circ = \sin(45^\circ - 30^\circ) = \sin45^\circ\cos30^\circ - \cos45^\circ\sin30^\circ \)
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Special Angles (tan285°, cot285°)</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Reduce using reference angle and quadrant.</li>
+						<li>\( \tan285^\circ = -\tan75^\circ \), \( \cot285^\circ = -\cot75^\circ \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Expansion & Simplification</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Use identities to condense into a single trig function.</li>
+						<li>\( \cos80^\circ \cos50^\circ + \sin80^\circ \sin50^\circ = \cos(80^\circ - 50^\circ) = \cos30^\circ \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Radians</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>All formulas work in radians as well as degrees.</li>
+						<li>Conversion: degrees = radians × 180/π.</li>
+						<li>Example: 15° = π/12, 75° = 5π/12.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Double-Angle Identities</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( \sin(2a) = 2\sin a \cos a \)</li>
+						<li>\( \cos(2a) = \cos^2 a - \sin^2 a = 2\cos^2 a - 1 = 1 - 2\sin^2 a \)</li>
+						<li>\( \tan(2a) = \frac{2\tan a}{1 - \tan^2 a} \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Using Identities in Problems</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Apply double-angle or half-angle formulas as needed.</li>
+						<li>Example: If \( \cos48^\circ = M \), then \( \cos96^\circ = 2M^2 - 1 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Proof Strategy</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Work with the more complex side.</li>
+						<li>Change to sine and cosine when stuck.</li>
+						<li>Use common denominators when adding/subtracting fractions.</li>
+						<li>Multiply by conjugates if useful.</li>
+						<li>Simplify step by step until both sides match.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Core Proof Tips</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Start with the tougher side.</li>
+						<li>Use Pythagorean identity: \( \sin^2x + \cos^2x = 1 \).</li>
+						<li>Replace tan, cot, sec, csc with sin/cos.</li>
+						<li>Always check for restrictions (denominator \( \neq 0 \)).</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+		<span class="toggle-handle"></span>
+	</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>

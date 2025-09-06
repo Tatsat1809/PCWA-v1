@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 7 Overview | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">
+				Unit 7: Trigonometric Identities
+			</h1>
+			<p style="text-align:center;">Overview</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>Addition & Subtraction Formulas</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( \sin(A \pm B) = \sin A \cos B \pm \cos A \sin B \)</li>
+						<li>\( \cos(A \pm B) = \cos A \cos B \mp \sin A \sin B \)</li>
+						<li>\( \tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B} \)</li>
+					</ul>
+					<div class="example-block">
+						<b>Example:</b> \( \sin(75^\circ) = \sin(45^\circ + 30^\circ) = \sin45^\circ\cos30^\circ + \cos45^\circ\sin30^\circ \)
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Angle Addition & Subtraction Identities</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Break the angle into a sum/difference of special angles (30°, 45°, 60°, 90°).</li>
+						<li>Write the expression using a trig identity.</li>
+						<li>Substitute known trig values and simplify.</li>
+						<li>Check the sign using the <b>ASTC</b> rule.</li>
+					</ul>
+					<div class="example-block">
+						<b>Example:</b> \( \sin(15^\circ) = \sin(45^\circ - 30^\circ) = \sin45^\circ\cos30^\circ - \cos45^\circ\sin30^\circ \)
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Step-by-Step: Finding Exact Values</h2>
+					<ol style="margin-left: 1.5em;">
+						<li>Choose a combination of known angles.</li>
+						<li>Write the trig expression in the correct form.</li>
+						<li>Apply the correct identity (sin, cos, or tan).</li>
+						<li>Simplify using known values.</li>
+						<li>Use ASTC to confirm the sign.</li>
+					</ol>
+					<div class="example-block">
+						<b>Example:</b> \( \tan(75^\circ) = \frac{\tan45^\circ + \tan30^\circ}{1 - \tan45^\circ\tan30^\circ} = \frac{1 + \frac{1}{\sqrt{3}}}{1 - 1 \cdot \frac{1}{\sqrt{3}}} \)
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Reference Angles & Periodicity</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Reduce angles using reference angles and periodicity.</li>
+						<li>Example: 285° = 360° - 75°, so it lies in Quadrant IV.</li>
+						<li>\( \tan285^\circ = -\tan75^\circ \), \( \cot285^\circ = -\cot75^\circ \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Expanding & Simplifying Expressions</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Condense trig expressions using formulas.</li>
+						<li>\( \cos80^\circ\cos50^\circ + \sin80^\circ\sin50^\circ = \cos(80^\circ - 50^\circ) = \cos30^\circ \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Radians & Degree Conversion</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Addition and subtraction formulas work in radians too.</li>
+						<li>Convert: degrees = radians × 180/π.</li>
+						<li>Example: 15° = π/12, 75° = 5π/12.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Double-Angle Identities</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Derived from addition formulas.</li>
+						<li>\( \sin(2a) = 2\sin a\cos a \)</li>
+						<li>\( \cos(2a) = \cos^2 a - \sin^2 a = 2\cos^2 a - 1 = 1 - 2\sin^2 a \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Special Problems & Connections</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Sometimes trig values are connected using identities.</li>
+						<li>Example: If \( \cos48^\circ = M \), then \( \cos96^\circ = 2M^2 - 1 \) (double-angle identity).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Trigonometric Proofs</h2>
+					<ol style="margin-left: 1.5em;">
+						<li>Work with the more complicated side.</li>
+						<li>Convert all functions to sine and cosine if possible.</li>
+						<li>Use algebra skills: factoring, simplification.</li>
+						<li>Combine fractions with common denominators.</li>
+						<li>Multiply by conjugates if needed.</li>
+						<li>Simplify until both sides match.</li>
+					</ol>
+				</section>
+				<section class="question-card">
+					<h2>Proof Techniques Summary</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Start with the tougher-looking side.</li>
+						<li>Use basic identities: \( \sin^2\theta + \cos^2\theta = 1 \).</li>
+						<li>Replace tan, cot, sec, csc with sin and cos if stuck.</li>
+						<li>Keep track of restrictions (denominators not zero).</li>
+						<li>Be patient — proofs often take multiple steps!</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+		<span class="toggle-handle"></span>
+	</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>
