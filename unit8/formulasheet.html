@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Unit 8: Functions | Pre-Calc 40S</title>
+	<link rel="stylesheet" href="../styles.css">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
+		<span class="logo-text">PC40S</span>
+	</a>
+	<div class="container" style="max-width: 1100px;">
+		<header>
+			<h1 style="text-align:center;">
+				Unit 8: Functions
+			</h1>
+			<p style="text-align:center;">Formula Sheet</p>
+		</header>
+		<div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+			<main style="flex: 3; min-width: 260px;">
+				<section class="question-card">
+					<h2>Notation & Core Definitions</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( (f + g)(x) = f(x) + g(x) \) &nbsp; (always use parentheses for combined functions)</li>
+						<li>\( (f - g)(x) = f(x) - g(x) \)</li>
+						<li>\( (f \cdot g)(x) \) or \( (f \times g)(x) = f(x) \cdot g(x) \)</li>
+						<li>\( (f \div g)(x) \) or \( (f/g)(x) = \frac{f(x)}{g(x)} \), only where \( g(x) \neq 0 \)</li>
+						<li>\( (f \circ g)(x) \) or \( f(g(x)) \): apply \( g \) first, then \( f \) (composition)</li>
+						<li>\( \text{Domain}(f \circ g) = \{ x \in \text{Domain}(g) : g(x) \in \text{Domain}(f) \} \)</li>
+					</ul>
+					<div style="margin:1em 0 0.5em 0; text-align:center;">
+						<svg width="260" height="110" viewBox="0 0 260 110" style="background:#f8fafc; border-radius:8px;">
+							<!-- Axes -->
+							<line x1="30" y1="90" x2="230" y2="90" stroke="#888" stroke-width="1.1"/>
+							<line x1="60" y1="20" x2="60" y2="100" stroke="#888" stroke-width="1.1"/>
+							<!-- f(x) = x+1 (blue) -->
+							<polyline fill="none" stroke="#3949ab" stroke-width="2" points="30,70 60,60 120,40 180,20 230,10"/>
+							<text x="200" y="30" font-size="11" fill="#3949ab">f(x)</text>
+							<!-- g(x) = 2-x (green) -->
+							<polyline fill="none" stroke="#43a047" stroke-width="2" points="30,80 60,70 120,60 180,50 230,40"/>
+							<text x="200" y="55" font-size="11" fill="#43a047">g(x)</text>
+						</svg>
+						<div style="font-size:0.97em; color:#444; margin-top:0.2em;">Sample: f(x) = x+1 (blue), g(x) = 2-x (green)</div>
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Domains (Short Rules)</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>\( \text{Domain}(f+g),\ (f-g),\ (f \cdot g) = \text{Domain}(f) \cap \text{Domain}(g) \)</li>
+						<li>\( \text{Domain}(f \div g) = \text{Domain}(f) \cap \text{Domain}(g) \), excluding \( x \) where \( g(x) = 0 \)</li>
+						<li>\( \text{Domain}(f \circ g) = \{ x \in \text{Domain}(g) : g(x) \in \text{Domain}(f) \} \)</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>How to Graph a Combined Function</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Pick \( x \)-values covering key features (intercepts, turning points, asymptotes).</li>
+						<li>Make a table: \( x \) | \( f(x) \) | \( g(x) \) | \( (f+g)(x) \) | \( (f-g)(x) \) | \( (f \cdot g)(x) \) | \( (f/g)(x) \) (if \( g(x) \neq 0 \)).</li>
+						<li>Compute each result numerically and plot the points.</li>
+						<li>Connect points smoothly, respecting continuity and asymptotes.</li>
+					</ul>
+					<div class="example-block">
+						<b>Notes:</b>
+						<ul style="margin-left:1.2em;">
+							<li>\( (f+g) \): add y-values; zeros where \( f(x) + g(x) = 0 \).</li>
+							<li>\( (f-g) \): subtract y-values; zeros where \( f(x) = g(x) \).</li>
+							<li>\( (f \cdot g) \): zeros are any zeros of \( f \) or \( g \); sign = sign(f)×sign(g).</li>
+							<li>\( (f/g) \): zeros are zeros of \( f \) (if \( g \neq 0 \)); vertical asymptotes where \( g = 0 \); holes if both \( f \) and \( g \) are zero at same \( x \).</li>
+						</ul>
+					</div>
+					<div style="margin:1em 0 0.5em 0; text-align:center;">
+						<svg width="260" height="110" viewBox="0 0 260 110" style="background:#f8fafc; border-radius:8px;">
+							<!-- Axes -->
+							<line x1="30" y1="90" x2="230" y2="90" stroke="#888" stroke-width="1.1"/>
+							<line x1="60" y1="20" x2="60" y2="100" stroke="#888" stroke-width="1.1"/>
+							<!-- f(x) = x+1 (blue) -->
+							<polyline fill="none" stroke="#3949ab" stroke-width="2" points="30,70 60,60 120,40 180,20 230,10"/>
+							<!-- g(x) = 2-x (green) -->
+							<polyline fill="none" stroke="#43a047" stroke-width="2" points="30,80 60,70 120,60 180,50 230,40"/>
+							<!-- f+g (red) -->
+							<polyline fill="none" stroke="#e53935" stroke-width="2" points="30,75 60,65 120,50 180,35 230,25"/>
+							<text x="200" y="30" font-size="11" fill="#3949ab">f(x)</text>
+							<text x="200" y="55" font-size="11" fill="#43a047">g(x)</text>
+							<text x="200" y="20" font-size="11" fill="#e53935">f+g</text>
+						</svg>
+						<div style="font-size:0.97em; color:#444; margin-top:0.2em;">Sample: f(x) = x+1 (blue), g(x) = 2-x (green), f+g (red)</div>
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Product, Quotient, and Composition — Visuals</h2>
+					<div style="margin:1em 0 0.5em 0; text-align:center;">
+						<svg width="260" height="110" viewBox="0 0 260 110" style="background:#f8fafc; border-radius:8px;">
+							<!-- Axes -->
+							<line x1="30" y1="90" x2="230" y2="90" stroke="#888" stroke-width="1.1"/>
+							<line x1="60" y1="20" x2="60" y2="100" stroke="#888" stroke-width="1.1"/>
+							<!-- f(x) = x (blue) -->
+							<polyline fill="none" stroke="#3949ab" stroke-width="2" points="30,90 60,70 120,50 180,30 230,10"/>
+							<!-- g(x) = 2-x (green) -->
+							<polyline fill="none" stroke="#43a047" stroke-width="2" points="30,80 60,70 120,60 180,50 230,40"/>
+							<!-- f·g (purple) -->
+							<polyline fill="none" stroke="#8e24aa" stroke-width="2" points="30,80 60,70 120,50 180,30 230,10"/>
+							<!-- f/g (red, with asymptote) -->
+							<polyline fill="none" stroke="#e53935" stroke-width="2" points="30,60 60,70 120,90 180,100 230,105"/>
+							<!-- Asymptote -->
+							<line x1="120" y1="20" x2="120" y2="100" stroke="#b00" stroke-dasharray="4,3" stroke-width="1.2"/>
+							<text x="200" y="35" font-size="11" fill="#3949ab">f(x)</text>
+							<text x="200" y="55" font-size="11" fill="#43a047">g(x)</text>
+							<text x="200" y="20" font-size="11" fill="#8e24aa">f·g</text>
+							<text x="200" y="80" font-size="11" fill="#e53935">f/g</text>
+							<text x="125" y="30" font-size="10" fill="#b00">asymptote</text>
+						</svg>
+						<div style="font-size:0.97em; color:#444; margin-top:0.2em;">Sample: f(x) = x (blue), g(x) = 2-x (green), f·g (purple), f/g (red, vertical asymptote)</div>
+					</div>
+					<div style="margin:1em 0 0.5em 0; text-align:center;">
+						<svg width="260" height="110" viewBox="0 0 260 110" style="background:#f8fafc; border-radius:8px;">
+							<!-- Axes -->
+							<line x1="30" y1="90" x2="230" y2="90" stroke="#888" stroke-width="1.1"/>
+							<line x1="60" y1="20" x2="60" y2="100" stroke="#888" stroke-width="1.1"/>
+							<!-- g(x) = x^2 (green) -->
+							<polyline fill="none" stroke="#43a047" stroke-width="2" points="30,90 60,80 120,60 180,40 230,20"/>
+							<!-- f(g(x)) = 2x^2+1 (blue) -->
+							<polyline fill="none" stroke="#3949ab" stroke-width="2" points="30,80 60,70 120,50 180,30 230,10"/>
+							<text x="200" y="35" font-size="11" fill="#43a047">g(x)</text>
+							<text x="200" y="20" font-size="11" fill="#3949ab">f∘g</text>
+						</svg>
+						<div style="font-size:0.97em; color:#444; margin-top:0.2em;">Sample: g(x) = x² (green), f∘g = 2x²+1 (blue)</div>
+					</div>
+				</section>
+				<section class="question-card">
+					<h2>Quick Evaluation Examples (Algebraic)</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Let \( f(x) = x^2 + 1 \), \( g(x) = 3x \):
+							<ul>
+								<li>\( (f + g)(1) = 2 + 3 = 5 \)</li>
+								<li>\( (f - g)(2) = 5 - 6 = -1 \)</li>
+								<li>\( (f \cdot g)(0) = 1 \cdot 0 = 0 \)</li>
+								<li>\( (f \div g)(1) = 2/3 \) (only if \( g(1) \neq 0 \))</li>
+							</ul>
+						</li>
+						<li>With graphs: read \( f(x) \) and \( g(x) \) at that \( x \), then compute.</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Composition — Forming and Evaluating f∘g and g∘f</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>Definition: \( (f \circ g)(x) = f(g(x)) \). Evaluate by two steps: first compute \( y = g(x) \), then \( f(y) \).</li>
+						<li>Example: \( f(x) = 2x+1,\ g(x) = x^2 \)</li>
+						<li>\( (f \circ g)(x) = 2x^2 + 1 \)</li>
+						<li>\( (g \circ f)(x) = (2x+1)^2 = 4x^2 + 4x + 1 \)</li>
+						<li>\( (f \circ g)(4) = 33 \), \( (g \circ f)(5) = 121 \)</li>
+						<li>Domain caution: \( f(x) = \sqrt{x} \) (domain \( x \geq 0 \)), \( g(x) = x-3 \).<br>
+							\( (f \circ g)(x) = \sqrt{x-3} \), domain \( x \geq 3 \).<br>
+							\( (g \circ f)(x) = \sqrt{x} - 3 \), domain \( x \geq 0 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Evaluating Compositions from Graphs</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>To find \( (f \circ g)(a) \):
+							<ol>
+								<li>Read \( g(a) \) from g-graph (call this \( y \)).</li>
+								<li>If \( y \) not in domain of \( f \), then \( (f \circ g)(a) \) is undefined.</li>
+								<li>Otherwise, read \( f(y) \) from f-graph; that is \( (f \circ g)(a) \).</li>
+							</ol>
+						</li>
+						<li>Example: if \( g(-2) = 3 \) and \( f(3) = -1 \), then \( (f \circ g)(-2) = -1 \).</li>
+					</ul>
+				</section>
+				<section class="question-card">
+					<h2>Given h(x): Strategies to Propose f and g</h2>
+					<ul style="margin-left: 1.5em;">
+						<li>If \( h = f + g \): look at \( h(0) \) and zeros to split into two simple summands.</li>
+						<li>If \( h = f \cdot g \): zeros of \( h \) must be zeros of \( f \) or \( g \); factor \( h \) and assign factors to \( f \) or \( g \).</li>
+						<li>If \( h = f \div g \): vertical asymptotes indicate zeros of \( g \); zeros of \( h \) indicate zeros of \( f \) (if numerator not zero).</li>
+						<li>If \( h = f \circ g \): look for inner mapping behaviour — repeated patterns or restricted ranges hint at the inner \( g \).</li>
+						<li>Decompositions are not unique; choose simple, justifiable \( f \) and \( g \) matching intercepts, zeros, and asymptotes.</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+	<footer class="footer-bar">
+		<div class="footer-resources">
+			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+			<a class="resource-link" href="#" download>Past Exam Paper</a>
+			<a class="resource-link" href="#" download>Summary Notes</a>
+		</div>
+		<div class="footer-text">
+			Empowering Manitoba students to succeed in Pre-Calculus 40S.
+		</div>
+		<div class="footer-copyright">
+			&copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+		</div>
+	</footer>
+	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+		<span class="toggle-handle"></span>
+	</button>
+	<script>
+	// Light/Dark Mode Toggle (Switch Style)
+	const themeBtn = document.getElementById('themeToggleBtn');
+	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	const savedTheme = localStorage.getItem('theme');
+	function setTheme(mode) {
+		if (mode === 'dark') {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			themeBtn.classList.add('on');
+		} else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			themeBtn.classList.remove('on');
+		}
+		localStorage.setItem('theme', mode);
+	}
+	if (savedTheme) {
+		setTheme(savedTheme);
+	} else {
+		setTheme(prefersDark ? 'dark' : 'light');
+	}
+	themeBtn.addEventListener('click', function() {
+		const current = document.documentElement.getAttribute('data-theme');
+		setTheme(current === 'dark' ? 'light' : 'dark');
+	});
+	</script>
+</body>
+</html>
