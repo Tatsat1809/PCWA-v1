@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>Unit 2: Transformations | PC40S</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 	<a href="index.html" class="logo-link" aria-label="Go to homepage">
 		<span class="logo-text">PC40S</span>
 	</a>
 	<div class="container">
-    		<header>
+		<header>
 			<h1>Unit 2: Transformations</h1>
 			<p>Explore concepts, practice, and resources for Unit 2: Transformations</p>
 		</header>
@@ -21,7 +23,7 @@
 			<a class="nav-btn" href="unit2/formulasheet.html">Formula Sheet</a>
 		</nav>
 	</div>
-	<footer class="footer-bar">
+	<footer class="footer-bar" style="margin-top: 166px;">
 		<div class="footer-resources">
 			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
 		</div>
@@ -33,15 +35,15 @@
 		</div>
 	</footer>
 	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-      <span class="toggle-handle"></span>
-    </button>
+		<span class="toggle-handle"></span>
+	</button>
 	<script>
 		function scrollToSection(id) {
-			document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+			document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 		}
 		// Remove focus from nav buttons after click so hover works again
 		document.querySelectorAll('.unit-nav-grid .nav-btn').forEach(btn => {
-			btn.addEventListener('click', function() {
+			btn.addEventListener('click', function () {
 				this.blur();
 			});
 		});
@@ -64,10 +66,11 @@
 		} else {
 			setTheme(prefersDark ? 'dark' : 'light');
 		}
-		themeBtn.addEventListener('click', function() {
+		themeBtn.addEventListener('click', function () {
 			const current = document.documentElement.getAttribute('data-theme');
 			setTheme(current === 'dark' ? 'light' : 'dark');
 		});
 	</script>
 </body>
+
 </html>
