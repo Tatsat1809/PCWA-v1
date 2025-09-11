@@ -23,10 +23,19 @@
                 <h1>Unit 1: Unit Circle</h1>
                 <p>Explore concepts, practice, and resources for Unit 1: Unit Circle</p>
         </header>
-        <nav class="unit-nav-vertical" aria-label="Unit Navigation">
-            <a class="nav-btn" href="unit1/overview.html">Unit Overview</a>
-            <a class="nav-btn" href="unit1/practice.html">Practice Questions</a>
-            <a class="nav-btn" href="unit1/formulasheet.html">Formula Sheet</a>
+
+        <nav class="unit-nav-vertical" aria-label="Unit Navigation" style="position: relative;">
+            <a class="nav-btn" href="unit1/overview.html" data-popup="Get a concise summary of Unit Circle in Unit 1. This section explains the main ideas, definitions, and key concepts you’ll need before moving on to practice or formulas.">Unit Overview</a>
+            <a class="nav-btn" href="unit1/practice.html" data-popup="Work through carefully chosen problems for Unit Circle in Unit 1. These exercises range from basic to challenging, helping you strengthen skills and check your understanding.">Practice Questions</a>
+            <a class="nav-btn" href="unit1/formulasheet.html" data-popup="Find all the essential formulas for Unit Circle in Unit 1 in one place. This quick reference is perfect for reviewing before quizzes, assignments, or exams.">Formula Sheet</a>
+                        <div id="nav-popup" style="display:none; position:absolute; left: 110%; top:0; width:260px; background:#fff; color:#222; border:1px solid #1976d2; border-radius:8px; box-shadow:0 2px 8px rgba(25,118,210,0.10); padding:14px 14px 14px 18px; font-size:0.98em; z-index:10;">
+                                <span id="nav-popup-arrow" style="position:absolute; left:-18px; top:50%; transform:translateY(-50%); width:18px; height:24px; display:block; pointer-events:none;">
+                                    <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <polygon points="0,12 18,6 18,18" fill="#1976d2"/>
+                                    </svg>
+                                </span>
+                                <span id="nav-popup-text"></span>
+                        </div>
         </nav>
 
     </div>
@@ -45,6 +54,32 @@
         <span class="toggle-handle"></span>
     </button>
     <script>
+        // Popup for nav buttons with blue pointer and vertical centering
+        const nav = document.querySelector('.unit-nav-vertical');
+        const popup = document.getElementById('nav-popup');
+        const popupText = document.getElementById('nav-popup-text');
+        nav.querySelectorAll('.nav-btn').forEach(btn => {
+            function showPopup() {
+                popupText.textContent = btn.getAttribute('data-popup');
+                // Vertically center popup to button using transform
+                const btnRect = btn.getBoundingClientRect();
+                const navRect = nav.getBoundingClientRect();
+                // Set popup top to button's top + half height, then translateY(-50%)
+                popup.style.top = (btn.offsetTop + btn.offsetHeight/2) + 'px';
+                popup.style.transform = 'translateY(-50%)';
+                popup.style.display = 'block';
+            }
+            btn.addEventListener('mouseenter', showPopup);
+            btn.addEventListener('focus', showPopup);
+            btn.addEventListener('mouseleave', function() {
+                popup.style.display = 'none';
+                popup.style.transform = '';
+            });
+            btn.addEventListener('blur', function() {
+                popup.style.display = 'none';
+                popup.style.transform = '';
+            });
+        });
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
