@@ -14,6 +14,15 @@
   <!-- MathJax for beautiful math rendering -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      options: {
+        renderActions: {
+          addMenu: [0, '', '']
+        }
+      }
+    };
+  </script>
 </head>
 <body>
   <a href="../index.html" class="logo-link" aria-label="Go to homepage">
@@ -33,26 +42,26 @@
         <section class="question-card">
           <h2>Master Form & Mapping Rule</h2>
           <ul style="margin-left: 1.5em;">
-            <li><b>General form:</b> <span style="font-size:1.15em; color:#1976d2;">$$y = a\,f(b(x + c)) + d$$</span></li>
+            <li><b>General form:</b> <span style="font-size:1.15em; color:#1976d2;">\(y = a f(b(x + c)) + d\)</span></li>
             <li><b>Order of effects:</b> Inside (b(x + c)) = horizontal (stretch/compress, reflect, shift); outside (a, d) = vertical (stretch/reflect/shift)</li>
             <li><b>Coordinate mapping:</b> If (x, y) is on y = f(x), then on y = a f(b(x + c)) + d:<br>
-              <span style="font-size:1.1em; color:#1976d2;">$$(x_{new}, y_{new}) = (x / b - c,\ a y + d)$$</span></li>
+              <span style="font-size:1.1em; color:#1976d2;">\((x_\text{new}, y_\text{new}) = (\frac{x}{b} - c,\ a y + d)\)</span></li>
           </ul>
         </section>
         <section class="question-card">
           <h2>What Each Transformation Does</h2>
           <table style="width:100%;max-width:700px;margin:0 auto 1em auto;text-align:left;border-collapse:collapse;">
-            <tr style="background:#f0f4ff;"><th>Transformation</th><th>Equation</th><th>Mapped Point</th></tr>
-            <tr><td>Vertical stretch by k</td><td>y = k f(x)</td><td>(x, k y)</td></tr>
-            <tr><td>Vertical compression by k</td><td>y = k f(x), 0 &lt; k &lt; 1</td><td>(x, k y)</td></tr>
-            <tr><td>Vertical reflection</td><td>y = -f(x)</td><td>(x, -y)</td></tr>
-            <tr><td>Horizontal compression by k</td><td>y = f(kx), k &gt; 1</td><td>(x / k, y)</td></tr>
-            <tr><td>Horizontal stretch by k</td><td>y = f(kx), 0 &lt; k &lt; 1</td><td>(x / k, y)</td></tr>
-            <tr><td>Horizontal reflection</td><td>y = f(-x)</td><td>(-x, y)</td></tr>
-            <tr><td>Horizontal translation right by c</td><td>y = f(x - c)</td><td>(x + c, y)</td></tr>
-            <tr><td>Horizontal translation left by c</td><td>y = f(x + c)</td><td>(x - c, y)</td></tr>
-            <tr><td>Vertical translation up by d</td><td>y = f(x) + d</td><td>(x, y + d)</td></tr>
-            <tr><td>Vertical translation down by d</td><td>y = f(x) - d</td><td>(x, y - d)</td></tr>
+            <tr style="background:#f0f4ff;"><th style="padding:6px 8px;">Transformation</th><th style="padding:6px 8px;">Equation</th><th style="padding:6px 8px;">Mapped Point</th></tr>
+            <tr><td style="padding:4px 8px;">Vertical stretch by <span style="color:#1976d2;">\(k\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = k f(x)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x,\ ky)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Vertical compression by <span style="color:#1976d2;">\(k\)</span> (<span style="color:#1976d2;">\(0 < k < 1\)</span>)</td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = k f(x)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x,\ ky)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Vertical reflection</td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = -f(x)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x,\ -y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Horizontal compression by <span style="color:#1976d2;">\(k\)</span> (<span style="color:#1976d2;">\(k > 1\)</span>)</td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(kx)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((\frac{x}{k},\ y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Horizontal stretch by <span style="color:#1976d2;">\(k\)</span> (<span style="color:#1976d2;">\(0 < k < 1\)</span>)</td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(kx)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((\frac{x}{k},\ y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Horizontal reflection</td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(-x)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((-x,\ y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Horizontal translation right by <span style="color:#1976d2;">\(c\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(x - c)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x + c,\ y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Horizontal translation left by <span style="color:#1976d2;">\(c\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(x + c)\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x - c,\ y)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Vertical translation up by <span style="color:#1976d2;">\(d\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(x) + d\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x,\ y + d)\)</span></td></tr>
+            <tr><td style="padding:4px 8px;">Vertical translation down by <span style="color:#1976d2;">\(d\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\(y = f(x) - d\)</span></td><td style="padding:4px 8px;"><span style="color:#1976d2">\((x,\ y - d)\)</span></td></tr>
           </table>
         </section>
         <section class="question-card">
@@ -67,30 +76,29 @@
         <section class="question-card">
           <h2>Absolute Value, Reciprocal, and Inverse Graphs</h2>
           <ul style="margin-left: 1.5em;">
-            <li><b>y = |f(x)|:</b> Reflect any part below x-axis upward. (x, y) with y ≥ 0 stays, y < 0 maps to (x, −y).</li>
-            <li><b>y = f(|x|):</b> Right side (x ≥ 0) stays, left side is a mirror of the right.</li>
-            <li><b>y = 1 / f(x):</b> (x, y) → (x, 1/y), zeros become vertical asymptotes.</li>
-            <li><b>y = f<sup>-1</sup>(x):</b> (x, y) → (y, x), reflect across y = x. Domain/range swap.</li>
-          </ul>
+            <li><span style="color:#1976d2;">\(y = |f(x)|\)</span>: Reflect any part below x-axis upward. <span style="color:#1976d2;">\((x, y)\)</span> with <span style="color:#1976d2;">\(y \geq 0\)</span> stays, <span style="color:#1976d2;">\(y < 0\)</span> maps to <span style="color:#1976d2;">\((x, -y)\)</span>.</li>
+            <li><span style="color:#1976d2;">\(y = f(|x|)\)</span>: Right side (<span style="color:#1976d2;">\(x \geq 0\)</span>) stays, left side is a mirror of the right.</li>
+            <li><span style="color:#1976d2;">\(y = \frac{1}{f(x)}\)</span>: <span style="color:#1976d2;">\((x, y) \rightarrow (x, 1/y)\)</span>, zeros become vertical asymptotes.</li>
+            <li><span style="color:#1976d2;">\(y = f^{-1}(x)\)</span>: <span style="color:#1976d2;">\((x, y) \rightarrow (y, x)\)</span>, reflect across <span style="color:#1976d2;">\(y = x\)</span>. Domain/range swap.</li>
         </section>
         <section class="question-card">
           <h2>Trigonometric Graphs: Sine, Cosine, Tangent</h2>
           <ul style="margin-left: 1.5em;">
-            <li>Standard form: y = a sin(b(x + c)) + d or y = a cos(b(x + c)) + d</li>
-            <li>Amplitude = |a|, Midline = y = d, Period = 2π/|b| (or 360°/|b|), Phase shift = −c (right if c &lt; 0, left if c &gt; 0)</li>
-            <li>Tangent: y = a tan(b(x + c)) + d, period = π/|b|, vertical asymptotes where b(x + c) = π/2 + nπ</li>
-            <li>For sin: zeros at b(x + c) = nπ → x = −c + nπ/b</li>
-            <li>For cos: zeros at b(x + c) = π/2 + nπ → x = −c + (π/2 + nπ)/b</li>
-            <li>For tan: zeros at b(x + c) = nπ</li>
-            <li>sin/cos range: [d − |a|, d + |a|], domain all real numbers</li>
+            <li>Standard form: <span style="color:#1976d2;">\(y = a \sin(b(x + c)) + d\)</span> or <span style="color:#1976d2;">\(y = a \cos(b(x + c)) + d\)</span></li>
+            <li>Amplitude = <span style="color:#1976d2;">\(|a|\)</span>, Midline = <span style="color:#1976d2;">\(y = d\)</span>, Period = <span style="color:#1976d2;">\(\frac{2\pi}{|b|}\)</span> (or <span style="color:#1976d2;">\(\frac{360^\circ}{|b|}\)</span>), Phase shift = <span style="color:#1976d2;">\(-c\)</span> (right if <span style="color:#1976d2;">\(c < 0\)</span>, left if <span style="color:#1976d2;">\(c > 0\)</span>)</li>
+            <li>Tangent: <span style="color:#1976d2;">\(y = a \tan(b(x + c)) + d\)</span>, period = <span style="color:#1976d2;">\(\frac{\pi}{|b|}\)</span>, vertical asymptotes where <span style="color:#1976d2;">\(b(x + c) = \frac{\pi}{2} + n\pi\)</span></li>
+            <li>For sin: zeros at <span style="color:#1976d2;">\(b(x + c) = n\pi \rightarrow x = -c + \frac{n\pi}{b}\)</span></li>
+            <li>For cos: zeros at <span style="color:#1976d2;">\(b(x + c) = \frac{\pi}{2} + n\pi \rightarrow x = -c + \frac{\pi/2 + n\pi}{b}\)</span></li>
+            <li>For tan: zeros at <span style="color:#1976d2;">\(b(x + c) = n\pi\)</span></li>
+            <li>sin/cos range: <span style="color:#1976d2;">\([d - |a|,\ d + |a|]\)</span>, domain all real numbers</li>
             <li>tan: range all real, domain excludes vertical asymptotes</li>
           </ul>
         </section>
         <section class="question-card">
           <h2>Exam-Ready Checklist</h2>
           <ul style="margin-left: 1.5em;"> 
-            <li>Write all transformed equations in the master form y = a f(b(x + c)) + d</li>
-            <li>Use the mapping (x / b − c, a y + d) on key points</li>
+            <li>Write all transformed equations in the master form <span style="color:#1976d2;">\(y = a f(b(x + c)) + d\)</span></li>
+            <li>Use the mapping <span style="color:#1976d2;">\((\frac{x}{b} - c,\ a y + d)\)</span> on key points</li>
             <li>Check sign conventions: does +c shift left or right?</li>
             <li>For trig: compute amplitude, period, phase shift, midline, and label one full period</li>
             <li>For absolute/reciprocal/inverse: identify domain/range/asymptotes, map sample points</li>
@@ -100,9 +108,9 @@
         <section class="question-card">
           <h2>Short Worked Examples (Exam Style)</h2>
           <ul style="margin-left: 1.5em;">
-            <li>Given y = 2 sin(3(x + π/6)) - 1: amplitude = 2, period = 2π/3, midline y = -1, phase shift left π/6</li>
-            <li>If f(x) = x² has (1,1), then g(x) = -2 f(3(x + 2)) + 5 maps to (1/3 - 2, -2*1 + 5) = (-5/3, 3)</li>
-            <li>If y = |f(x)| and f has (2, -3), then g has (2, 3)</li>
+            <li>Given <span style="color:#1976d2;">\(y = 2 \sin(3(x + \frac{\pi}{6})) - 1\)</span>: amplitude = <span style="color:#1976d2;">2</span>, period = <span style="color:#1976d2;">\(\frac{2\pi}{3}\)</span>, midline <span style="color:#1976d2;">\(y = -1\)</span>, phase shift left <span style="color:#1976d2;">\(\frac{\pi}{6}\)</span></li>
+            <li>If <span style="color:#1976d2;">\(f(x) = x^2\)</span> has <span style="color:#1976d2;">\((1,1)\)</span>, then <span style="color:#1976d2;">\(g(x) = -2 f(3(x + 2)) + 5\)</span> maps to <span style="color:#1976d2;">\((\frac{1}{3} - 2,\ -2 \cdot 1 + 5) = (-\frac{5}{3}, 3)\)</span></li>
+            <li>If <span style="color:#1976d2;">\(y = |f(x)|\)</span> and <span style="color:#1976d2;">\(f\)</span> has <span style="color:#1976d2;">\((2, -3)\)</span>, then <span style="color:#1976d2;">g</span> has <span style="color:#1976d2;">\((2, 3)\)</span></li>
           </ul>
         </section>
       </main>

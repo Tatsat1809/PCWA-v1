@@ -29,53 +29,53 @@
                 <section class="question-card">
                     <h2>Master Form & Parameter Roles</h2>
                     <ul style="margin-left: 1.5em;">
-                        <li>Master form: <span class="math">y = a \cdot f\big(b(x + c)\big) + d</span></li>
-                        <li>a: vertical stretch/compression by |a|; reflect in x-axis if a &lt; 0</li>
-                        <li>b: horizontal compression/stretch; scale factor = 1/|b|; reflect in y-axis if b &lt; 0</li>
-                        <li>c: horizontal shift; +c moves left c units, −c moves right c units</li>
-                        <li>d: vertical shift; +d up, −d down</li>
-                        <li>Mapping rule: If (x, y) lies on y = f(x), then on y = a·f(b(x + c)) + d the corresponding point is:
+                        <li>Master form: <span>\(y = a \cdot f\big(b(x + c)\big) + d\)</span></li>
+                        <li>a: vertical stretch/compression by \(|a|\); reflect in x-axis if \(a < 0\)</li>
+                        <li>b: horizontal compression/stretch; scale factor = \(1/|b|\); reflect in y-axis if \(b < 0\)</li>
+                        <li>c: horizontal shift; \(+c\) moves left \(c\) units, \(-c\) moves right \(c\) units</li>
+                        <li>d: vertical shift; \(+d\) up, \(-d\) down</li>
+                        <li>Mapping rule: If \((x, y)\) lies on \(y = f(x)\), then on \(y = a f(b(x + c)) + d\) the corresponding point is:
                             <ul>
-                                <li><span class="math">x' = \frac{x}{b} - c</span></li>
-                                <li><span class="math">y' = a \cdot y + d</span></li>
+                                <li><span>\(x' = \frac{x}{b} - c\)</span></li>
+                                <li><span>\(y' = a y + d\)</span></li>
                             </ul>
                         </li>
-                        <li>Order of effects: apply “inside” (b, c) first (horizontal), then “outside” (a, d) (vertical).</li>
+                        <li>Order of effects: apply “inside” (\(b, c\)) first (horizontal), then “outside” (\(a, d\)) (vertical).</li>
                     </ul>
                 </section>
                 <section class="question-card">
                     <h2>Quick Mapping: What Each Transformation Does</h2>
                     <ul style="margin-left: 1.5em;">
-                        <li>Vertical stretch by k (&gt;1): <span class="math">y = k f(x) \rightarrow (x, k\cdot y)</span></li>
-                        <li>Vertical compression by k (0&lt;k&lt;1): <span class="math">y = k f(x) \rightarrow (x, k\cdot y)</span></li>
-                        <li>Vertical reflection: <span class="math">y = -f(x) \rightarrow (x, -y)</span></li>
-                        <li>Horizontal compression by k (&gt;1): <span class="math">y = f(kx) \rightarrow (\frac{x}{k}, y)</span></li>
-                        <li>Horizontal stretch by k (&gt;1): <span class="math">y = f(x/k) \rightarrow (k\cdot x, y)</span></li>
-                        <li>Horizontal reflection: <span class="math">y = f(-x) \rightarrow (-x, y)</span></li>
-                        <li>Horizontal shift right by c: <span class="math">y = f(x - c) \rightarrow (x + c, y)</span></li>
-                        <li>Horizontal shift left by c: <span class="math">y = f(x + c) \rightarrow (x - c, y)</span></li>
-                        <li>Vertical shift up by d: <span class="math">y = f(x) + d \rightarrow (x, y + d)</span></li>
-                        <li>Vertical shift down by d: <span class="math">y = f(x) - d \rightarrow (x, y - d)</span></li>
+                        <li>Vertical stretch by \(k\) (\(k>1\)): \(y = k f(x) \rightarrow (x, k y)\)</li>
+                        <li>Vertical compression by \(k\) (\(0<k<1\)): \(y = k f(x) \rightarrow (x, k y)\)</li>
+                        <li>Vertical reflection: \(y = -f(x) \rightarrow (x, -y)\)</li>
+                        <li>Horizontal compression by \(k\) (\(k>1\)): \(y = f(kx) \rightarrow (\frac{x}{k}, y)\)</li>
+                        <li>Horizontal stretch by \(k\) (\(0<k<1\)): \(y = f(kx) \rightarrow (\frac{x}{k}, y)\)</li>
+                        <li>Horizontal reflection: \(y = f(-x) \rightarrow (-x, y)\)</li>
+                        <li>Horizontal shift right by \(c\): \(y = f(x - c) \rightarrow (x + c, y)\)</li>
+                        <li>Horizontal shift left by \(c\): \(y = f(x + c) \rightarrow (x - c, y)\)</li>
+                        <li>Vertical shift up by \(d\): \(y = f(x) + d \rightarrow (x, y + d)\)</li>
+                        <li>Vertical shift down by \(d\): \(y = f(x) - d \rightarrow (x, y - d)\)</li>
                     </ul>
                 </section>
                 <section class="question-card">
                     <h2>Domain, Range, Intercepts, Asymptotes</h2>
                     <ul style="margin-left: 1.5em;">
-                        <li>Domain: apply the inverse horizontal map to parent domain endpoints: <span class="math">x' = \frac{x}{b} - c</span></li>
-                        <li>Range: apply vertical map to parent range: <span class="math">y' = a\cdot y + d</span></li>
-                        <li>x-intercepts: solve <span class="math">a\cdot f(b(x + c)) + d = 0</span> (do not just map x-intercepts unless d = 0)</li>
-                        <li>y-intercept: set x = 0 → <span class="math">y = a\cdot f(b\cdot c) + d</span></li>
-                        <li>Vertical asymptotes x = L map to <span class="math">x = \frac{L}{b} - c</span></li>
-                        <li>Horizontal asymptotes y = L map to <span class="math">y = a\cdot L + d</span></li>
+                        <li>Domain: apply the inverse horizontal map to parent domain endpoints: \(x' = \frac{x}{b} - c\)</li>
+                        <li>Range: apply vertical map to parent range: \(y' = a y + d\)</li>
+                        <li>x-intercepts: solve \(a f(b(x + c)) + d = 0\) (do not just map x-intercepts unless \(d = 0\))</li>
+                        <li>y-intercept: set \(x = 0\) \(\rightarrow\) \(y = a f(b c) + d\)</li>
+                        <li>Vertical asymptotes \(x = L\) map to \(x = \frac{L}{b} - c\)</li>
+                        <li>Horizontal asymptotes \(y = L\) map to \(y = a L + d\)</li>
                     </ul>
                 </section>
                 <section class="question-card">
                     <h2>Absolute Value, Reciprocal, and Inverse</h2>
                     <ul style="margin-left: 1.5em;">
-                        <li>y = |f(x)|: Points with y ≥ 0 stay the same; points with y &lt; 0 reflect across the x-axis to (x, −y). Domain unchanged; range becomes [0, ∞) if parent is symmetric about x-axis.</li>
-                        <li>y = f(|x|): Keep the right half (x ≥ 0) of y = f(x); mirror it to the left. Domain becomes (−∞, ∞) if f is defined for x ≥ 0; range = range of f on x ≥ 0.</li>
-                        <li>y = 1 / f(x): Map (x, y) to (x, 1/y); zeros of f become vertical asymptotes; vertical asymptotes of f remain vertical asymptotes. Where |y| is large, 1/y is near 0; where y is near 0, 1/y is large in magnitude. Domain excludes x where f(x) = 0; range excludes 0 if f has no infinities.</li>
-                        <li>y = f⁻¹(x) (inverse): Reflect across y = x: (x, y) → (y, x). Domain and range swap; function must be one-to-one (restrict domain if needed).</li>
+                        <li>\(y = |f(x)|\): Points with \(y \geq 0\) stay the same; points with \(y < 0\) reflect across the x-axis to \((x, -y)\). Domain unchanged; range becomes \([0, \infty)\) if parent is symmetric about x-axis.</li>
+                        <li>\(y = f(|x|)\): Keep the right half (\(x \geq 0\)) of \(y = f(x)\); mirror it to the left. Domain becomes \(( -\infty, \infty )\) if \(f\) is defined for \(x \geq 0\); range = range of \(f\) on \(x \geq 0\).</li>
+                        <li>\(y = \frac{1}{f(x)}\): Map \((x, y)\) to \((x, 1/y)\); zeros of \(f\) become vertical asymptotes; vertical asymptotes of \(f\) remain vertical asymptotes. Where \(|y|\) is large, \(1/y\) is near 0; where \(y\) is near 0, \(1/y\) is large in magnitude. Domain excludes \(x\) where \(f(x) = 0\); range excludes 0 if \(f\) has no infinities.</li>
+                        <li>\(y = f^{-1}(x)\) (inverse): Reflect across \(y = x\): \((x, y) \rightarrow (y, x)\). Domain and range swap; function must be one-to-one (restrict domain if needed).</li>
                     </ul>
                 </section>
                 <section class="question-card">
@@ -83,31 +83,31 @@
                     <ul style="margin-left: 1.5em;">
                         <li>Standard forms:
                             <ul>
-                                <li><span class="math">y = a \cdot \sin(b(x + c)) + d</span></li>
-                                <li><span class="math">y = a \cdot \cos(b(x + c)) + d</span></li>
-                                <li><span class="math">y = a \cdot \tan(b(x + c)) + d</span></li>
+                                <li><span style="color:#1976d2;">\(y = a \sin(b(x + c)) + d\)</span></li>
+                                <li><span style="color:#1976d2;">\(y = a \cos(b(x + c)) + d\)</span></li>
+                                <li><span style="color:#1976d2;">\(y = a \tan(b(x + c)) + d\)</span></li>
                             </ul>
                         </li>
                         <li>Common features (sin/cos):
                             <ul>
                                 <li>Amplitude = |a|</li>
                                 <li>Midline = y = d</li>
-                                <li>Period (sin/cos) = <span class="math">\frac{2\pi}{|b|}</span> (or 360° / |b| in degrees)</li>
+                                <li>Period (sin/cos) = <span style="color:#1976d2;">\(\frac{2\pi}{|b|}\)</span> (or $360^\circ/|b|$ in degrees)</li>
                                 <li>Phase shift = −c (left if c &gt; 0, right if c &lt; 0)</li>
                                 <li>Range = [ d − |a| , d + |a| ] ; domain = all real x</li>
                             </ul>
                         </li>
                         <li>Zeros (anchors):
                             <ul>
-                                <li>sin: <span class="math">b(x + c) = n\pi \rightarrow x = -c + \frac{n\pi}{b}</span></li>
-                                <li>cos: <span class="math">b(x + c) = \frac{\pi}{2} + n\pi \rightarrow x = -c + \frac{\pi/2 + n\pi}{b}</span></li>
+                                <li>sin: <span style="color:#1976d2;">\(b(x + c) = n\pi \rightarrow x = -c + \frac{n\pi}{b}\)</span></li>
+                                <li>cos: <span style="color:#1976d2;">\(b(x + c) = \frac{\pi}{2} + n\pi \rightarrow x = -c + \frac{\pi/2 + n\pi}{b}\)</span></li>
                             </ul>
                         </li>
                         <li>Tangent specifics:
                             <ul>
-                                <li>Period = <span class="math">\frac{\pi}{|b|}</span></li>
-                                <li>Vertical asymptotes where <span class="math">b(x + c) = \frac{\pi}{2} + n\pi \rightarrow x = -c + \frac{\pi/2 + n\pi}{b}</span></li>
-                                <li>Zeros where <span class="math">b(x + c) = n\pi</span></li>
+                                <li>Period = <span style="color:#1976d2;">\(\frac{\pi}{|b|}\)</span></li>
+                                <li>Vertical asymptotes where <span style="color:#1976d2;">\(b(x + c) = \frac{\pi}{2} + n\pi \rightarrow x = -c + \frac{\pi/2 + n\pi}{b}\)</span></li>
+                                <li>Zeros where <span style="color:#1976d2;">\(b(x + c) = n\pi\)</span></li>
                                 <li>Domain: all real x except VA lines; range: all real y</li>
                             </ul>
                         </li>
@@ -116,10 +116,10 @@
                 <section class="question-card">
                     <h2>Strategy for Sketching/Analysis (Exam Checklist)</h2>
                     <ul style="margin-left: 1.5em;">
-                        <li>Rewrite into master form <span class="math">y = a \cdot f(b(x + c)) + d</span></li>
+                        <li>Rewrite into master form <span style="color:#1976d2;">\(y = a f(b(x + c)) + d\)</span></li>
                         <li>Extract a, b, c, d and record: horizontal scale 1/|b|, shifts, reflections, vertical scale |a|</li>
                         <li>Choose key parent points (intercepts, turning points, zeros/asymptotes), then map each using:
-                            <span class="math">x' = \frac{x}{b} - c,\quad y' = a\cdot y + d</span>
+                            <span style="color:#1976d2;">\(x' = \frac{x}{b} - c,\quad y' = a y + d\)</span>
                         </li>
                         <li>For trig: compute amplitude, period, phase shift, midline; mark one full period with zeros/extrema/asymptotes</li>
                         <li>For absolute value, reciprocal, inverse: note new domain/range, locate asymptotes (if any), and map representative points</li>
@@ -127,34 +127,7 @@
                         <li>Label asymptotes, midline, and key points on the final graph; use exact values (π fractions, radicals) until the final step</li>
                     </ul>
                 </section>
-                <section class="question-card">
-                    <h2>Short Worked Examples</h2>
-                    <ul style="margin-left: 1.5em;">
-                        <li><strong>Example 1 (trig):</strong> <span class="math">y = 2 \cdot \sin(3(x + \frac{\pi}{6})) - 1</span><br>
-                            a = 2 → amplitude 2; b = 3 → period 2π/3; c = π/6 → shift left π/6; d = −1 → midline y = −1<br>
-                            Zeros: 3(x + π/6) = nπ → x = −π/6 + nπ/3
-                        </li>
-                        <li><strong>Example 2 (algebraic mapping):</strong> f(x) = x² has point (1, 1).<br>
-                            g(x) = −2 · f( 3 (x + 2) ) + 5<br>
-                            Map (1, 1): x' = 1/3 − 2 = −5/3 ; y' = −2·1 + 5 = 3 → new point (−5/3, 3)
-                        </li>
-                        <li><strong>Example 3 (reciprocal):</strong> If f has a zero at x = 4, then y = 1/f(x) has a vertical asymptote at x = 4. If f → ±∞ as x → −2, then 1/f(x) → 0, giving a horizontal behavior near y = 0.
-                        </li>
-                    </ul>
-                </section>
-                <section class="question-card">
-                    <h2>Common Pitfalls & Quick Tips</h2>
-                    <ul style="margin-left: 1.5em;">
-                        <li>Inside vs outside: b and c act horizontally (opposite sense), a and d act vertically (direct sense)</li>
-                        <li>“+c” inside means shift left by c; “−c” inside means shift right by c</li>
-                        <li>Horizontal scale factor is 1/|b| (not |b|)</li>
-                        <li>Negative a reflects across x-axis; negative b reflects across y-axis</li>
-                        <li>Intercepts change when d ≠ 0 — recompute them</li>
-                        <li>For inverses, confirm one-to-one or restrict domain before reflecting across y = x</li>
-                        <li>For tangent, always state period and list VA lines explicitly</li>
-                        <li>Always state domain, range, asymptotes, and key points when presenting a final graph</li>
-                    </ul>
-                </section>
+                
             </main>
         </div>
     </div>
