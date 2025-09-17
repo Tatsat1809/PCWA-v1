@@ -30,8 +30,8 @@
           <h2>What are Radicals and Rationals?</h2>
           <ul style="margin-left: 1.5em;">
             <li><b>Radical expressions</b> contain roots: <b>\(\sqrt{x}\)</b> (square root), <b>\(\sqrt[3]{x}\)</b> (cube root), and n-th roots.</li>
-            <li>Even roots (\(\sqrt{\phantom{x}}\), 4th root, ...) require the radicand \(\geq 0\) for real values.</li>
-            <li>Odd roots (cube root, 5th root, ...) accept all real radicands.</li>
+            <li>Even roots (\(\sqrt{\phantom{x}}\), 4th root, ...) require the <b>expression inside the root</b> \(\geq 0\) for real values.</li>
+            <li>Odd roots (cube root, 5th root, ...) accept all real values inside the root.</li>
             <li><b>Rational functions</b> are quotients of polynomials: <b>R(x) = P(x)/Q(x)</b>.</li>
             <li>Domain excludes x where Q(x) = 0 (non-permissible values), which cause vertical asymptotes or holes.</li>
           </ul>
@@ -43,7 +43,7 @@
             <li><b>y = \(\sqrt[3]{x}\):</b> Passes through origin, increases for all x. Domain and range: all reals.</li>
           </ul>
           <ol style="margin-left: 1.5em;">
-            <li>Identify domain (radicand \(\geq 0\) for even roots). Find left-most endpoint if any.</li>
+            <li>Identify domain (<b>expression inside the root</b> \(\geq 0\) for even roots). Find left-most endpoint if any.</li>
             <li>Make a table of easy x-values (e.g., 0,1,4,9 for sqrt) and compute y-values.</li>
             <li>Plot points and connect smoothly; keep correct end-behaviour.</li>
             <li>Label domain and range clearly on the graph.</li>
@@ -75,10 +75,10 @@
         <section class="question-card">
           <h2>Describing Transformations in Words</h2>
           <ul style="margin-left: 1.5em;">
-            <li>"Vertical stretch by 2, up 3" → y = 2 f(x) + 3</li>
-            <li>"Compressed horizontally by 1/3, left 4" → y = f(3(x + 4))</li>
-            <li>"Reflected in x-axis, right 2, up 1" → y = -f(x - 2) + 1</li>
-            <li>For radicals: "Standard sqrt curve shifted right h, up k, stretched by a" → y = a sqrt(x - h) + k (watch sign inside!)</li>
+            <li>"Vertical stretch by 2, up 3" &rarr; <span>\(y = 2 f(x) + 3\)</span></li>
+            <li>"Compressed horizontally by 1/3, left 4" &rarr; <span>\(y = f(3(x + 4))\)</span></li>
+            <li>"Reflected in x-axis, right 2, up 1" &rarr; <span>\(y = -f(x - 2) + 1\)</span></li>
+            <li>For radicals: "Standard sqrt curve shifted right \(h\), up \(k\), stretched by \(a\)" &rarr; <span>\(y = a \sqrt{x - h} + k\)</span> (watch sign inside!)</li>
           </ul>
         </section>
         <section class="question-card">
@@ -91,8 +91,8 @@
             <li>Check domain requirement for even roots: b(x + c) \(\geq 0\).</li>
           </ol>
           <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; margin: 1em 0;">
-            <b>Example:</b> Domain [2, ∞), range [3, ∞), shape of sqrt(x):<br>
-            Candidate: y = sqrt(x - 2) + 3. If steeper, y = 2 sqrt(x - 2) + 3. Verify with a point.
+            <b>Example:</b> Domain \([2, \infty)\), range \([3, \infty)\), shape of \(\sqrt{x}\):<br>
+            Candidate: <span>\(y = \sqrt{x - 2} + 3\)</span>. If steeper, <span>\(y = 2\sqrt{x - 2} + 3\)</span>. Verify with a point.
           </div>
         </section>
         <section class="question-card">
@@ -114,10 +114,10 @@
             <li>Check all solutions in the original (discard extraneous roots).</li>
           </ol>
           <div style="background: #f8fafc; border-radius: 8px; box-shadow: 0 1px 4px #eee; padding: 1em 1.5em; margin: 1em 0;">
-            <b>Example:</b> Solve sqrt(x + 3) = x - 1.<br>
-            Domain: x - 1 \(\geq 0\) → x \(\geq 1\).<br>
-            Square: x + 3 = (x - 1)^2 = x^2 - 2x + 1.<br>
-            Rearrange: 0 = x^2 - 3x - 2. Solve: x = (3 ± sqrt(17))/2.<br>
+            <b>Example:</b> Solve <span>\(\sqrt{x + 3} = x - 1\)</span>.<br>
+            Domain: <span>\(x - 1 \geq 0 \implies x \geq 1\)</span>.<br>
+            Square: <span>\(x + 3 = (x - 1)^2 = x^2 - 2x + 1\)</span>.<br>
+            Rearrange: <span>\(0 = x^2 - 3x - 2\)</span>. Solve: <span>\(x = \frac{3 \pm \sqrt{17}}{2}\)</span>.<br>
             Check which satisfy original and domain.
           </div>
         </section>
