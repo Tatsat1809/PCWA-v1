@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    .container { flex: 1 0 auto; }
+    footer.footer-bar { flex-shrink: 0; }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 4 Practice Questions | PC40S</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container" style="max-width: 900px;">
+    <header>
+      <h1>Unit 4: Practice Questions</h1>
+      <p>Test your understanding of Exponential and Logarithmic Functions!</p>
+    </header>
+    <main>
+      <div id="question-container"></div>
+      <div style="text-align:center; margin-top:2rem;">
+        <button id="prev-btn" class="nav-btn" style="margin-right:1em;">Previous</button>
+        <button id="solution-btn" class="nav-btn" style="margin-right:1em;">View Solution</button>
+        <button id="next-btn" class="nav-btn" style="margin-right:1em;">Next</button>
+        <label for="jump-to-q" style="margin-left:1em;">Go to:
+          <input id="jump-to-q" type="number" min="1" max="60" style="width:3em;">
+        </label>
+        <button id="jump-btn" class="nav-btn">Go</button>
+      </div>
+    </main>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+    </div>
+    <div class="footer-text">
+      Practice makes progress!
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 PC40S. All rights reserved.
+    </div>
+  </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+      <span class="toggle-handle"></span>
+    </button>
+  <script>
+    // 60 questions from practice.JSON
+    fetch('practice.JSON')
+      .then(response => response.json())
+      .then(questions => {
+        let current = 0;
+        function showQuestion(idx) {
+          const q = questions[idx];
+          let html = `<section class='question-card'><h2>Question ${idx+1} of ${questions.length}</h2><p>${q.question.replace(/\n/g, '<br>')}</p>`;
+          if (q.type === 'mcq' && Array.isArray(q.choices)) {
+            html += `<ul class='choices'>`;
+            q.choices.forEach((c,i)=>{
+              html += `<li><label><input type='radio' name='choice' value='${i}'> ${c}</label></li>`;
+            });
+            html += `</ul>`;
+          } else if (q.type === 'short_answer') {
+            html += `<div class='short-answer-box'><label>Answer: <input type='text' style='width:60%;max-width:300px;'></label></div>`;
+          }
+          html += `<div id='solution' style='display:none; margin-top:1em; color:#1976d2;'><b>Answer:</b> ${q.answer ? q.answer : ''}<br><b>Solution:</b> ${q.solution ? q.solution : ''}</div></section>`;
+          document.getElementById('question-container').innerHTML = html;
+        }
+        function toggleSolution() {
+          const sol = document.getElementById('solution');
+          const btn = document.getElementById('solution-btn');
+          if (sol.style.display === 'block') {
+            sol.style.display = 'none';
+            btn.textContent = 'View Solution';
+          } else {
+            sol.style.display = 'block';
+            btn.textContent = 'Hide Solution';
+          }
+        }
+        document.getElementById('next-btn').onclick = function() {
+          if(current < questions.length-1) { current++; showQuestion(current); resetSolutionBtn(); }
+        };
+        document.getElementById('prev-btn').onclick = function() {
+          if(current > 0) { current--; showQuestion(current); resetSolutionBtn(); }
+        };
+        document.getElementById('solution-btn').onclick = function() { toggleSolution(); };
+        function resetSolutionBtn() {
+          const btn = document.getElementById('solution-btn');
+          btn.textContent = 'View Solution';
+        }
+        document.getElementById('jump-btn').onclick = function() {
+          const val = parseInt(document.getElementById('jump-to-q').value, 10);
+          if (!isNaN(val) && val >= 1 && val <= questions.length) {
+            current = val - 1;
+            showQuestion(current);
+            resetSolutionBtn();
+          }
+        };
+        // Initial load
+        showQuestion(current);
+        resetSolutionBtn();
+      });
+  </script>
+  <script>
+    // Light/Dark Mode Toggle (Switch Style)
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeBtn.classList.add('on');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeBtn.classList.remove('on');
+      }
+      localStorage.setItem('theme', mode);
+    }
+    // Initial theme
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeBtn.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
