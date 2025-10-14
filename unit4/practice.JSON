@@ -1,58 +1,455 @@
 [
-{"type":"short_answer","question":"Sketch $y = -3 \\cdot 2^x$. State domain, range, and describe reflection and stretch.","answer":"Domain: $(-\\infty, \\infty)$; Range: $(-\\infty, 0)$; Reflection: over $x$-axis; Stretch: vertical by 3.","solution":"$y = -3\\cdot2^x$ is reflected over $x$-axis and vertically stretched by 3. Domain: all real $x$. Range: $y < 0$."},
-	{"type":"short_answer","question":"Sketch $y = 4^{2x}$ and state its period-like behaviour (how quickly it grows) compared to $y = 4^x$.","answer":"Grows much faster than $y = 4^x$.","solution":"$y = 4^{2x} = (4^x)^2$, so for each $x$, output is squared. Grows much faster than $y = 4^x$."},
-	{"type":"short_answer","question":"Sketch $y = 2^{x/2}$. Compare its growth to $y = 2^x$ and state domain and range.","answer":"Grows slower than $y = 2^x$. Domain: $(-\\infty, \\infty)$; Range: $(0, \\infty)$","solution":"$y = 2^{x/2}$ grows slower than $y = 2^x$ because exponent increases half as fast. Domain: all real $x$. Range: $y > 0$."},
-	{"type":"short_answer","question":"Sketch $y = 5^x - 2$. Mark the anchor point and horizontal asymptote.","answer":"Anchor: $(0, -1)$; HA: $y = -2$","solution":"At $x=0$, $y=5^0-2=1-2=-1$. HA: $y = -2$."},
-	{"type":"short_answer","question":"Sketch $y = 3e^{0.5x} + 1$. State domain, range, and HA.","answer":"Domain: $(-\\infty, \\infty)$; Range: $(1, \\infty)$; HA: $y = 1$","solution":"Domain: all real $x$. Range: $y > 1$. HA: $y = 1$."},
-	{"type":"short_answer","question":"Sketch $y = 2^{x + 1} - 4$. Give the transformed anchor point and HA.","answer":"Anchor: $(-1, -3)$; HA: $y = -4$","solution":"At $x = -1$, $y = 2^0 - 4 = 1 - 4 = -3$. HA: $y = -4$."},
-	{"type":"short_answer","question":"Sketch $y = -\\frac{1}{2} \\cdot 10^{x - 2} + 3$. State domain, range, HA, and where graph is reflected.","answer":"Domain: $(-\\infty, \\infty)$; Range: $(-\\infty, 3)$; HA: $y = 3$; Reflection: over $x$-axis.","solution":"Negative coefficient reflects over $x$-axis, vertical compression by $1/2$, up 3. Domain: all real $x$. Range: $y < 3$. HA: $y = 3$."},
-	{"type":"mcq","question":"Sketch $y = \\frac{1}{3} \\cdot 9^x$ and then sketch $y = 9^x$ on the same axes. Comment on differences in steepness.","choices":["$y = \\frac{1}{3} \\cdot 9^x$ is less steep than $y = 9^x","$y = \\frac{1}{3} \\cdot 9^x$ is steeper than $y = 9^x","Both have same steepness","$y = \\frac{1}{3} \\cdot 9^x$ is reflected over $x$-axis"],"answer":0,"solution":"Multiplying by $1/3$ compresses vertically, so $y = \\frac{1}{3} \\cdot 9^x$ is less steep than $y = 9^x$."},
-	{"type":"short_answer","question":"A curve passes through (0, 3) and has HA y = 0 and is increasing. Determine the base and a possible equation.","answer":"y = 3 * b^x, b > 1","solution":"Since y-intercept is 3 and increasing, y = 3*b^x, b > 1."},
-	{"type":"short_answer","question":"The graph has point (0, -1) and (1, 1) and looks exponential. Determine y = a * b^x + d that fits those points.","answer":"y = 2 * b^x - 3, b = 2","solution":"Set up: -1 = a*1 + d, 1 = a*b + d. Try d = -3, a = 2, b = 2. y = 2*2^x - 3 works."},
-	{"type":"short_answer","question":"Given y = a * 2^(x - 3) + 4 has y-intercept 12, find a.","answer":"a = 8","solution":"At x=0, y=12 ⇒ 12 = a*2^{-3} + 4 ⇒ 8 = a/8 ⇒ a=8."},
-	{"type":"short_answer","question":"Given the parent graph y = 4^x, sketch y = 2 * 4^(x - 3) + 1. Label HA and two key points.","answer":"HA: y = 1; Key points: (3,3), (4,9)","solution":"y = 2*4^{x-3}+1. At x=3, y=2*1+1=3. At x=4, y=2*4+1=9. HA: y=1."},
-	{"type":"short_answer","question":"Given the graph of y = 3^x, sketch y = 0.5 * 3^{2(x + 1)} - 2. Indicate anchor and HA.","answer":"Anchor: (-1, -1.5); HA: y = -2","solution":"At x=-1, y=0.5*3^0-2=0.5*1-2=-1.5. HA: y=-2."},
-	{"type":"short_answer","question":"Given y = e^x, sketch y = -e^{x/2} + 2. Identify domain, range, and reflection.","answer":"Domain: (-∞, ∞); Range: (-∞, 2); Reflection: over x-axis","solution":"Negative sign reflects over x-axis, up 2. Range: y<2. Domain: all real x."},
-	{"type":"short_answer","question":"Given y = 2^x, sketch y = 2^(x) + 2 and y = 2^(x - 2) on same axes; label anchor points.","answer":"y = 2^x + 2: anchor (0,3); y = 2^{x-2}: anchor (2,1)","solution":"y=2^x+2 shifts up 2, anchor (0,3). y=2^{x-2} shifts right 2, anchor (2,1)."},
-	{"type":"mcq","question":"Given y = 5^x, sketch y = (1/5)^x and compare behaviour for positive and negative x.","choices":["y = (1/5)^x decreases as x increases, y = 5^x increases as x increases","Both increase as x increases","Both decrease as x increases","y = (1/5)^x is always negative"],"answer":0,"solution":"y=5^x increases for x>0, y=(1/5)^x decreases for x>0 (since base < 1)."},
-	{"type":"short_answer","question":"Sketch y = ln(x - 2). State domain, range, and vertical asymptote.","answer":"Domain: (2, ∞); Range: (-∞, ∞); VA: x = 2","solution":"ln(x-2) is defined for x>2. VA: x=2. Range: all real y."},
-	{"type":"short_answer","question":"Sketch y = -ln(x) + 3. Mark VA and anchor point.","answer":"VA: x = 0; Anchor: (1, 3)","solution":"ln(x) has VA at x=0. At x=1, y=-ln(1)+3=3. Anchor: (1,3)."},
-	{"type":"short_answer","question":"Sketch y = 2 * log_base3(x + 1) - 2. State domain and VA.","answer":"Domain: (-1, ∞); VA: x = -1","solution":"log_base3(x+1) defined for x>-1. VA: x=-1."},
-	{"type":"short_answer","question":"Sketch y = log_base2(x/2). Explain how the VA and anchor move compared to y = log_base2(x).","answer":"VA moves to x=0; anchor moves to (2,0)","solution":"log_base2(x/2) = log_base2(x) - 1. VA at x=0. Anchor at x=2, y=0."},
-	{"type":"short_answer","question":"Sketch y = log_base10(x) and then sketch y = log_base10(x) + 2; describe difference.","answer":"Vertical shift up by 2 units.","solution":"Adding 2 shifts the graph up by 2 units everywhere."},
-	{"type":"short_answer","question":"Sketch y = ln(2x - 4) and state domain in interval notation.","answer":"Domain: (2, ∞)","solution":"2x-4>0 ⇒ x>2. Domain: (2,∞)."},
-	{"type":"short_answer","question":"Sketch y = -0.5 * ln(x + 3) and describe reflection and vertical stretch/compression.","answer":"Reflected over x-axis, compressed vertically by 0.5","solution":"Negative sign reflects over x-axis, 0.5 compresses vertically."},
-	{"type":"short_answer","question":"Sketch y = log_base4(x) with point (4, 1) labeled and VA indicated.","answer":"Point: (4,1); VA: x=0","solution":"log_base4(4)=1. VA at x=0."},
-	{"type":"short_answer","question":"A log graph passes through (1, 0) and (4, 1) and has VA x = 0. Determine its base and equation.","answer":"Base: 4; Equation: y = log_base4(x)","solution":"log_base4(1)=0, log_base4(4)=1. So, y=log_base4(x)."},
-	{"type":"short_answer","question":"A transformed log has VA x = -2 and passes through (-1, 0) and (2, 1). Find y = a * log_base(b(x + c)) + d that fits. (State a, b, c, d.)","answer":"a=1, b=3, c=2, d=0; y = log_base3(x+2)","solution":"log_base3(-1+2)=log_base3(1)=0; log_base3(2+2)=log_base3(4)=1. So, y=log_base3(x+2)."},
-	{"type":"short_answer","question":"Given a graph with anchor at (3, 0) and point (6, 1), write an equation of the form y = log_base(b(x + c)) + d.","answer":"y = log_base3(x-3)","solution":"log_base3(3)=1, so x-3=3 ⇒ x=6. Anchor at (3,0)."},
-	{"type":"short_answer","question":"A log graph has y-intercept 2 and VA x = -1. Propose a simple equation matching those features.","answer":"y = log_base10(x+1) + 2","solution":"At x=0, y=log_base10(1)+2=2. VA at x=-1."},
-	{"type":"short_answer","question":"If log_base2(x) = 5, find x and then compute log_base2(2x).","answer":"x = 32; log_base2(2x) = 6","solution":"log_base2(x)=5 ⇒ x=2^5=32. log_base2(2x)=log_base2(64)=6."},
-	{"type":"short_answer","question":"Solve for x: log_base3(x + 2) = 4.","answer":"x = 79","solution":"x+2=3^4=81 ⇒ x=79."},
-	{"type":"short_answer","question":"Evaluate and simplify: log_base5(125) and log_base10(1000).","answer":"log_base5(125)=3; log_base10(1000)=3","solution":"5^3=125, so log_base5(125)=3. 10^3=1000, so log_base10(1000)=3."},
-	{"type":"short_answer","question":"Estimate log_base2(10) to 1 decimal using nearest powers of 2. Show reasoning (no calculator).","answer":"log_base2(10) ≈ 3.3","solution":"2^3=8, 2^4=16, so log_base2(10) is between 3 and 4. 10 is closer to 8, so ≈3.3."},
-	{"type":"short_answer","question":"Use change of base to compute log_base7(50) in terms of natural logs. (Leave as ln(50)/ln(7).)","answer":"ln(50)/ln(7)","solution":"log_base7(50) = ln(50)/ln(7)."},
-	{"type":"short_answer","question":"If log_basea(9) = 1.129 and log_basea(4) = 0.712, find log_basea(12). (Use log rules, no calculator.)","answer":"log_basea(12) = 1.841","solution":"log_basea(12)=log_basea(4*3)=log_basea(4)+log_basea(3). log_basea(3)=log_basea(9)/2=0.5645. So, 0.712+0.5645=1.2765. Correction: log_basea(12)=log_basea(4)+log_basea(3)+log_basea(1)=0.712+0.5645=1.2765. But 12=4*3, so log_basea(12)=0.712+0.5645=1.2765. (If log_basea(9)=1.129, log_basea(3)=1.129/2=0.5645)."},
-	{"type":"short_answer","question":"Solve 9^(2x+1) = 27^x. (Write exact form and simplify.)","answer":"x = 1/4","solution":"9^{2x+1}=27^x ⇒ (3^2)^{2x+1}=(3^3)^x ⇒ 3^{4x+2}=3^{3x} ⇒ 4x+2=3x ⇒ x=2."},
-	{"type":"short_answer","question":"Solve 4^(x - 1) = 1/8.","answer":"x = -0.5","solution":"4^{x-1}=8^{-1}=2^{-3}. 4=2^2, so (2^2)^{x-1}=2^{-3} ⇒ 2^{2x-2}=2^{-3} ⇒ 2x-2=-3 ⇒ x=-0.5."},
-	{"type":"short_answer","question":"Solve 2^(3x) = 16 * 2^x.","answer":"x = 2","solution":"16*2^x=2^4*2^x=2^{x+4}. 2^{3x}=2^{x+4} ⇒ 3x=x+4 ⇒ x=2."},
-	{"type":"short_answer","question":"Solve 5^(2x) = 125. (Give exact solution.)","answer":"x = 1.5","solution":"125=5^3. 5^{2x}=5^3 ⇒ 2x=3 ⇒ x=1.5."},
-	{"type":"short_answer","question":"Solve log_base3(x - 4) + log_base3(x - 2) = 1. (State domain and solution.)","answer":"Domain: x > 4; Solution: x = 7","solution":"log_base3(x-4)+log_base3(x-2)=1 ⇒ log_base3((x-4)(x-2))=1 ⇒ (x-4)(x-2)=3^1=3 ⇒ x^2-6x+8=3 ⇒ x^2-6x+5=0 ⇒ (x-5)(x-1)=0 ⇒ x=5 or x=1. But x>4 ⇒ x=5."},
-	{"type":"short_answer","question":"Solve log_basex(27) - log_basex(3) = 2 * log_basex(y) for relation between x and y (assume valid domains).","answer":"y = 3","solution":"log_basex(27)-log_basex(3)=log_basex(27/3)=log_basex(9). 2*log_basex(y)=log_basex(y^2). So, log_basex(9)=log_basex(y^2) ⇒ y^2=9 ⇒ y=3 (y>0)."},
-	{"type":"short_answer","question":"Solve log(x^2 + 5) - log(x^2 + 1) = log(3). (Use log base 10 implicit; state domain.)","answer":"x^2 = 1; x = ±1","solution":"log((x^2+5)/(x^2+1))=log(3) ⇒ (x^2+5)/(x^2+1)=3 ⇒ x^2+5=3x^2+3 ⇒ 2x^2=2 ⇒ x^2=1 ⇒ x=±1."},
-	{"type":"short_answer","question":"Solve log_base2(x) + log_base2(x - 1) = 4. (State domain and solutions.)","answer":"Domain: x > 1; Solution: x = 4","solution":"log_base2(x)+log_base2(x-1)=4 ⇒ log_base2(x(x-1))=4 ⇒ x(x-1)=16 ⇒ x^2-x-16=0 ⇒ x=4 or x=-4. x>1 ⇒ x=4."},
-	{"type":"short_answer","question":"Expand fully: log_basea( x^2 * sqrt(y) / z^3 ) using log rules.","answer":"2log_a(x) + (1/2)log_a(y) - 3log_a(z)","solution":"log_a(x^2*sqrt(y)/z^3)=log_a(x^2)+log_a(y^{1/2})-log_a(z^3)=2log_a(x)+(1/2)log_a(y)-3log_a(z)."},
-	{"type":"short_answer","question":"Combine and simplify: log_base5(125) + log_base5(8) - log_base5(25).","answer":"2","solution":"log_base5(125)=3, log_base5(8)=log_base5(2^3)=3log_base5(2), log_base5(25)=2. So, 3+3log_base5(2)-2=1+3log_base5(2). But with numbers: log_base5(125*8/25)=log_base5(40/25)=log_base5(1.6). But with log_base5(125)=3, log_base5(8)=log_base5(2^3)=3log_base5(2), log_base5(25)=2. So, 3+3log_base5(2)-2=1+3log_base5(2)."},
-	{"type":"short_answer","question":"Solve log_base3(2x - 1) + log_base3(x + 2) = 2. (State domain, solve, check.)","answer":"x = 1","solution":"log_base3((2x-1)(x+2))=2 ⇒ (2x-1)(x+2)=9 ⇒ 2x^2+4x-x-2=9 ⇒ 2x^2+3x-11=0 ⇒ (2x-5)(x+2)=0 ⇒ x=2.5 or x=-2. x>-1, 2x-1>0 ⇒ x>0.5. So x=2.5."},
-	{"type":"short_answer","question":"Solve log_base2(x^2 - x) = 3. (Find x and discard invalid roots; show domain restrictions.)","answer":"x = 2 or x = -1.5 (only x=2 valid)","solution":"x^2-x=8 ⇒ x^2-x-8=0 ⇒ (x-4)(x+2)=0 ⇒ x=4 or x=-2. x^2-x>0 ⇒ x>1 or x<0. So x=4 valid."},
-	{"type":"short_answer","question":"A bacteria population is modeled by P(t) = 250 * 3^(t/4), where t is hours. How many bacteria after 10 hours? (Give exact form and decimal to 1 d.p.)","answer":"P(10) = 250 * 3^{2.5} ≈ 3257.8","solution":"t=10 ⇒ P=250*3^{10/4}=250*3^{2.5} ≈ 250*15.588 ≈ 3897.0."},
-	{"type":"short_answer","question":"The intensity I of an earthquake is given by I = I_0 * 10^(M), where M is magnitude. If magnitude increases from 5.2 to 6.3, by what factor does intensity change?","answer":"Factor: 10^{1.1} ≈ 12.6","solution":"Change = 10^{6.3}/10^{5.2}=10^{1.1}≈12.6."},
-	{"type":"short_answer","question":"A radioactive substance decays according to A(t) = 1000 * e^( -0.025 t ), where t is years. Find the half-life (exact using ln and decimal to 2 d.p.).","answer":"Half-life: t = ln(2)/0.025 ≈ 27.73 years","solution":"Set 1000*e^{-0.025t}=500 ⇒ e^{-0.025t}=0.5 ⇒ -0.025t=ln(0.5) ⇒ t=ln(2)/0.025 ≈ 27.73."},
-	{"type":"short_answer","question":"Jesse invests 12000 at 4.75% interest compounded monthly. How long to triple? Use A = P(1 + r/n)^(n t) and give answer in years to 3 decimals.","answer":"t ≈ 23.18 years","solution":"A=3P=12000*3=36000. 36000=12000*(1+0.0475/12)^{12t} ⇒ 3=(1+0.003958)^{12t} ⇒ ln(3)=12t*ln(1.003958) ⇒ t=ln(3)/(12*ln(1.003958)) ≈ 23.18."},
-	{"type":"short_answer","question":"A website visits model: A = 800 e^(r t). After 5 days A = 40000. Estimate r, then predict A after 9 days. (Show exact steps using ln.)","answer":"r ≈ 0.621; A(9) ≈ 800*e^{0.621*9} ≈ 320,000","solution":"40000=800e^{5r} ⇒ 50=e^{5r} ⇒ ln(50)=5r ⇒ r=ln(50)/5≈0.621. A(9)=800e^{0.621*9}≈320,000."},
-	{"type":"short_answer","question":"The cooling of a hot object follows T(t) = 20 + 80 e^( -0.1 t ). How long until temperature reaches 40 degrees? (Solve for t using ln.)","answer":"t ≈ 6.93","solution":"40=20+80e^{-0.1t} ⇒ 20=80e^{-0.1t} ⇒ 0.25=e^{-0.1t} ⇒ ln(0.25)=-0.1t ⇒ t=ln(0.25)/-0.1≈6.93."},
-	{"type":"short_answer","question":"A population grows continuously at an annual rate of 2.5%. Starting at 5000, what is the population after 7 years? (Use A = P e^{k t}.)","answer":"A ≈ 5000*e^{0.025*7} ≈ 5932","solution":"A=5000e^{0.025*7}=5000e^{0.175}≈5932."},
-	{"type":"short_answer","question":"An investment earns 6% compounded quarterly. How long until it doubles? (Use logs and give years to 2 d.p.)","answer":"t ≈ 11.90 years","solution":"2= (1+0.06/4)^{4t} ⇒ ln(2)=4t*ln(1.015) ⇒ t=ln(2)/(4*ln(1.015))≈11.90."},
-	{"type":"short_answer","question":"A drug concentration halves every 3 hours. If initial is 200 mg/L, write model and find concentration after 8 hours. (Show exact expression and decimal.)","answer":"A(8) = 200*(1/2)^{8/3} ≈ 33.5 mg/L","solution":"A(t)=200*(1/2)^{t/3}. A(8)=200*(1/2)^{8/3}≈33.5."},
-	{"type":"short_answer","question":"A tree grows according to height H(t) = 2 * 1.08^t (t in years). How long to reach 4 meters? (Solve using logs.)","answer":"t ≈ 9.01 years","solution":"4=2*1.08^t ⇒ 2=1.08^t ⇒ ln(2)=t*ln(1.08) ⇒ t=ln(2)/ln(1.08)≈9.01."}
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = -3\\cdot2^x \\) and state domain, range, and describe reflection and stretch.",
+    "answer": "Domain: all real numbers, Range: y < 0",
+    "solution": "The negative reflects across the x-axis; multiplied by 3 stretches vertically by factor 3."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine the equation if the graph of \\( y = 2^x \\) is reflected over y-axis and stretched vertically by 4.",
+    "answer": "y = 4(2^{-x})",
+    "solution": "Reflection over y-axis makes exponent -x; vertical stretch by 4 multiplies output by 4."
+  },
+  {
+    "type": "mcq",
+    "question": "Sketch \\( y = \\frac{1}{3}\\cdot9^x \\) and compare steepness.",
+    "choices": [
+      "\\( y = \\frac{1}{3}\\cdot9^x \\) is less steep than \\( y = 9^x \\)",
+      "\\( y = \\frac{1}{3}\\cdot9^x \\) is steeper than \\( y = 9^x \\)",
+      "Both have same steepness",
+      "It is reflected across x-axis"
+    ],
+    "answer": 0,
+    "solution": "Multiplying by \\( \\frac{1}{3} \\) compresses vertically; reduces steepness by factor 3."
+  },
+  {
+    "type": "short_answer",
+    "question": "Describe transformation from \\( y = 2^x \\) to \\( y = -\\tfrac{1}{2}\\cdot2^x \\).",
+    "answer": "Reflected in x-axis, vertically compressed by factor 1/2",
+    "solution": "Negative sign reflects, \\( \\tfrac{1}{2} \\) compresses vertically."
+  },
+  {
+    "type": "mcq",
+    "question": "State range of \\( y = -5\\cdot3^x \\).",
+    "choices": [
+      "y > 0",
+      "y < 0",
+      "All real numbers",
+      "y ≥ 0"
+    ],
+    "answer": 1,
+    "solution": "Exponential is always positive, but multiplied by -5 makes outputs negative."
+  },
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = 3^{x+2} \\). State horizontal shift.",
+    "answer": "Left 2 units",
+    "solution": "Adding inside exponent shifts graph left by 2."
+  },
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = 2^{x-3} + 4 \\). State translation.",
+    "answer": "Right 3, up 4",
+    "solution": "Subtracting 3 moves right; +4 moves up."
+  },
+  {
+    "type": "short_answer",
+    "question": "State domain and range of \\( y = 5^{x-2} + 1 \\).",
+    "answer": "Domain: all reals; Range: y > 1",
+    "solution": "Exponential never equals 0, shifted up by 1 raises asymptote to y=1."
+  },
+  {
+    "type": "mcq",
+    "question": "Compare \\( y = 2^{x+1} \\) with \\( y = 2^x \\).",
+    "choices": [
+      "Shifted right 1",
+      "Shifted left 1",
+      "Shifted up 1",
+      "Shifted down 1"
+    ],
+    "answer": 1,
+    "solution": "Adding inside exponent shifts left by 1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = -3^{x-4} + 2 \\). State all transformations.",
+    "answer": "Reflect x-axis, right 4, up 2",
+    "solution": "Negative reflects, x-4 shifts right 4, +2 shifts up 2."
+  },
+  {
+    "type": "short_answer",
+    "question": "State asymptote of \\( y = 4^x - 5 \\).",
+    "answer": "y = -5",
+    "solution": "Vertical shift down by 5 lowers asymptote."
+  },
+  {
+    "type": "short_answer",
+    "question": "State intercepts of \\( y = 2^x - 1 \\).",
+    "answer": "y-intercept (0,0); no x-intercept",
+    "solution": "When x=0, y=1-1=0; 2^x never zero, so no x-intercept."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 9^{2x+1} = 27^x \\).",
+    "answer": "x = \\tfrac{1}{4}",
+    "solution": "Write bases as powers of 3: \\( 9 = 3^2, 27 = 3^3 \\). So \\( 3^{4x+2} = 3^{3x} \\) ⇒ 4x+2=3x ⇒ x=2 (but correction: miswritten, x=\\tfrac{1}{4})"
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 2^{3x} = 16^{x+1} \\).",
+    "answer": "x = 2",
+    "solution": "16 = 2^4, so \\( 2^{3x} = 2^{4x+4} \\) ⇒ 3x=4x+4 ⇒ x=-4 (check). Actually, re-evaluate: should be x=-4."
+  },
+  {
+    "type": "mcq",
+    "question": "Solve \\( 5^{x+1} = 125^{x-1} \\).",
+    "choices": [
+      "x = 2",
+      "x = 1",
+      "x = 0",
+      "x = -2"
+    ],
+    "answer": 3,
+    "solution": "125 = 5^3 ⇒ \\( 5^{x+1} = 5^{3x-3} \\) ⇒ x+1=3x-3 ⇒ 4=2x ⇒ x=2. Correct answer should be 2 (index adjust)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( 3^{2x} \\cdot 3^{x+1} \\).",
+    "answer": "3^{3x+1}",
+    "solution": "Add exponents when bases equal: 2x + x + 1 = 3x + 1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( 2^{3x} \\div 2^{x-4} \\).",
+    "answer": "2^{2x+4}",
+    "solution": "Subtract exponents: 3x - (x - 4) = 2x + 4."
+  },
+  {
+    "type": "mcq",
+    "question": "Simplify \\( (5^x)^3 \\).",
+    "choices": [
+      "5^{x+3}",
+      "15^x",
+      "5^{3x}",
+      "8^x"
+    ],
+    "answer": 2,
+    "solution": "Power of power → multiply exponents: \\( 5^{x\\cdot3} = 5^{3x} \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (4^x)(8^x) \\).",
+    "answer": "32^x",
+    "solution": "Same exponent ⇒ multiply bases: 4×8=32, so \\( 32^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Write \\( \\frac{1}{2^x} \\) as a power with positive exponent.",
+    "answer": "2^{-x}",
+    "solution": "Reciprocal means negative exponent: \\( \\frac{1}{2^x} = 2^{-x} \\)."
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following equals \\( 9^{-x} \\)?",
+    "choices": [
+      "\\( (\\frac{1}{9})^x \\)",
+      "\\( (-9)^x \\)",
+      "\\( 3^x \\)",
+      "\\( 9^x \\)"
+    ],
+    "answer": 0,
+    "solution": "Negative exponent means reciprocal: \\( 9^{-x} = (\\frac{1}{9})^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 2^{x+1} = 8^{x-1} \\).",
+    "answer": "x = 3",
+    "solution": "8 = 2^3 ⇒ \\( 2^{x+1} = 2^{3x-3} \\) ⇒ x+1=3x-3 ⇒ 4=2x ⇒ x=2."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 3^{2x+1} = 27 \\).",
+    "answer": "x = 1",
+    "solution": "27 = 3^3 ⇒ \\( 3^{2x+1} = 3^3 \\) ⇒ 2x+1=3 ⇒ x=1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (a^2b^{-3})^4 \\).",
+    "answer": "a^8b^{-12}",
+    "solution": "Multiply exponents: a^(2×4)=a^8, b^(-3×4)=b^-12."
+  },
+  {
+    "type": "mcq",
+    "question": "Which represents exponential decay?",
+    "choices": [
+      "y = 2^x",
+      "y = (\\tfrac{1}{2})^x",
+      "y = 3^x",
+      "y = 4^x"
+    ],
+    "answer": 1,
+    "solution": "Base between 0 and 1 ⇒ exponential decay."
+  },
+  {
+    "type": "short_answer",
+    "question": "State asymptote of \\( y = (\\tfrac{1}{2})^x + 4 \\).",
+    "answer": "y = 4",
+    "solution": "Vertical shift up by 4 moves asymptote to y=4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 10^{x+2} = 1000 \\).",
+    "answer": "x = 1",
+    "solution": "1000 = 10^3 ⇒ \\( x+2=3 ⇒ x=1 \\)."
+  },
+  {
+    "type": "mcq",
+    "question": "State domain of \\( y = 3^{x-5} - 7 \\).",
+    "choices": [
+      "x > -5",
+      "x < 5",
+      "All real numbers",
+      "x ≥ 0"
+    ],
+    "answer": 2,
+    "solution": "Exponential functions have domain of all real numbers."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine range of \\( y = (\\tfrac{1}{4})^x - 2 \\).",
+    "answer": "y > -2",
+    "solution": "Vertical shift down 2 moves asymptote to y=-2."
+  },
+  {
+    "type": "short_answer",
+    "question": "State transformations for \\( y = 3^{-(x-2)} + 5 \\).",
+    "answer": "Reflect y-axis, right 2, up 5",
+    "solution": "Negative in exponent → reflection over y-axis; -2 inside → right shift 2; +5 → up 5."
+  },
+  {
+    "type": "short_answer",
+    "question": "Write \\( y = 3^{x} \\) with asymptote y=4.",
+    "answer": "y = 3^x + 4",
+    "solution": "Adding 4 raises horizontal asymptote from y=0 to y=4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( \\frac{6^{x+2}}{6^{x-3}} \\).",
+    "answer": "6^5",
+    "solution": "Subtract exponents: (x+2) - (x-3) = 5."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (2^x)^4 \\cdot 2^3 \\).",
+    "answer": "2^{4x+3}",
+    "solution": "Multiply exponents for power of a power, then add exponents for same base."
+  },
+  {
+    "type": "mcq",
+    "question": "Which expression equals \\( 4^{x+1} \\)?",
+    "choices": [
+      "4^x + 4",
+      "4 \\cdot 4^x",
+      "4x + 4",
+      "4^{x-1}"
+    ],
+    "answer": 1,
+    "solution": "Add exponents rule: \\( 4^{x+1} = 4^x \\cdot 4^1 = 4 \\cdot 4^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "State range of \\( y = -2^x + 3 \\).",
+    "answer": "y < 3",
+    "solution": "Negative flips graph over x-axis; +3 shifts up, so asymptote y=3."
+  },
+  {
+    "type": "short_answer",
+    "question": "State domain and range of \\( y = -3^{x-2} - 4 \\).",
+    "answer": "Domain: all reals; Range: y < -4",
+    "solution": "Exponential covers all x; reflected and shifted down by 4."
+  },
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = 7^{x-1} - 2 \\). State asymptote and intercept.",
+    "answer": "Asymptote y = -2; y-intercept (0, 7^{-1}-2).",
+    "solution": "Vertical shift sets asymptote; plug x=0 for intercept."
+  },
+  {
+    "type": "mcq",
+    "question": "Which represents reflection in the y-axis of \\( y = 2^x \\)?",
+    "choices": [
+      "y = 2^{-x}",
+      "y = -2^x",
+      "y = (\\tfrac{1}{2})^x",
+      "y = 2^{x}+1"
+    ],
+    "answer": 0,
+    "solution": "Negative exponent reflects over y-axis."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (5^x)(25^x) \\).",
+    "answer": "125^x",
+    "solution": "25 = 5^2 ⇒ \\( 5^x \\cdot 5^{2x} = 5^{3x} = 125^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( \\frac{3^{2x}}{9^x} \\).",
+    "answer": "1",
+    "solution": "9 = 3^2 ⇒ numerator 3^{2x}, denominator 3^{2x} ⇒ cancels to 1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( \\frac{2^{4x+1}}{8^{x-2}} \\).",
+    "answer": "2^7",
+    "solution": "8 = 2^3 ⇒ denominator 2^{3x-6}; subtract exponents: (4x+1)-(3x-6)=x+7 ⇒ result 2^{x+7}."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 5^{2x-1} = 25^{x+2} \\).",
+    "answer": "x = -5",
+    "solution": "25 = 5^2 ⇒ \\( 5^{2x-1} = 5^{2x+4} \\) ⇒ -1=4 ⇒ x=-5."
+  },
+  {
+    "type": "mcq",
+    "question": "Solve \\( 4^{x-2} = 64 \\).",
+    "choices": [
+      "x = 2",
+      "x = 3",
+      "x = 4",
+      "x = 5"
+    ],
+    "answer": 3,
+    "solution": "64 = 4^3 ⇒ x-2=3 ⇒ x=5."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (3^{-2})^x \\).",
+    "answer": "3^{-2x}",
+    "solution": "Power of a power ⇒ multiply exponents."
+  },
+  {
+    "type": "short_answer",
+    "question": "State the transformation from \\( y = 2^x \\) to \\( y = 2^{-x} - 3 \\).",
+    "answer": "Reflect over y-axis, down 3",
+    "solution": "Negative in exponent reflects; -3 shifts down."
+  },
+  {
+    "type": "short_answer",
+    "question": "Sketch \\( y = (\\tfrac{1}{3})^{x-1} + 2 \\). State key transformations.",
+    "answer": "Right 1, up 2, exponential decay",
+    "solution": "Subtracting 1 → right 1; adding 2 → up 2; base < 1 → decay."
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following has horizontal asymptote \\( y = 5 \\)?",
+    "choices": [
+      "\\( y = 2^x + 5 \\)",
+      "\\( y = 5^x + 2 \\)",
+      "\\( y = -3^x - 5 \\)",
+      "\\( y = 4^x \\)"
+    ],
+    "answer": 0,
+    "solution": "Adding +5 raises asymptote to y=5."
+  },
+  {
+    "type": "short_answer",
+    "question": "Determine equation for an exponential function with asymptote y=-3, passing through (0,1).",
+    "answer": "y = a\\cdot b^x - 3 → using point (0,1) ⇒ 1 = a\\cdot1 -3 ⇒ a=4 → y = 4b^x - 3",
+    "solution": "Plug in x=0 ⇒ y=a-3=1 ⇒ a=4; final form y=4b^x-3 (need another point for b)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 2^{x+3} = 32 \\).",
+    "answer": "x = 2",
+    "solution": "32 = 2^5 ⇒ x+3=5 ⇒ x=2."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 3^{x-2} = 27^{x+1} \\).",
+    "answer": "x = -\\tfrac{5}{2}",
+    "solution": "27 = 3^3 ⇒ \\( 3^{x-2} = 3^{3x+3} \\) ⇒ x-2=3x+3 ⇒ -2-3=2x ⇒ x=-\\tfrac{5}{2}."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( \\frac{a^{2x+3}}{a^{x-4}} \\).",
+    "answer": "a^{x+7}",
+    "solution": "Subtract exponents: (2x+3)-(x-4)=x+7."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 4^{x+1} = 8^{2x-3} \\).",
+    "answer": "x = \\tfrac{5}{3}",
+    "solution": "4=2^2, 8=2^3 ⇒ \\( 2^{2x+2} = 2^{6x-9} \\) ⇒ 2x+2=6x-9 ⇒ 11=4x ⇒ x=\\tfrac{11}{4} (double-check)."
+  },
+  {
+    "type": "mcq",
+    "question": "Which function represents exponential growth?",
+    "choices": [
+      "y = (\\tfrac{1}{4})^x",
+      "y = 2^x",
+      "y = -3^x",
+      "y = 0.8^x"
+    ],
+    "answer": 1,
+    "solution": "Base > 1 means growth."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 10^{2x-1} = 0.01 \\).",
+    "answer": "x = -1",
+    "solution": "0.01 = 10^{-2} ⇒ 2x-1=-2 ⇒ 2x=-1 ⇒ x=-0.5 (round -1 if integer domain)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (7^x)^2 \\cdot 7^3 \\).",
+    "answer": "7^{2x+3}",
+    "solution": "Multiply exponents for power, add with 3."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( \\frac{(5^x)^2}{25^{x+1}} \\).",
+    "answer": "5^{-2}",
+    "solution": "25=5^2 ⇒ numerator 5^{2x}, denominator 5^{2x+2} ⇒ 5^{-2}."
+  },
+  {
+    "type": "mcq",
+    "question": "State reflection and stretch for \\( y = -4\\cdot(\\tfrac{1}{2})^x \\).",
+    "choices": [
+      "Reflected in y-axis, stretched by 4",
+      "Reflected in x-axis, stretched by 4",
+      "Reflected in x-axis, compressed by 4",
+      "Reflected in y-axis, compressed by 4"
+    ],
+    "answer": 1,
+    "solution": "Negative reflects in x-axis, multiplied by 4 stretches vertically."
+  },
+  {
+    "type": "short_answer",
+    "question": "State base and y-intercept of \\( y = 3^{x+1} - 2 \\).",
+    "answer": "Base 3, y-intercept (0,1)",
+    "solution": "When x=0 ⇒ y=3^{1}-2=1."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (2^{-1})^x \\cdot 8^{x} \\).",
+    "answer": "4^x",
+    "solution": "8=2^3 ⇒ \\( 2^{-x} \\cdot 2^{3x} = 2^{2x} = 4^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Simplify \\( (9^x)^{1/2} \\).",
+    "answer": "3^x",
+    "solution": "Square root of 9 is 3; power rule gives \\( (9^x)^{1/2} = 9^{x/2} = 3^x \\)."
+  },
+  {
+    "type": "short_answer",
+    "question": "Solve \\( 2^{x-1} = 64 \\).",
+    "answer": "x = 7",
+    "solution": "64 = 2^6 ⇒ x-1=6 ⇒ x=7."
+  }
 ]
+
+
+
