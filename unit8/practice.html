@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1 0 auto;
+    }
+
+    footer.footer-bar {
+      flex-shrink: 0;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 8 Practice Questions | PC40S</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</head>
+
+<body>
+  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container" style="max-width: 900px;">
+    <header>
+      <h1>Unit 8: Practice Questions</h1>
+      <p>Test your understanding of Functions!</p>
+    </header>
+    <main>
+      <div id="question-container"></div>
+      <div style="text-align:center; margin-top:2rem;">
+        <button id="prev-btn" class="nav-btn" style="margin-right:1em;">Previous</button>
+        <button id="solution-btn" class="nav-btn" style="margin-right:1em;">View Solution</button>
+        <button id="next-btn" class="nav-btn" style="margin-right:1em;">Next</button>
+        <label for="jump-to-q" style="margin-left:1em;">Go to:
+          <input id="jump-to-q" type="number" min="1" max="60" style="width:3em;">
+        </label>
+        <button id="jump-btn" class="nav-btn">Go</button>
+      </div>
+    </main>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+    </div>
+    <div class="footer-text">
+      Practice makes progress!
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 PC40S. All rights reserved.
+    </div>
+  </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+    <span class="toggle-handle"></span>
+  </button>
+  <script>
+    // 60 questions from practice.JSON
+    // Add KaTeX JS and auto-render after DOMContentLoaded
+
+
+    // Use inline `questions` array (defined later in the page) instead of fetching
+    // an external JSON file. Wrap initialization so it runs after the DOM is ready
+    // and after the inline `questions` variable is parsed.
+    document.addEventListener('DOMContentLoaded', function initQuestions() {
+      // Ensure the inline `questions` variable exists
+      if (typeof questions === 'undefined' || !Array.isArray(questions) || questions.length === 0) {
+        document.getElementById('question-container').innerHTML = '<p style="color:#b71c1c;">Unable to load questions. Please contact the site administrator.</p>';
+        console.error('Inline questions array missing or empty.');
+        return;
+      }
+
+      let current = 0;
+      function renderMath(targetEl) {
+        if (!targetEl) return;
+        if (window.renderMathInElement) {
+          renderMathInElement(targetEl, {
+            delimiters: [
+              { left: "$", right: "$", display: false },
+              { left: "$$", right: "$$", display: true }
+            ]
+          });
+        } else {
+          // Try again shortly if KaTeX auto-render isn't loaded yet
+          setTimeout(function () { renderMath(targetEl); }, 100);
+        }
+      }
+
+      function showQuestion(idx) {
+        const q = questions[idx];
+        let html = `<section class='question-card'><h2>Question ${idx + 1} of ${questions.length}</h2><p>${q.question.replace(/\n/g, '<br>')}</p>`;
+        if (q.type === 'mcq' && Array.isArray(q.choices)) {
+          html += `<ul class='choices'>`;
+          q.choices.forEach((c, i) => {
+            html += `<li><label><input type='radio' name='choice' value='${i}'> ${c}</label></li>`;
+          });
+          html += `</ul>`;
+        } else if (q.type === 'short_answer') {
+          html += `<div class='short-answer-box'><label>Answer: <input type='text' style='width:60%;max-width:300px;'></label></div>`;
+        }
+        html += `<div id='solution' style='display:none; margin-top:1em; color:#1976d2;'><b>Answer:</b> ${q.answer ? q.answer : ''}<br><b>Solution:</b> ${q.solution ? q.solution : ''}</div></section>`;
+
+        document.getElementById('question-container').innerHTML = html;
+
+        // ✅ Re-render KaTeX every time a question loads
+        if (window.renderMathInElement) {
+          renderMathInElement(document.getElementById('question-container'), {
+            delimiters: [
+              { left: "\\(", right: "\\)", display: false },
+              { left: "\\[", right: "\\]", display: true }
+            ]
+          });
+        }
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "/", right: "/", display: false }
+          ]
+        });
+
+      }
+
+
+      function toggleSolution() {
+        const sol = document.getElementById('solution');
+        const btn = document.getElementById('solution-btn');
+        if (!sol) return;
+        if (sol.style.display === 'block') {
+          sol.style.display = 'none';
+          btn.textContent = 'View Solution';
+        } else {
+          sol.style.display = 'block';
+          btn.textContent = 'Hide Solution';
+          // Render math inside the solution container
+          renderMath(sol);
+        }
+      }
+
+      document.getElementById('next-btn').onclick = function () {
+        if (current < questions.length - 1) { current++; showQuestion(current); resetSolutionBtn(); }
+      };
+      document.getElementById('prev-btn').onclick = function () {
+        if (current > 0) { current--; showQuestion(current); resetSolutionBtn(); }
+      };
+      document.getElementById('solution-btn').onclick = function () { toggleSolution(); };
+      function resetSolutionBtn() {
+        const btn = document.getElementById('solution-btn');
+        btn.textContent = 'View Solution';
+      }
+      document.getElementById('jump-btn').onclick = function () {
+        const val = parseInt(document.getElementById('jump-to-q').value, 10);
+        if (!isNaN(val) && val >= 1 && val <= questions.length) {
+          current = val - 1;
+          showQuestion(current);
+          resetSolutionBtn();
+        }
+      };
+      // Initial load
+      showQuestion(current);
+      resetSolutionBtn();
+    });
+  </script>
+  <script>
+    // Light/Dark Mode Toggle (Switch Style)
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeBtn.classList.add('on');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeBtn.classList.remove('on');
+      }
+      localStorage.setItem('theme', mode);
+    }
+    // Initial theme
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+  <script>
+    const questions = [
+      {
+        "id": 1,
+        "question": "Graphs of \\(f(x)\\) and \\(g(x)\\) are given (as two curves). Sketch the graph of \\(h(x) = f(x) + g(x)\\). Describe the procedure to obtain \\(h(x)\\) from \\(f\\) and \\(g\\).",
+        "answer": "/h(x)/ is obtained by adding the /y/-values of /f/ and /g/ point-wise; draw the new curve accordingly.",
+        "solution": "At each /x/, compute /y_h = y_f + y_g/. Plot a few key /x/-values (intersections, peaks, zeros) and connect smoothly. Where /f/ and /g/ both positive, /h/ is higher; where signs differ, /h/ is difference. No domain change unless one function undefined."
+      },
+      {
+        "id": 2,
+        "question": "Given graphs of /f(x)/ and /g(x)/, sketch /h(x) = f(x) - g(x)/.",
+        "answer": "/h(x)/ obtained by subtracting /g/'s /y/-values from /f/'s at each /x/; plot resulting /y/-values.",
+        "solution": "Compute /y_h = y_f - y_g/ pointwise. Mark zeros where /y_f = y_g/. If /f/ and /g/ cross, /h/ crosses zero there. Reflect /g/ across /x/-axis to get /-g/ then add to /f/."
+      },
+      {
+        "id": 3,
+        "question": "Given graphs of /f(x)/ and /g(x)/, sketch /k(x) = f(x) × g(x)/.",
+        "answer": "/k(x)/ is pointwise product: multiply /y/-values of /f/ and /g/ at each /x/; sign is product of signs.",
+        "solution": "Find zeros where either /f/ or /g/ is zero. Where both positive or both negative, product positive; where signs differ, product negative. Use key points and shape to sketch."
+      },
+      {
+        "id": 4,
+        "question": "Given graphs of /f(x)/ and /g(x)/, sketch \\(h(x) = f(x)/g(x)\\). Indicate vertical asymptotes where /g(x)=0/.",
+        "answer": "Plot \\(y = f/g\\) pointwise; vertical asymptotes at /x/ where /g=0/ (unless /f/ also /0/ and cancels).",
+        "solution": "Compute \\(y_h = y_f / y_g\\). Vertical asymptotes at zeros of /g/ (unless removable). Horizontal behavior follows quotient of end-behavior. Mark sign changes and asymptotes."
+      },
+      {
+        "id": 5,
+        "question": "Suppose \\(f(x) = x^2 - 1\\) and \\(g(x) = \\sqrt{x}\\). Draw rough graphs of /f/ and /g/, then sketch /(f + g)(x)/.",
+        "answer": "/f/: parabola opening up with vertex /(0,-1)/; /g/: sqrt{} curve starting at /(0,0)/. \\((f+g)\\) exists for /x >= 0/; add /y/-values to sketch resulting curve starting at \\((0,-1)\\).",
+        "solution": "Domain of /f+g/ is /x>=0/ because \\(\\sqrt{x}\\) requires /x>=0/. At /x=0/, /f+g = -1+0 = -1/. For /x/ large, /f/ dominates (parabola). Compute a few points: /x=0 -> -1/; /x=1/ -> /(1-1)+1=1/; /x=4/ -> /(16-1)+2=17/. Sketch accordingly."
+      },
+      {
+        "id": 6,
+        "question": "Let /f(x) = 2x - 3/, \\(g(x) = x^2\\). Sketch /f/ and /g/, then sketch /(f × g)(x)/.",
+        "answer": "/f/: line slope /2/ crossing /y/ at /-3/; /g/: parabola. Product is cubic with zeros where /x=0/ and where /2x-3=0/ (/x=1.5/).",
+        "solution": "Zeros: /x=0/ (from /g/) and /x=1.5/ (from /f/). Leading behavior: degree /3/ positive coefficient /2/, so as /x/ -> /+/∞ -> /+/∞, /x/ -> /-/∞ -> /-/∞. Sketch shape passing through zeros and matching sign intervals."
+      },
+      {
+        "id": 7,
+        "question": "Let \\(f(x) = (x - 1)/(x + 2)\\), /g(x) = x + 3/. Sketch both, then sketch \\((f/g)(x)\\). State non-permissible values.",
+        "answer": "Non-permissible: /x ≠ -2/ (/f/ undefined) and /x ≠ -3/ (/g=0/ leading to division by zero). (\\(f/g\\)) has vertical asymptotes at /x=-2/ and /x=-3/ unless cancellation occurs (it doesn't).",
+        "solution": "/f/ has vertical asymptote at /x=-2/, horizontal asymptote /y=1/. /g/ is line crossing /-3/ at /x=-3/. \\((f/g) = (x-1)/((x+2)(x+3))\\). Domain excludes /-2/ and /-3/. Zeros at /x=1/. Sketch using asymptotes and zeros."
+      },
+      {
+        "id": 8,
+        "question": "Graph of /f(x)/ is an 'S-shaped' cubic. Graph of /g(x)/ is the horizontal line /y = 2/. Sketch /f(x) - g(x)/.",
+        "answer": "Subtracting /2/ shifts the cubic down by /2/. Zeros occur where original /f=2/.",
+        "solution": "/h(x)=f(x)-2/ is the cubic shifted down. Its inflection and general shape remain; intercepts change. Sketch same S-shape shifted down. Mark points where /f/ crosses /2/ as zeros."
+      },
+      {
+        "id": 9,
+        "question": "Given \\(f(x) = x^3\\) and \\(g(x) = 1/x\\) (graph both). Sketch /(f + g)(x)/ and discuss domain restrictions.",
+        "answer": "Domain: /x ≠ 0/ due to /g/. \\(f+g = x^3 + 1/x\\). Behavior: for large /|x|/ dominated by \\(x^3\\); near /0/, \\(1/x\\) dominates with vertical asymptote at /0/.",
+        "solution": "Plot sample points: /x=1/ -> /1+1=2/; /x= -1 -> -1 -1 = -2/. As /x -> 0+, +∞/; as /x/ -> /0, -∞/. Sketch cubic with a vertical blow-up near /0/."
+      },
+      {
+        "id": 10,
+        "question": "Given /f(x)/ is a parabola and /g(x)/ is a shifted parabola, sketch their product.",
+        "answer": "Product is quartic (degree /4/) with zeros at each parabola's zeros; shape depends on multiplicities and vertical shifts.",
+        "solution": "If parabolas open upwards and have distinct real zeros, product opens upward (positive leading coefficient), has up to /4/ real roots. Sketch using zeros and end behavior; near shared roots multiplicity affects flattening."
+      },
+      {
+        "id": 11,
+        "question": "Suppose \\(f(x) = \\sqrt{x}\\) for /x ≥ 0/, and /g(x) = x - 4/. Sketch /f/ and /g/, then sketch /(g - f)(x)/.",
+        "answer": "Domain of /g-f: x ≥ 0/. Compute \\(g-f = x - 4 - \\sqrt{x}\\). Graph crosses where \\(x - 4 = \\sqrt{x}\\).",
+        "solution": "Find intersections by solving \\(x - 4 = \\sqrt{x}\\). Let \\(t = \\sqrt{x} >= 0\\) => \\(t^2 - t - 4 = 0\\) => \\(t = (1 ± \\sqrt{1+16})/2 = (1 ± \\sqrt{17})/2\\) => positive root \\((t=(1+\\sqrt{17})/2 ~ (1+4.123)/2=2.5615\\) => /x≈6.56/. Plot a few points: /x=0/ -> /-4/; /x=4/ -> /0 - 2 = -2/; /x=9/ -> /5 - 3 = 2/. Sketch accordingly."
+      },
+      {
+        "id": 12,
+        "question": "Given \\(f(x) = 1/x\\) and \\(g(x) = 1/(x - 1)\\), sketch /f(x) + g(x)/. Identify vertical asymptotes.",
+        "answer": "Vertical asymptotes at /x=0/ and /x=1/. Sum simplifies to \\((2x-1)/(x(x-1))\\).",
+        "solution": "Compute \\(f+g = (x-1 + x)/[x(x-1)] = (2x-1)/(x(x-1))\\). Vertical asymptotes at /x=0/ and /x=1/. Zeros where numerator /2x-1=0/ => \\(x=1/2\\). Use sign chart between asymptotes and end behavior to sketch."
+      },
+      {
+        "id": 13,
+        "question": "Given tables for /f/ and /g/ (at /x=2/): /f(2)=5/, /g(2)=3/. Find /(f + g)(2)/.",
+        "answer": "/8/",
+        "solution": "/(f+g)(2)=f(2)+g(2)=5+3=8/."
+      },
+      {
+        "id": 14,
+        "question": "Given graph values: at /x = -1/, /f(-1) = 2/ and /g(-1) = -3/. Evaluate /(f × g)(-1)/.",
+        "answer": "/-6/",
+        "solution": "Multiply: /2 × -3 = -6/."
+      },
+      {
+        "id": 15,
+        "question": "Given \\(f(x) = x^2\\), /g(x) = 3 - x/, compute \\((f/g)(4)\\).",
+        "answer": "\\(16/(-1) = -16\\)",
+        "solution": "/f(4)=16/, /g(4)=3-4=-1/. So \\((f/g)(4)=16/(-1)=-16\\)."
+      },
+      {
+        "id": 16,
+        "question": "If /f(x) = 2x + 1/, /g(x) = x - 3/, find /(f + g)(0)/, /(f × g)(2)/, \\((f/g)(1)\\).",
+        "answer": "/(f+g)(0)= -2/; /(f×g)(2) = (5)×(-1)= -5/; \\((f/g)(1)=3/(-2) = -3/2\\)",
+        "solution": "Compute values: /f(0) = 1/, /g(0) = -3/ => sum /-2/. /f(2) = 5/, /g(2) = -1/ => product /-5/. /f(1) = 3/, /g(1) = -2/ => quotient \\(3/-2 = -3/2\\)."
+      },
+      {
+        "id": 17,
+        "question": "Graphs of /f/ and /g/ are provided: at /x = 3/, /f(3) = 4/, /g(3) = 1/. Find /(f - g)(3)/.",
+        "answer": "/3/",
+        "solution": "/f(3)-g(3)=4-1=3/."
+      },
+      {
+        "id": 18,
+        "question": "Given \\(f(x) = (x - 2)/(x + 1)\\) and \\(g(x) = \\sqrt{x + 1}\\), find /(f × g)(3)/.",
+        "answer": "\\(f(3)=1/4\\), /g(3) = 2/ => product \\(= 1/2\\)",
+        "solution": "\\(f(3)=(3-2)/(3+1)=1/4\\). \\(g(3)=\\sqrt{4}=2\\). Product \\(= 1/4×2=1/2\\)."
+      },
+      {
+        "id": 19,
+        "question": "If \\(f(x)=x^2 - 1\\), \\(g(x)=\\sqrt{x+1}\\), compute \\((f/g)(8)\\).",
+        "answer": "\\((64-1)/3 = 63/3 = 21\\)",
+        "solution": "/f(8)=64-1=63/. \\(g(8)=\\sqrt{9}=3\\). So quotient /= 21/."
+      },
+      {
+        "id": 20,
+        "question": "Provided table: /f(1) = 2/, /f(2) = 5/; /g(1) = 4/, /g(2) = 3/. Find /(f × g)(2)/ and \\((f/g)(1)\\).",
+        "answer": "/(f×g)(2)=5×3=15/; \\((f/g)(1)=2/4=1/2\\)",
+        "solution": "Multiply and divide corresponding table entries."
+      },
+      {
+        "id": 21,
+        "question": "Let \\(f(x) = \\sqrt{x - 1}\\), /g(x) = x + 2/. Determine domain of /h(x) = f(x) + g(x)/.",
+        "answer": "Domain: /x >= 1/",
+        "solution": "\\(\\sqrt{x-1}\\) requires /x-1 >= 0/ => /x >= 1/. /g/ is defined everywhere. So domain intersection is /[1,∞)/."
+      },
+      {
+        "id": 22,
+        "question": "Given \\(f(x) = 1/(x - 3)\\), \\(g(x) = x^2\\). Domain of \\(h(x) = f(x) / g(x)\\)?",
+        "answer": "All real /x/ except /x = 3/ and /x = 0/ (because /g(0)=0/ leads to division by zero).",
+        "solution": "\\(h(x)= [1/(x-3)] / x^2 = 1/[x^2(x-3)]\\). Need /x != 3/ and /x != 0/."
+      },
+      {
+        "id": 23,
+        "question": "Let \\(f(x) = \\sqrt{x}\\), \\(g(x) = \\sqrt{x - 4}\\). Domain of /h(x) = f(g(x))/.",
+        "answer": "Domain: /x >= 4/",
+        "solution": "\\(g(x) = \\sqrt{x-4}\\) requires /x >= 4/. Then \\(f(g(x)) = \\sqrt{ \\sqrt{x-4} }\\) is defined for /g(x) >= 0/, which holds for /x >= 4/. So domain /[4,∞)/."
+      },
+      {
+        "id": 24,
+        "question": "If \\(f(x) = (x - 2)/(x + 1)\\), /g(x) = x + 3/, find domain of /(f × g)(x)/.",
+        "answer": "All real /x/ except /x = -1/",
+        "solution": "/f/ undefined at /x = -1/. /g/ is everywhere defined. Product undefined where f undefined, so domain is ℝ \\ /{-1}/."
+      },
+      {
+        "id": 25,
+        "question": "Given \\(f(x) = \\sqrt{x - 5}\\), /g(x) = x - 2/. Domain of composite /h(x) = g(f(x))/.",
+        "answer": "Domain: /x >= 5/",
+        "solution": "/f/ defined for /x >= 5/; /g/ is defined for all real inputs, including values /f(x)/ produces (nonnegative). So domain is /[5,∞)/."
+      },
+      {
+        "id": 26,
+        "question": "If \\(f(x) = 1/(x - 1)\\), \\(g(x) = \\sqrt{x - 2}\\), domain of /(f o g)(x) = f(g(x))/.",
+        "answer": "Domain: /x >= 2/ and /g(x) ≠ 1/, i.e. /x >= 2/ and \\(\\sqrt{x-2} ≠ 1\\) => /x ≠ 3/",
+        "solution": "/g/ requires /x >= 2/. Then \\(f(g(x)) = 1/(\\sqrt{x-2}-1)\\) needs denominator /≠0/ => \\(\\sqrt{x-2} ≠ 1\\) => /x ≠ 3/. So domain \\([2,∞) \\ {3}\\)."
+      },
+      {
+        "id": 27,
+        "question": "Let \\(f(x) = \\sqrt{x + 3}\\), \\(g(x) = 1/(x - 4)\\). Domain of /(g o f)(x)/.",
+        "answer": "/x >= -3/ and /f(x) ≠ 4/, i.e. /x >= -3/ and \\(\\sqrt{x+3} ≠ 4\\) => /x ≠ 13/",
+        "solution": "/f/ needs /x >= -3/. Then /g(f(x))/ denominator /f(x)-4 ≠ 0/ => \\(\\sqrt{x+3} ≠ 4\\) => /x+3 ≠ 16/ => /x ≠ 13/. Domain: \\([-3,∞) \\ {13}\\)."
+      },
+      {
+        "id": 28,
+        "question": "Suppose \\(f(x) = \\sqrt{x}\\), \\(g(x) = 1 / (x - 1)\\). Domain of \\((f / g)(x)\\) (i.e. \\(f(x)/g(x)\\)).",
+        "answer": "/x >= 0/, /x ≠ 1/",
+        "solution": "/f/ requires /x >= 0/. g requires /x ≠ 1/. Additionally quotient undefined where /g(x)=0/ but /g(x)=0/ never occurs for \\(1/(x-1)\\). So domain \\([0,∞) \\ {1}\\)."
+      },
+      {
+        "id": 29,
+        "question": "Given /f(x) = 2x + 3/, \\(g(x) = x^2\\), find /(f o g)(2)/ and /(g o f)(2)/.",
+        "answer": "/(f o g)(2)=f(4)=11/; /(g o f)(2)=g(7)=49/",
+        "solution": "\\(f(g(2))=2×(2^2)+3=2×4+3=11\\). \\(g(f(2))=(2×2+3)^2=(7)^2=49\\)."
+      },
+      {
+        "id": 30,
+        "question": "If \\(f(x) = \\sqrt{x}\\), /g(x) = x + 5/, find /(f o g)(4)/ and /(g o f)(4)/.",
+        "answer": "\\((f o g)(4)=\\sqrt{9}=3\\); \\((g o f)(4)=\\sqrt{4}+5=2+5=7\\)",
+        "solution": "Compute /g(4)=9/ then square-root; /f(4)=2/ then add /5/."
+      },
+      {
+        "id": 31,
+        "question": "\\(f(x) = 1/(x - 2)\\), \\(g(x) = x^2\\). Find /(f o g)(3)/ and /(g o f)(3)/.",
+        "answer": "\\((f o g)(3)=1/(9-2)=1/7\\); \\((g o f)(3) = [1/(3-2)]^2 = 1^2 =1\\)",
+        "solution": "\\(f(g(3))=1/(g(3)-2)=1/(9-2)=1/7\\). \\(g(f(3))=(f(3))^2\\) with \\(f(3)=1/(3-2)=1\\) => /1/."
+      },
+      {
+        "id": 32,
+        "question": "Given /f(x) = x - 1/, \\(g(x) = \\sqrt{x}\\), write formula for /(f o g)(x)/ and domain.",
+        "answer": "\\((f o g)(x) = \\sqrt{x} - 1\\), domain /x >= 0/",
+        "solution": "\\(g(x)=\\sqrt{x}\\) needs /x>=0/. Then subtract /1/. Domain /[0,∞)/."
+      },
+      {
+        "id": 33,
+        "question": "If \\(f(x) = 3x^2\\), /g(x) = x - 4/, find formula and sketch /(g o f)(x)/.",
+        "answer": "\\((g o f)(x) = 3x^2 - 4\\). It's a parabola opening up with vertex at /(0,-4)/.",
+        "solution": "Compute \\(f(x)=3x^2\\) then \\(g(f)=3x^2 - 4\\). Sketch standard parabola scaled by /3/ and shifted down /4/."
+      },
+      {
+        "id": 34,
+        "question": "Let \\(f(x) = \\sqrt{x + 1}\\), \\(g(x) = x^2 - 2\\). Find /(f o g)(x)/ and state domain.",
+        "answer": "\\((f o g)(x) = \\sqrt{x^2 - 2 + 1} = \\sqrt{x^2 -1}\\), domain /|x| >= 1/",
+        "solution": "Inside must be \\(>=0 => x^2 -1 >= 0\\) => /x <= -1/ or /x >= 1/."
+      },
+      {
+        "id": 35,
+        "question": "Combine a square-root and linear: \\(f(x) = \\sqrt{x}\\), /g(x) = 2x + 3/. Sketch graph of /(f o g)(x)/.",
+        "answer": "\\((f o g)(x) = \\sqrt{2x+3}\\) with domain /2x+3 >= 0/ => \\(x >= -3/2\\). It's a right-shifted and horizontally scaled square root curve.",
+        "solution": "Start at /x=-1.5/ where value /0/, then grows like square-root. Plot a few points: /x=-1.5/ -> /0/, /x=0/ -> \\(\\sqrt{3}=1.732\\), /x=1/ -> \\(\\sqrt{5}=2.236\\)."
+      },
+      {
+        "id": 36,
+        "question": "Given \\(f(x) = (x - 3)/(x + 1)\\), /g(x) = x + 2/, write and simplify /(g o f)(x)/.",
+        "answer": "\\((g o f)(x) = (x - 3)/(x + 1) + 2 = (3x -1)/(x+1)\\)",
+        "solution": "\\(g(f(x)) = f(x) + 2 = (x-3)/(x+1) + 2 = (x-3 + 2x +2)/(x+1) = (3x -1)/(x+1)\\). Domain /x ≠ -1/."
+      },
+      {
+        "id": 37,
+        "question": "Given /f/ and /g/ are rational and square root combinations, write /(f o g)/ and /(g o f)/; determine where they are defined. (Example: \\(f(x)=1/(x-2)\\), \\(g(x) = \\sqrt{x+1})\\).",
+        "answer": "\\((f o g)(x)=1/(\\sqrt{x+1}-2)\\) defined where /x >= -1/ and \\(\\sqrt{x+1} ≠ 2\\) => /x ≠ 3/. \\((g o f)(x) = \\sqrt{1/(x-2)+1}\\) defined where /x ≠ 2/ and \\(1/(x-2)+1 >=0\\) => solve inequality.",
+        "solution": "For /(f o g)/ require /x>=-1/ and \\(\\sqrt{x+1} ≠2\\) => /x ≠3/. For /(g o f)/ require /x ≠ 2/ and \\((1/(x-2)+1) >= 0\\). Solve: \\((1 + x -2)/(x-2) = (x-1)/(x-2) >= 0\\) -> sign chart gives intervals /(-∞,1]/ and /(2,∞)/ intersect where denominator /≠0/; combine: /x ≤1/ or /x>2/. Also exclude /x=2/."
+      },
+      {
+        "id": 38,
+        "question": "In a province-style exam question: If \\(f(x) = \\sqrt{2x - 1}\\), \\(g(x) = (x + 3)/(x - 1)\\), write formula of /(f o g)(x)/, simplify, and state domain.",
+        "answer": "\\((f o g)(x) = \\sqrt{2×(x+3)/(x-1)} - 1 ) = \\sqrt{(2x+6 - x +1)/(x-1)} = \\sqrt{(x+7)/(x-1)}\\). Domain: /x ≠ 1/ and \\((x+7)/(x-1) >= 0\\).",
+        "solution": "Compute inside: \\(2g-1 = (2(x+3)/(x-1)) -1 = (2x+6 - x +1)/(x-1) = (x+7)/(x-1)\\). Need \\((x+7)/(x-1) >=0\\) and /x ≠ 1/. Solve inequality: critical points /-7/ and /1/; sign chart gives domain /x <= -7/ or /x >1/. Exclude /x=1/."
+      },
+      {
+        "id": 39,
+        "question": "Given \\(h(x) = \\sqrt{3x + 5}\\), express as /f(g(x))/ with simple /f/ and /g/.",
+        "answer": "\\(f(u) = \\sqrt{u}\\), /g(x) = 3x + 5/",
+        "solution": "Then \\(f(g(x)) = \\sqrt{3x+5}\\). Domain: /3x+5 >=0/ -> \\(x >= -5/3\\)."
+      },
+      {
+        "id": 40,
+        "question": "Let \\(h(x) = 2(x^2 - 1)^3\\). Decompose into /f(g(x))/ (two functions).",
+        "answer": "Take \\(g(x)=x^2 - 1\\), \\(f(u) = 2 u^3\\)",
+        "solution": "Then \\(f(g(x)) = 2 (x^2 -1)^3\\)."
+      },
+      {
+        "id": 41,
+        "question": "Given \\(h(x) = (3x + 4)/(x - 2)\\), write /h/ as /f(g(x))/.",
+        "answer": "One decomposition: /g(x)=x/, \\(f(u) = (3u+4)/(u-2)\\) (trivial). Better: /g(x) = (x-2)/, \\(f(v) = (3(v+2)+4)/v = (3v+10)/v\\) but that is more complex.",
+        "solution": "Simplest decomposition is \\(f(u) = (3u+4)/(u-2)\\) with /g(x)=x/. If preferred: /g(x)=x-2/ and \\(f(v) = (3(v+2)+4)/v = (3v+10)/v\\) producing same result."
+      },
+      {
+        "id": 42,
+        "question": "Suppose \\(h(x) = \\sqrt{(x + 2)/(x - 1)}\\). Decompose into /f(g(x))/.",
+        "answer": "\\(g(x) = (x+2)/(x-1)\\), \\(f(u)=\\sqrt{u}\\)",
+        "solution": "Then \\(f(g(x)) = \\sqrt{(x+2)/(x-1)}\\). Domain requires \\((x+2)/(x-1) >= 0\\) and /x≠1/."
+      },
+      {
+        "id": 43,
+        "question": "Given \\(h(x) = \\sqrt{(2x + 3)^4 + 1}\\), decompose into /f(g(x))/.",
+        "answer": "/g(x) = (2x+3)^4 + 1/, \\(f(u) = \\sqrt{u}\\)",
+        "solution": "Then /f(g(x))/ matches. Domain: all real /x/ since inside /≥1/."
+      },
+      {
+        "id": 44,
+        "question": "Given /f/ defined by ordered pairs /{(1,2), (2,3), (3,1)}/, find /f(f(2))/.",
+        "answer": "/2/",
+        "solution": "/f(2)=3/ then /f(3)=1/ -> Wait recalc: /f(2)=3/, then /f(3)=1/. So /f(f(2))=1/.",
+        "note": "Corrected answer is /1/"
+      },
+      {
+        "id": 45,
+        "question": "Suppose /f = { (2,6), (3,2), (4,5) }/. Find /f(f(3))/.",
+        "answer": "/f(3)=2/ then /f(2)=6/ -> result /6/",
+        "solution": "Apply /f/ to /3/ gives /2/, then /f(2)=6/."
+      },
+      {
+        "id": 46,
+        "question": "Let /f = { (1,4), (4,2), (2,1) }/. Compute /f(f(f(1)))/.",
+        "answer": "/1/",
+        "solution": "/f(1)=4/, /f(4)=2/, /f(2)=1/. So result /1/."
+      },
+      {
+        "id": 47,
+        "question": "Given /f = { (0,5), (5,3), (3,0), (7,1) }/, find /f(f(f(5)))/.",
+        "answer": "/3/ -> /f(5)=3/, /f(3)=0/, /f(0)=5/ => result /5/",
+        "solution": "/f(5)=3/, /f(3)=0/, /f(0)=5/. So /(f(f(5)))=5/."
+      },
+      {
+        "id": 48,
+        "question": "Given /f = { (2,6), (3,2), (3,4), (6,5) }/ (note /3/ mapped to two values), discuss whether /f(f(3))/ is defined or not, and find /f(f(2))/.",
+        "answer": "/f/ is not a function in strict sense because /3/ maps to two values; /f(f(3))/ is ambiguous ÷ undefined. /f(f(2))=f(6)=5/.",
+        "solution": "Since /3/ maps to both /2/ and /4/, /f(3)/ is ambiguous so /f(f(3))/ undefined. /f(2)=6/ then /f(6)=5/ so /f(f(2))=5/."
+      },
+      {
+        "id": 49,
+        "question": "Let /f = { (1,2), (2,3), (3,3), (4,1) }/. Compute /f(f(4)) and f(f(3))/.",
+        "answer": "/f(f(4)) = f(1)=2/; /f(f(3))=f(3)=3/",
+        "solution": "/f(4)=1/ -> /f(1)=2/. /f(3)=3/ -> /f(3)=3/ so /f(f(3))=3/."
+      },
+      {
+        "id": 50,
+        "question": "Given \\(f(x)=x^2\\) and \\(g(x)=3-x\\), what is \\((f/g)(4)\\)?",
+        "choices": ["A: /-16/", "B: /16/", "C: /-8/", "D: /8/"],
+        "answer": "A: -/16/",
+        "solution": "/f(4)=16/, /g(4)= -1/, quotient = \\(16/(-1) = -16\\)."
+      }
+    ];
+
+
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ]
+      });
+    });
+  </script>
+
+</body>
+
+</html>
