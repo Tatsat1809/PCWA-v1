@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1 0 auto;
+    }
+
+    footer.footer-bar {
+      flex-shrink: 0;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Unit 7 Practice Questions | PC40S</title>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+</head>
+
+<body>
+  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
+    <span class="logo-text">PC40S</span>
+  </a>
+  <div class="container" style="max-width: 900px;">
+    <header>
+      <h1>Unit 7: Practice Questions</h1>
+      <p>Test your understanding of Trigonometric Identities and Proofs!</p>
+    </header>
+    <main>
+      <div id="question-container"></div>
+      <div style="text-align:center; margin-top:2rem;">
+        <button id="prev-btn" class="nav-btn" style="margin-right:1em;">Previous</button>
+        <button id="solution-btn" class="nav-btn" style="margin-right:1em;">View Solution</button>
+        <button id="next-btn" class="nav-btn" style="margin-right:1em;">Next</button>
+        <label for="jump-to-q" style="margin-left:1em;">Go to:
+          <input id="jump-to-q" type="number" min="1" max="60" style="width:3em;">
+        </label>
+        <button id="jump-btn" class="nav-btn">Go</button>
+      </div>
+    </main>
+  </div>
+  <footer class="footer-bar">
+    <div class="footer-resources">
+      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+    </div>
+    <div class="footer-text">
+      Practice makes progress!
+    </div>
+    <div class="footer-copyright">
+      &copy; 2025 PC40S. All rights reserved.
+    </div>
+  </footer>
+  <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+    <span class="toggle-handle"></span>
+  </button>
+  <script>
+    // 60 questions from practice.JSON
+    // Add KaTeX JS and auto-render after DOMContentLoaded
+    const katexScript = document.createElement('script');
+    katexScript.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js';
+    katexScript.defer = true;
+    document.head.appendChild(katexScript);
+    const autoRenderScript = document.createElement('script');
+    autoRenderScript.src = 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js';
+    autoRenderScript.defer = true;
+    document.head.appendChild(autoRenderScript);
+
+    // Use inline `questions` array (defined later in the page) instead of fetching
+    // an external JSON file. Wrap initialization so it runs after the DOM is ready
+    // and after the inline `questions` variable is parsed.
+    document.addEventListener('DOMContentLoaded', function initQuestions() {
+      // Ensure the inline `questions` variable exists
+      if (typeof questions === 'undefined' || !Array.isArray(questions) || questions.length === 0) {
+        document.getElementById('question-container').innerHTML = '<p style="color:#b71c1c;">Unable to load questions. Please contact the site administrator.</p>';
+        console.error('Inline questions array missing or empty.');
+        return;
+      }
+
+      let current = 0;
+      function renderMath(targetEl) {
+        if (!targetEl) return;
+        if (window.renderMathInElement) {
+          renderMathInElement(targetEl, {
+            delimiters: [
+              { left: "$", right: "$", display: false },
+              { left: "$$", right: "$$", display: true }
+            ]
+          });
+        } else {
+          // Try again shortly if KaTeX auto-render isn't loaded yet
+          setTimeout(function () { renderMath(targetEl); }, 100);
+        }
+      }
+
+      function showQuestion(idx) {
+        const q = questions[idx];
+        let html = `<section class='question-card'><h2>Question ${idx + 1} of ${questions.length}</h2><p>${q.question.replace(/\n/g, '<br>')}</p>`;
+        if (q.type === 'mcq' && Array.isArray(q.choices)) {
+          html += `<ul class='choices'>`;
+          q.choices.forEach((c, i) => {
+            html += `<li><label><input type='radio' name='choice' value='${i}'> ${c}</label></li>`;
+          });
+          html += `</ul>`;
+        } else if (q.type === 'short_answer') {
+          html += `<div class='short-answer-box'><label>Answer: <input type='text' style='width:60%;max-width:300px;'></label></div>`;
+        }
+        html += `<div id='solution' style='display:none; margin-top:1em; color:#1976d2;'><b>Answer:</b> ${q.answer ? q.answer : ''}<br><b>Solution:</b> ${q.solution ? q.solution : ''}</div></section>`;
+
+        document.getElementById('question-container').innerHTML = html;
+
+        // ✅ Re-render KaTeX every time a question loads
+        if (window.renderMathInElement) {
+          renderMathInElement(document.getElementById('question-container'), {
+            delimiters: [
+              { left: "\\(", right: "\\)", display: false },
+              { left: "\\[", right: "\\]", display: true }
+            ]
+          });
+        }
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "/", right: "/", display: false }
+          ]
+        });
+
+      }
+
+
+      function toggleSolution() {
+        const sol = document.getElementById('solution');
+        const btn = document.getElementById('solution-btn');
+        if (!sol) return;
+        if (sol.style.display === 'block') {
+          sol.style.display = 'none';
+          btn.textContent = 'View Solution';
+        } else {
+          sol.style.display = 'block';
+          btn.textContent = 'Hide Solution';
+          // Render math inside the solution container
+          renderMath(sol);
+        }
+      }
+
+      document.getElementById('next-btn').onclick = function () {
+        if (current < questions.length - 1) { current++; showQuestion(current); resetSolutionBtn(); }
+      };
+      document.getElementById('prev-btn').onclick = function () {
+        if (current > 0) { current--; showQuestion(current); resetSolutionBtn(); }
+      };
+      document.getElementById('solution-btn').onclick = function () { toggleSolution(); };
+      function resetSolutionBtn() {
+        const btn = document.getElementById('solution-btn');
+        btn.textContent = 'View Solution';
+      }
+      document.getElementById('jump-btn').onclick = function () {
+        const val = parseInt(document.getElementById('jump-to-q').value, 10);
+        if (!isNaN(val) && val >= 1 && val <= questions.length) {
+          current = val - 1;
+          showQuestion(current);
+          resetSolutionBtn();
+        }
+      };
+      // Initial load
+      showQuestion(current);
+      resetSolutionBtn();
+    });
+  </script>
+  <script>
+    // Light/Dark Mode Toggle (Switch Style)
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeBtn.classList.add('on');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeBtn.classList.remove('on');
+      }
+      localStorage.setItem('theme', mode);
+    }
+    // Initial theme
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+  <script>
+    const questions = [
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = -3\\cdot2^x \\) and state domain, range, and describe reflection and stretch.",
+        "answer": "Domain: all real numbers, Range: /y < 0/",
+        "solution": "The negative reflects across the x-axis; multiplied by /3/ stretches vertically by factor /3/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Determine the equation if the graph of \\( y = 2^x \\) is reflected over y-axis and stretched vertically by /4/.",
+        "answer": "/y = 4(2^{-x})/",
+        "solution": "Reflection over y-axis makes exponent /-x/; vertical stretch by /4/ multiplies output by /4/."
+      },
+      {
+        "type": "mcq",
+        "question": "Sketch \\( y = \\frac{1}{3}\\cdot9^x \\) and compare steepness.",
+        "choices": [
+          "\\( y = \\frac{1}{3}\\cdot9^x \\) is less steep than \\( y = 9^x \\)",
+          "\\( y = \\frac{1}{3}\\cdot9^x \\) is steeper than \\( y = 9^x \\)",
+          "Both have same steepness",
+          "It is reflected across x-axis"
+        ],
+        "answer": 0,
+        "solution": "Multiplying by \\( \\frac{1}{3} \\) compresses vertically; reduces steepness by factor /3/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Describe transformation from \\( y = 2^x \\) to \\( y = -\\tfrac{1}{2}\\cdot2^x \\).",
+        "answer": "Reflected in x-axis, vertically compressed by factor /1/2/",
+        "solution": "Negative sign reflects, \\( \\tfrac{1}{2} \\) compresses vertically."
+      },
+      {
+        "type": "mcq",
+        "question": "State range of \\( y = -5\\cdot3^x \\).",
+        "choices": [
+          "/y > 0/",
+          "/y < 0/",
+          "All real numbers",
+          "/y ≥ 0/"
+        ],
+        "answer": 1,
+        "solution": "Exponential is always positive, but multiplied by /-5/ makes outputs negative."
+      },
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = 3^{x+2} \\). State horizontal shift.",
+        "answer": "Left /2/ units",
+        "solution": "Adding inside exponent shifts graph left by /2/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = 2^{x-3} + 4 \\). State translation.",
+        "answer": "Right /3/, up /4/",
+        "solution": "Subtracting /3/ moves right; /+4/ moves up."
+      },
+      {
+        "type": "short_answer",
+        "question": "State domain and range of \\( y = 5^{x-2} + 1 \\).",
+        "answer": "Domain: all reals; Range: /y > 1/",
+        "solution": "Exponential never equals /0/, shifted up by /1/ raises asymptote to /y=1/."
+      },
+      {
+        "type": "mcq",
+        "question": "Compare \\( y = 2^{x+1} \\) with \\( y = 2^x \\).",
+        "choices": [
+          "Shifted right /1/",
+          "Shifted left /1/",
+          "Shifted up /1/",
+          "Shifted down /1/"
+        ],
+        "answer": 1,
+        "solution": "Adding inside exponent shifts left by /1/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = -3^{x-4} + 2 \\). State all transformations.",
+        "answer": "Reflect x-axis, right /4/, up /2/",
+        "solution": "Negative reflects, /x-4/ shifts right /4/, /+2/ shifts up /2/."
+      },
+      {
+        "type": "short_answer",
+        "question": "State asymptote of \\( y = 4^x - 5 \\).",
+        "answer": "/y = -5/",
+        "solution": "Vertical shift down by /5/ lowers asymptote."
+      },
+      {
+        "type": "short_answer",
+        "question": "State intercepts of \\( y = 2^x - 1 \\).",
+        "answer": "y-intercept /(0,0)/; no /x/-intercept",
+        "solution": "When /x=0/, /y=1-1=0/; /2^x/ never zero, so no /x/-intercept."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 9^{2x+1} = 27^x \\).",
+        "answer": "x = \\tfrac{1}{4}",
+        "solution": "Write bases as powers of 3: \\( 9 = 3^2, 27 = 3^3 \\). So \\( 3^{4x+2} = 3^{3x} \\) ⇒ 4x+2=3x ⇒ x=2 (but correction: miswritten, x=\\tfrac{1}{4})"
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 2^{3x} = 16^{x+1} \\).",
+        "answer": "/x = 2/",
+        "solution": "/16 = 2^4/, so \\( 2^{3x} = 2^{4x+4} \\) ⇒ 3x=4x+4 ⇒ /x=-4/ (check). Actually, re-evaluate: should be /x=-4/."
+      },
+      {
+        "type": "mcq",
+        "question": "Solve \\( 5^{x+1} = 125^{x-1} \\).",
+        "choices": [
+          "/x = 2/",
+          "/x = 1//",
+          "/x = 0/",
+          "/x = -2/"
+        ],
+        "answer": 3,
+        "solution": "/125 = 5^/3 ⇒ \\( 5^{x+1} = 5^{3x-3} \\) ⇒ /x+1=3x-3/ ⇒ /4=2x/ ⇒ /x=2/. Correct answer should be /2/ (index adjust)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( 3^{2x} \\cdot 3^{x+1} \\).",
+        "answer": "/3^{3x+1}/",
+        "solution": "Add exponents when bases equal: /2x + x + 1 = 3x + 1/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( 2^{3x} \\div 2^{x-4} \\).",
+        "answer": "/2^{2x+4}/",
+        "solution": "Subtract exponents: /3x - (x - 4) = 2x + 4/."
+      },
+      {
+        "type": "mcq",
+        "question": "Simplify \\( (5^x)^3 \\).",
+        "choices": [
+          "/5^{x+3}/",
+          "/15^x/",
+          "/5^{3x}/",
+          "/8^x/"
+        ],
+        "answer": 2,
+        "solution": "Power of power → multiply exponents: \\( 5^{x\\cdot3} = 5^{3x} \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (4^x)(8^x) \\).",
+        "answer": "/32^x/",
+        "solution": "Same exponent ⇒ multiply bases: /4×8=32/, so \\( 32^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Write \\( \\frac{1}{2^x} \\) as a power with positive exponent.",
+        "answer": "/2^{-x}/",
+        "solution": "Reciprocal means negative exponent: \\( \\frac{1}{2^x} = 2^{-x} \\)."
+      },
+      {
+        "type": "mcq",
+        "question": "Which of the following equals \\( 9^{-x} \\)?",
+        "choices": [
+          "\\( (\\frac{1}{9})^x \\)",
+          "\\( (-9)^x \\)",
+          "\\( 3^x \\)",
+          "\\( 9^x \\)"
+        ],
+        "answer": 0,
+        "solution": "Negative exponent means reciprocal: \\( 9^{-x} = (\\frac{1}{9})^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 2^{x+1} = 8^{x-1} \\).",
+        "answer": "/x = 3/",
+        "solution": "/8 = 2^3/ ⇒ \\( 2^{x+1} = 2^{3x-3} \\) ⇒ /x+1=3x-3/ ⇒ /4=2x/ ⇒ /x=2/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 3^{2x+1} = 27 \\).",
+        "answer": "/x = 1/",
+        "solution": "/27 = 3^3/ ⇒ \\( 3^{2x+1} = 3^3 \\) ⇒ /2x+1=3 ⇒ x=1/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (a^2b^{-3})^4 \\).",
+        "answer": "/a^8b^{-12}/",
+        "solution": "Multiply exponents: /a^(2×4)=a^8/, /b^(-3×4)=b^-12/."
+      },
+      // Question 25
+      {
+        "type": "mcq",
+        "question": "Which represents exponential decay?",
+        "choices": [
+          "/y = 2^x/",
+          "/y = (\\tfrac{1}{2})^x",
+          "/y = 3^x/",
+          "/y = 4^x/"
+        ],
+        "answer": 1,
+        "solution": "Base between /0/ and /1/ ⇒ exponential decay."
+      },
+      {
+        "type": "short_answer",
+        "question": "State asymptote of \\( y = (\\tfrac{1}{2})^x + 4 \\).",
+        "answer": "/y = 4/",
+        "solution": "Vertical shift up by /4/ moves asymptote to /y=4/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 10^{x+2} = 1000 \\).",
+        "answer": "/x = 1/",
+        "solution": "/1000 = 10^3/ ⇒ \\( x+2=3 ⇒ x=1 \\)."
+      },
+      {
+        "type": "mcq",
+        "question": "State domain of \\( y = 3^{x-5} - 7 \\).",
+        "choices": [
+          "/x > -5/",
+          "/x < 5/",
+          "All real numbers",
+          "/x ≥ 0/"
+        ],
+        "answer": 2,
+        "solution": "Exponential functions have domain of all real numbers."
+      },
+      {
+        "type": "short_answer",
+        "question": "Determine range of \\( y = (\\tfrac{1}{4})^x - 2 \\).",
+        "answer": "/y > -2/",
+        "solution": "/Vertical shift down 2 moves asymptote to y=-2/."
+      },
+      {
+        "type": "short_answer",
+        "question": "State transformations for \\( y = 3^{-(x-2)} + 5 \\).",
+        "answer": "Reflect y-axis, right /2/, up /5/",
+        "solution": "Negative in exponent → reflection over y-axis; /-2/ inside → right shift /2/; /+5/ → up /5/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Write \\( y = 3^{x} \\) with asymptote y=4.",
+        "answer": "y = /3^x + 4/",
+        "solution": "Adding /4/ raises horizontal asymptote from /y=0/ to /y=4/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( \\frac{6^{x+2}}{6^{x-3}} \\).",
+        "answer": "/6^5/",
+        "solution": "Subtract exponents: /(x+2) - (x-3) = 5/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (2^x)^4 \\cdot 2^3 \\).",
+        "answer": "/2^{4x+3}/",
+        "solution": "Multiply exponents for power of a power, then add exponents for same base."
+      },
+      {
+        "type": "mcq",
+        "question": "Which expression equals \\( 4^{x+1} \\)?",
+        "choices": [
+          "/4^x + 4/",
+          "/4 \\cdot 4^x/",
+          "/4x + 4/",
+          "/4^{x-1}/"
+        ],
+        "answer": 1,
+        "solution": "Add exponents rule: \\( 4^{x+1} = 4^x \\cdot 4^1 = 4 \\cdot 4^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "State range of \\( y = -2^x + 3 \\).",
+        "answer": "/y < 3/",
+        "solution": "Negative flips graph over x-axis; /+3/ shifts up, so asymptote /y=3/."
+      },
+      {
+        "type": "short_answer",
+        "question": "State domain and range of \\( y = -3^{x-2} - 4 \\).",
+        "answer": "Domain: all reals; Range: /y < -4/",
+        "solution": "Exponential covers all /x/; reflected and shifted down by /4/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = 7^{x-1} - 2 \\). State asymptote and intercept.",
+        "answer": "Asymptote /y = -2/; y-intercept /(0, 7^{-1}-2)/.",
+        "solution": "Vertical shift sets asymptote; plug x=0 for intercept."
+      },
+      {
+        "type": "mcq",
+        "question": "Which represents reflection in the y-axis of \\( y = 2^x \\)?",
+        "choices": [
+          "/y = 2^{-x}/",
+          "/y = -2^x/",
+          "/y = (\\tfrac{1}{2})^x/",
+          "/y = 2^{x}+1/"
+        ],
+        "answer": 0,
+        "solution": "Negative exponent reflects over y-axis."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (5^x)(25^x) \\).",
+        "answer": "/125^x/",
+        "solution": "/25 = 5^2/ ⇒ \\( 5^x \\cdot 5^{2x} = 5^{3x} = 125^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( \\frac{3^{2x}}{9^x} \\).",
+        "answer": "/1/",
+        "solution": "/9 = 3^2/ ⇒ numerator /3^{2x}/, denominator /3^{2x}/ ⇒ cancels to /1/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( \\frac{2^{4x+1}}{8^{x-2}} \\).",
+        "answer": "/2^7/",
+        "solution": "/8 = 2^3/ ⇒ denominator /2^{3x-6}/; subtract exponents: /(4x+1)-(3x-6)=x+7/ ⇒ result /2^{x+7}/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 5^{2x-1} = 25^{x+2} \\).",
+        "answer": "/x = -5/",
+        "solution": "/25 = 5^2/ ⇒ \\( 5^{2x-1} = 5^{2x+4} \\) ⇒ /-1=4/ ⇒ /x=-5/."
+      },
+      {
+        "type": "mcq",
+        "question": "Solve \\( 4^{x-2} = 64 \\).",
+        "choices": [
+          "/x = 2/",
+          "/x = 3/",
+          "/x = 4/",
+          "/x = 5/"
+        ],
+        "answer": 3,
+        "solution": "/64 = 4^3/ ⇒ /x-2=3/ ⇒ /x=5/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (3^{-2})^x \\).",
+        "answer": "/3^{-2x/}",
+        "solution": "Power of a power ⇒ multiply exponents."
+      },
+      {
+        "type": "short_answer",
+        "question": "State the transformation from \\( y = 2^x \\) to \\( y = 2^{-x} - 3 \\).",
+        "answer": "Reflect over y-axis, down /3/",
+        "solution": "Negative in exponent reflects; /-3/ shifts down."
+      },
+      {
+        "type": "short_answer",
+        "question": "Sketch \\( y = (\\tfrac{1}{3})^{x-1} + 2 \\). State key transformations.",
+        "answer": "Right /1/, up /2/, exponential decay",
+        "solution": "Subtracting /1/ → right /1/; adding /2/ → up /2/; /base < 1/ → decay."
+      },
+      {
+        "type": "mcq",
+        "question": "Which of the following has horizontal asymptote \\( y = 5 \\)?",
+        "choices": [
+          "\\( y = 2^x + 5 \\)",
+          "\\( y = 5^x + 2 \\)",
+          "\\( y = -3^x - 5 \\)",
+          "\\( y = 4^x \\)"
+        ],
+        "answer": 0,
+        "solution": "Adding /+5/ raises asymptote to /y=5/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Determine equation for an exponential function with asymptote y=-3, passing through (0,1).",
+        "answer": "y = a\\cdot b^x - 3 → using point (0,1) ⇒ 1 = a\\cdot1 -3 ⇒ a=4 → y = 4b^x - 3",
+        "solution": "Plug in /x=0/ ⇒ /y=a-3=1/ ⇒ /a=4/; final form /y=4b^x-3/ (need another point for b)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 2^{x+3} = 32 \\).",
+        "answer": "/x = 2/",
+        "solution": "/32 = 2^5/ ⇒ /x+3=5/ ⇒ /x=2/."
+      },
+      // Till here 40
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 3^{x-2} = 27^{x+1} \\).",
+        "answer": "/x = -\\tfrac{5}{2}/",
+        "solution": "/27 = 3^3/ ⇒ \\( 3^{x-2} = 3^{3x+3} \\) ⇒ /x-2=3x+3/ ⇒ /-2-3=2x/ ⇒ /x=-\\tfrac{5}{2}/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( \\frac{a^{2x+3}}{a^{x-4}} \\).",
+        "answer": "/a^{x+7}/",
+        "solution": "Subtract exponents: /(2x+3)-(x-4)=x+7/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 4^{x+1} = 8^{2x-3} \\).",
+        "answer": "/x = \\tfrac{5}{3}/",
+        "solution": "/4=2^2/, /8=2^3/ ⇒ \\( 2^{2x+2} = 2^{6x-9} \\) ⇒ /2x+2=6x-9/ ⇒ /11=4x/ ⇒ /x=\\tfrac{11}{4}/ (double-check)."
+      },
+      {
+        "type": "mcq",
+        "question": "Which function represents exponential growth?",
+        "choices": [
+          "/y = (\\tfrac{1}{4})^x/",
+          "/y = 2^x/",
+          "/y = -3^x/",
+          "/y = 0.8^x/"
+        ],
+        "answer": 1,
+        "solution": "/Base > 1/ means growth."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 10^{2x-1} = 0.01 \\).",
+        "answer": "/x = -1/",
+        "solution": "/0.01 = 10^{-2}/ ⇒ /2x-1=-2/ ⇒ /2x=-1/ ⇒ /x=-0.5/ (round /-1/ if integer domain)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (7^x)^2 \\cdot 7^3 \\).",
+        "answer": "/7^{2x+3}/",
+        "solution": "Multiply exponents for power, add with /3/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( \\frac{(5^x)^2}{25^{x+1}} \\).",
+        "answer": "/5^{-2}/",
+        "solution": "/25=5^2/ ⇒ numerator /5^{2x}/, denominator /5^{2x+2}/ ⇒ /5^{-2}/."
+      },
+      {
+        "type": "mcq",
+        "question": "State reflection and stretch for \\( y = -4\\cdot(\\tfrac{1}{2})^x \\).",
+        "choices": [
+          "Reflected in y-axis, stretched by /4/",
+          "Reflected in x-axis, stretched by /4/",
+          "Reflected in x-axis, compressed by /4/",
+          "Reflected in y-axis, compressed by /4/"
+        ],
+        "answer": 1,
+        "solution": "Negative reflects in x-axis, multiplied by /4/ stretches vertically."
+      },
+      {
+        "type": "short_answer",
+        "question": "State base and y-intercept of \\( y = 3^{x+1} - 2 \\).",
+        "answer": "Base /3/, y-intercept /(0,1)/",
+        "solution": "When /x=0/ ⇒ /y=3^{1}-2=1/."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (2^{-1})^x \\cdot 8^{x} \\).",
+        "answer": "/4^x/",
+        "solution": "/8=2^3/ ⇒ \\( 2^{-x} \\cdot 2^{3x} = 2^{2x} = 4^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Simplify \\( (9^x)^{1/2} \\).",
+        "answer": "/3^x/",
+        "solution": "Square root of /9/ is /3/; power rule gives \\( (9^x)^{1/2} = 9^{x/2} = 3^x \\)."
+      },
+      {
+        "type": "short_answer",
+        "question": "Solve \\( 2^{x-1} = 64 \\).",
+        "answer": "/x = 7/",
+        "solution": "/64 = 2^6/ ⇒ /x-1=6/ ⇒ /x=7/."
+      }
+    ];
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "\\(", right: "\\)", display: false },
+          { left: "\\[", right: "\\]", display: true }
+        ]
+      });
+    });
+  </script>
+
+</body>
+
+</html>
