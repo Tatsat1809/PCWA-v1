@@ -1,0 +1,302 @@
+[
+	{
+		"id": 1,
+		"question": "The graph of /y = f(x)/ is shown. Sketch /y = f(x - 2)/. Describe the transformation.",
+		"answer": "Translate right /2/ units.",
+		"solution": "Replacing /x/ with /(<x - 2)/ shifts the graph right by /2/. Every point /(<x, y)/ on /y=f(x)/ moves to /(<x+2, y)/."
+	},
+	{
+		"id": 2,
+		"question": "The graph of /y = f(x)/ is shown. Sketch /y = f(x + 4) + 3/. Describe the transformation.",
+		"answer": "Translate left /4/ units and up /3/ units.",
+		"solution": "Inside /+4/ shifts left by /4/. Adding /3/ outside shifts the whole graph up by /3/. A point /(<x,y)/ becomes /(<x-4, y+3)/."
+	},
+	{
+		"id": 3,
+		"question": "Sketch /y = -2f(x)/ given the graph of /y = f(x)/. Describe the transformation.",
+		"answer": "Reflect in the x-axis and vertical stretch by factor /2/.",
+		"solution": "The negative reflects outputs /(y -> -y)/ and multiplying by /2/ scales vertical distances from the x-axis by /2/."
+	},
+	{
+		"id": 4,
+		"question": "Sketch /y = f(-x)/ given the graph of /y = f(x)/. Describe the transformation.",
+		"answer": "Reflect the graph across the y-axis.",
+		"solution": "Replacing /x/ with /(-x)/ sends each point /(<x,y)/ to /(-x,y)/, which is a reflection about the /y/-axis."
+	},
+	{
+		"id": 5,
+		"question": "Given /y = f(x)/, sketch /y = f(2x)/ and describe the transformation.",
+		"answer": "Horizontal compression by factor \\(1/2\\) (all x-values halved).",
+		"solution": "/f(2x)/ makes the graph change faster, mapping /x -> 2x/. To get original /x0/, use \\(x = x0/2\\), so points move closer to the /y/-axis by factor \\(1/2\\)."
+	},
+	{
+		"id": 6,
+		"question": "Given /y = f(x)/, sketch /y = -f(x - 1) + 2/ and describe the transformations.",
+		"answer": "Translate right /1/, reflect across /x/-axis, then translate up /2/.",
+		"solution": "Order: inside /(x-1)/ shifts right /1/; negative sign reflects in /x/-axis; /+2/ shifts up /2/. Point /(<x,y>)->(<x+1, -y+2>)/."
+	},
+	{
+		"id": 7,
+		"question": "Sketch /y = 3f(-x + 4)/ and state the sequence of transformations.",
+		"answer": "Reflect across /y/-axis, translate right /4/ (equivalently replace /x/ with /-x+4/), then vertical stretch by /3/.",
+		"solution": "Rewrite /-x+4 = -(x-4) so f(-x+4)=f(-(x-4))/ : first shift right /4/, then reflect across /y/-axis, then multiply output by /3/. Sequence: shift right /4/ → reflect over /y/-axis → vertical stretch ×/3/."
+	},
+	{
+		"id": 8,
+		"question": "Sketch \\(y = -1/2 f(x + 2) - 1\\) and describe all transformations applied.",
+		"answer": "Translate left /2/, reflect across /x/-axis, vertical compression by \\(1/2\\), then translate down /1/.",
+		"solution": "Inside /(x+2)/: shift left /2/. Negative sign: reflect in /x/-axis. Multiply by \\(1/2\\) compresses vertically. Finally subtract /1/ shifts down /1/."
+	},
+	{
+		"id": 9,
+		"question": "Describe the sequence of transformations that map /y = f(x)/ to /y = -f(x + 3)/.",
+		"answer": "Translate left /3/ units, then reflect across the /x/-axis.",
+		"solution": "Replacing /x/ with /(x + 3)/ means shifting left /3/; the leading negative reflects outputs across the /x/-axis."
+	},
+	{
+		"id": 10,
+		"question": "Describe the transformations from /y = f(x)/ to /y = f(-x) - 5/.",
+		"answer": "Reflect across the /y/-axis, then translate down /5/ units.",
+		"solution": "/f(-x)/ reflects horizontally, subtracting /5/ shifts the result down by /5/."
+	},
+	{
+		"id": 11,
+		"question": "Describe the transformations that map /y = f(x)/ to /y = 2f(3x - 6)/.",
+		"answer": "Horizontal compression by factor \\(1/3\\) (from /3x/), horizontal shift right /2/ (since /3x-6 = 3(x-2)/), then vertical stretch by factor /2/.",
+		"solution": "Rewrite /3x-6 = 3(x-2)/: inside gives shift right /2/, factor /3/ compresses horizontally by \\(1/3\\); outside multiply by /2/ stretches vertically. Order: horizontal shift right /2/ → horizontal compression \\(1/3\\) → vertical stretch ×/2/."
+	},
+	{
+		"id": 12,
+		"question": "Describe the transformations from \\(y = x^2\\) to \\(y = -(1/2)(x - 4)^2 + 3\\).",
+		"answer": "Translate right /4/, vertical compression by \\(1/2\\), reflect across /x/-axis, then translate up /3/.",
+		"solution": "\\((x-4)^2\\) shifts right /4/. Multiply by \\(-1/2\\) compresses vertically by \\(1/2\\) and reflects (negative). Then +3 shifts up /3/."
+	},
+	{
+		"id": 13,
+		"question": "Describe how the graph of \\(y = \\sqrt{x}\\) is transformed to \\(y = -\\sqrt{x - 5} + 2\\).",
+		"answer": "Translate right /5/, reflect across /x/-axis, then translate up /2/.",
+		"solution": "Inside /(x-5)/ shifts right /5/. Negative sign reflects outputs. /+2/ shifts up /2/. Domain starts at /x=5/."
+	},
+	{
+		"id": 14,
+		"question": "State the transformations that map \\(y = \\frac{1}{x}\\) to \\(y = \\frac{1}{x + 4} - 2\\).",
+		"answer": "Translate left /4/, then translate down /2/.",
+		"solution": "Replace /x/ by /x+4/ shifts the hyperbola left by /4/. Subtracting /2/ moves it down /2/. Vertical and horizontal asymptotes shift accordingly."
+	},
+	{
+		"id": 15,
+		"question": "Describe the transformation from /y = |x|/ to /y = -2|x - 3| + 1/.",
+		"answer": "Translate right /3/, vertical stretch by /2/, reflect in /x/-axis, then translate up /1/.",
+		"solution": "Inside /(x-3)/ shifts right /3/. Multiply by /-2/ scales outputs by /2/ and reflects; /+1/ shifts up /1/."
+	},
+	{
+		"id": 16,
+		"question": "If /y = f(x)/ passes through /(3, 5)/, find the image point on /y = f(x - 2)/.",
+		"answer": "/(5, 5)/",
+		"solution": "/f(x-2)/ shifts input right /2/: original point /(3,5)/ occurs when /x-2=3/ ⇒ /x=5/. So the image is /(5,5)/."
+	},
+	{
+		"id": 17,
+		"question": "If /f(x)/ passes through /(-1, 4)/, find the corresponding point on /y = -f(x)/.",
+		"answer": "/(-1, -4)/",
+		"solution": "/-f(x)/ negates outputs, so /y/ becomes /-4/ while /x/ remains /-1/."
+	},
+	{
+		"id": 18,
+		"question": "Given /y = f(x)/ passes through /(2, -3)/, find the corresponding point on /y = f(2x + 1)/.",
+		"answer": "\\(((2 - 1)/2, -3) = (0.5, -3)\\)",
+		"solution": "We need /x/ such that /2x + 1 = 2/ ⇒ /2x =1/ ⇒ /x=1/2/. So the image point is \\((1/2, -3)\\)."
+	},
+	{
+		"id": 19,
+		"question": "The point /(-3, 5)/ lies on /y = f(x)/. Find its image on /y = 2f(x - 4) - 1/.",
+		"answer": "/(1, 9)/",
+		"solution": "First shift: /x-4= -3/ ⇒ /x=1/ gives /f(-3)=5/. Then output transformed by /2f -1/ ⇒ /2×5 -1 = 9/. So /(1,9)/."
+	},
+	{
+		"id": 20,
+		"question": "Given /(x, y)/ lies on /y = f(x)/, write the mapping rule for /y = -f(3x + 6)/.",
+		"answer": "Map /(x, y)/ to \\(((x - (-2))/3 ???\\) — better: preimage /x0/ maps to /x/ such that /3x + 6 = x0/; so new \\(x = (x0 - 6)/3\\) with /y -> -y/.",
+		"solution": "If /f(x0)=y/ then for /g(x)= -f(3x+6)/ set /3x+6 = x0/ so \\(x = (x0 -6)/3\\) and new /y = -y/. So mapping: \\((x0,y) -> ((x0 -6)/3, -y)\\)."
+	},
+	{
+		"id": 21,
+		"question": "The point /(1, -2)/ lies on /y = f(x)/. Determine the corresponding point on /y = -1/2 f(x - 3) + 4/.",
+		"answer": "/(4, 5)/",
+		"solution": "Find /x/ so that /x-3 = 1/ ⇒ /x=4/. /f(1) = -2/. Apply /-1/2×(-2)+4 = 1 + 4 = 5/. So /(4,5)/."
+	},
+	{
+		"id": 22,
+		"question": "If /(-4, 8)/ is on /y = f(x)/, find its image on /y = f(-x + 2)/.",
+		"answer": "/(6, 8)/",
+		"solution": "To find /x/ such that /f(-x+2)/ uses the old input /-4/, solve /-x+2 = -4/ ⇒ /-x = -6/ ⇒ /x = 6/. So the image point is /(6,8)/."
+	},
+	{
+		"id": 23,
+		"question": "The point /(1, 7)/ lies on /y = -2f(x + 3)/. Find the corresponding point on /y = f(x)/.",
+		"answer": "/(4, -3.5)/",
+		"solution": "If /g(x) = -2 f(x+3)/ and /g(1)=7/ then /-2 f(1+3) = 7/ ⇒ /f(4) = -7/2 = -3.5/. So the corresponding point on /y=f(x)/ is /(4,-3.5)/."
+	},
+	{
+		"id": 24,
+		"question": "A point /(-6, -3)/ lies on /y = f(2x - 4)/. Find the corresponding point on /y = f(x)/.",
+		"answer": "/(-16, -3)/",
+		"solution": "Given /g(x)=f(2x-4)/ and /g(-6)=-3/, compute /2(-6)-4 = -16/ so /f(-16) = -3/. Thus corresponding point on /f/ is /(-16,-3)/."
+	},
+	{
+		"id": 25,
+		"question": "The point /(4, -5)/ lies on /y = f(x - 2) + 1/. Find the related point on /y = f(x)/.",
+		"answer": "/(2, -6)/",
+		"solution": "Given /f(4-2)+1 = -5/ ⇒ /f(2)+1 = -5/ ⇒ /f(2) = -6/. So /(2,-6)/."
+	},
+	{
+		"id": 26,
+		"question": "The point /(-2, 6)/ lies on /y = 3f(-x)/. Determine its preimage on /y = f(x)/.",
+		"answer": "/(2, 2)/",
+		"solution": "Given /g(x)=3f(-x)/ and /g(-2)=6/, we have /3f(2)=6/ ⇒ /f(2)=2/. So the preimage on /f/ is / (2,2) /."
+	},
+	{
+		"id": 27,
+		"question": "The domain of /f(x)/ is /[-2,4]/. Find the domain of /y = f(x - 3)/.",
+		"answer": "/[1, 7]/",
+		"solution": "If /f/ is defined for /t/ in /[-2,4]/, set /t = x-3/ so /x = t+3/ gives domain /[ -2+3, 4+3 ] = [1,7]/."
+	},
+	{
+		"id": 28,
+		"question": "The range of /f(x)/ is /[0, 6]/. Find the range of /y = -f(x) + 2/.",
+		"answer": "/[-4, 2]/",
+		"solution": "Apply /y' = -y + 2/. Max /6 -> -6+2 = -4/; min /0 -> -0+2 = 2/; reorder gives /[-4,2]/."
+	},
+	{
+		"id": 29,
+		"question": "The domain of /f(x)/ is /x ≥ 0/. Find the domain of /y = f(2x - 1)/.",
+		"answer": "/x ≥ 1/2/",
+		"solution": "Require /2x -1 ≥ 0/ ⇒ /2x ≥ 1/ ⇒ /x ≥ 1/2/."
+	},
+	{
+		"id": 30,
+		"question": "Given the range of /f(x)/ is /[-4, 2]/, find the range of /y = 3f(x) - 1/.",
+		"answer": "/[-13, 5]/",
+		"solution": "Multiply by /3/: /[-12,6]/, then subtract /1/ → /[-13,5]/."
+	},
+	{
+		"id": 31,
+		"question": "If /f(x)/ has domain /[-3,5]/, find the domain of /y = f(-x + 2)/.",
+		"answer": "/[-3, 5]/",
+		"solution": "Let /t = -x + 2/. If /t/ ranges over /[-3,5]/, then /x = 2 - t/ ranges over /[2-5, 2-(-3)] = [-3,5]/. So the domain of /f(-x+2)/ is /[-3,5]/."
+	},
+	{
+		"id": 32,
+		"question": "The range of /f(x)/ is /[-2,7]/. Find the range of \\(y = -1/2 f(x - 3) + 4\\).",
+		"answer": "/[0.5, 5]/",
+		"solution": "Apply transformation /y' = -1/2 y + 4/. For /y_min = -2/ ⇒ \\(y' = -1/2(-2)+4 = 1+4 = 5/\\) (maximum). For /y_max = 7/ ⇒ \\(y' = -1/2(7)+4 = -3.5+4 = 0.5\\) (minimum). So the range is /[0.5, 5]/."
+	},
+	{
+		"id": 33,
+		"question": "Given the range of /f(x)/ is /[-1,3]/, determine the original range if /y = -f(x) + 2/ has range /[-1,3]/.",
+		"answer": "/[-1, 3]/",
+		"solution": "If /-f + 2/ has range /[-1,3]/, set /s = -f + 2/ and solve for /f/: /f = 2 - s/. If /s/ ranges /[-1,3]/, then /f/ ranges /[2-3, 2-(-1)] = [-1,3]/. So the original range is /[-1,3]/."
+	},
+	{
+		"id": 34,
+		"question": "Given the graph of /y = f(x)/, sketch /y = |f(x)|/ and describe how negative parts change.",
+		"answer": "Reflect any portion of the graph below the /x/-axis upwards; nonnegative parts unchanged.",
+		"solution": "Absolute value replaces /y/ by /|y|/, so negative /y/-values become their positive mirror above /x/-axis."
+	},
+	{
+		"id": 35,
+		"question": "Given the graph of /y = f(x)/, sketch /y = f(|x|)/. Describe the effect on the graph.",
+		"answer": "Right-half of /f/ mirrored across /y/-axis to the left; left side becomes mirror of right.",
+		"solution": "/f(|x|)/ uses nonnegative input only: for /x≥0/ result is /f(x)/; for /x<0/ use /f(-x)/ so copy right branch to left."
+	},
+	{
+		"id": 36,
+		"question": "Sketch /y = |1/2 f(x - 1)|/ and describe the transformations.",
+		"answer": "Shift right /1/, vertical compression by \\(1/2\\), then take absolute value (reflect negative parts up).",
+		"solution": "Order: inside /x-1/ shift right /1/; multiply outputs by \\(1/2\\) compresses vertically; absolute value reflects negative values above /x/-axis."
+	},
+	{
+		"id": 37,
+		"question": "Sketch /y = -|f(-x + 2)|/ and describe the transformations.",
+		"answer": "Shift right /2/, reflect across /y/-axis, take absolute value, then reflect across /x/-axis (flip up→down).",
+		"solution": "Compute inside: /-x+2/ shift right /2/ then reflect; absolute value nonnegative; leading negative flips sign. Sequence: /x -> -x+2/, apply /f/, absolute value, then multiply by /-1/."
+	},
+	{
+		"id": 38,
+		"question": "The graph of \\(y = x^2\\) is given. Sketch \\(y = |x^2 - 4|\\).",
+		"answer": "Parabola shifted down /4/ then absolute value folds parts below /x/-axis upward; shows /V/-shape near zeros at /x=±2/.",
+		"solution": "\\(x^2-4\\) is parabola with roots /±2/. Where \\(x^2-4≥0\\) keep value, where negative reflect upward, creating 'W' like shape with minima at /x=±2/ of /0/."
+	},
+	{
+		"id": 39,
+		"question": "The graph of /y = x/ is given. Sketch /y = |x - 3| + 2/.",
+		"answer": "/V/-shaped graph with vertex at /(3,2)/, opening upward.",
+		"solution": "Shift /|x|/ right /3/ and up /2/ to get vertex /(3,2)/. Lines slope /±1/ away from vertex."
+	},
+	{
+		"id": 40,
+		"question": "Sketch the graph of \\(y = 1/f(x)\\) given /y = f(x)/. Indicate asymptotes and intercepts.",
+		"answer": "Vertical asymptotes at zeros of /f/; horizontal asymptotes where /f→∞/ make \\(1/f→0\\); intercepts where /f=1/ or /f=-1/ give /y=1/ or /-1/?",
+		"solution": "Reciprocal inverts outputs: zeros of /f/ become vertical asymptotes; large /f/ produce values near /0/; points where /f=1/ become /y=1/ etc. Provide example-based sketch."
+	},
+	{
+		"id": 41,
+		"question": "The graph of \\(y = x^2\\) is given. Sketch \\(y = \\frac{1}{x^2}\\).",
+		"answer": "A convex curve with vertical asymptote at /x=0/, even function; decays to /0/ as /|x|/ increases; min at /x=±1/ has value /1/.",
+		"solution": "Take reciprocal of parabola values: where /x^2/ small reciprocal large; symmetric about /y/-axis."
+	},
+	{
+		"id": 42,
+		"question": "Sketch the reciprocal of /y = |x - 2| + 1/.",
+		"answer": "Vertical asymptote where /|x-2|+1 =0/ (never), so no vertical asymptote; minimum value /1/ at /x=2/ gives /y =1/; reciprocal /≤1/ with maximum /1/ at /x=2/ and decays to /0/ away.",
+		"solution": "Since /|x-2|+1 ≥ 1/, reciprocal in /(0,1]/ with max /1/ at /x=2/. Graph symmetric around /x=2/."
+	},
+	{
+		"id": 43,
+		"question": "Explain how the graph of /y = f(x)/ relates to \\(y = f^{-1}(x)\\).",
+		"answer": "The inverse reflects the graph across the line /y = x/; coordinates swap /(a,b)→(b,a)/.",
+		"solution": "By definition \\(f^{-1}\\) undoes /f/. Points /(a,b)/ on /f/ correspond to /(b,a)/ on \\(f^{-1}\\). Geometrically this is reflection across /y=x/."
+	},
+	{
+		"id": 44,
+		"question": "Sketch \\(y = f^{-1}(x)\\) if /y = f(x)/ passes through /(2,5)/, /(4,1)/, /(6,-3)/.",
+		"answer": "Inverse passes through /(5,2)/, /(1,4)/, /(-3,6)/.",
+		"solution": "Swap coordinates of each point. Draw inverse roughly as reflection about /y=x/."
+	},
+	{
+		"id": 45,
+		"question": "Explain why /f(x)/ and \\(f^{-1}(x)\\) are reflections across /y = x/.",
+		"answer": "Because inverse swaps inputs and outputs; reflection across /y=x/ swaps coordinates.",
+		"solution": "Algebraically: if /y = f(x)/ then \\(x = f^{-1}(y)\\). Swap axes corresponds to reflecting across /y=x/."
+	},
+	{
+		"id": 46,
+		"question": "Sketch /y = 10/ \\(cos[(π/2)(x - 2)]\\) over /[0,6]/. Describe amplitude, period and phase shift.",
+		"answer": "Amplitude /10/, period /= 4/ (since \\(k = π/2\\) ⇒ period = \\(2π / (π/2) = 4\\)), phase shift right /2/, vertical shift /0/.",
+		"solution": "General cos: \\(Acos(B(x - C))+D\\). Here /A=10/, \\(B=π/2\\) so period \\(2π/B = 4\\). Shift right /2/. Draw /1.5/ cycles? Over /[0,6]/ period /4/ covers /1.5/ periods."
+	},
+	{
+		"id": 47,
+		"question": "Sketch \\(y = 5 sin[(π/3)(x + 1)] - 2\\) over /[-3,5]/. Describe amplitude, period, phase shift, vertical shift.",
+		"answer": "Amplitude /5/, period = \\(2π / (π/3) = 6\\), phase shift left /1/, vertical shift down /2/.",
+		"solution": "Amplitude /|5|/. \\(B=π/3\\) so period /6/. /x+1/ shifts left /1/. Subtract /2/ moves graph down /2/. Over /[-3,5]/ one full period is shown."
+	},
+	{
+		"id": 48,
+		"question": "Determine amplitude, period, phase shift, and vertical shift for \\(y = 4 cos[(π/4)(x - 1)] + 3\\).",
+		"answer": "Amplitude /4/; period = \\(2π / (π/4) = 8\\); phase shift right /1/; vertical shift up /3/.",
+		"solution": "Amplitude /|4|=4/. \\(B=π/4\\) ⇒ period \\(2π/(π/4)=8. /(x-1)\\) shifts right /1/. /+3/ shifts up /3/."
+	},
+	{
+		"id": 49,
+		"question": "Describe transformations from /y = sin(x)/ to \\(y = -3 sin[π(x + 2)] - 1\\).",
+		"answer": "Horizontal compression by factor \\(1/π\\) (period shortened), shift left /2/, vertical stretch by /3/, reflect across /x/-axis, shift down /1/.",
+		"solution": "Replace /x/ by /π(x+2)/ scales horizontally; multiply by /-3/ stretches and reflects; /-1/ shifts down. Order typically horizontal shift, stretch ÷ compression, reflection, vertical shift."
+	},
+	{
+		"id": 50,
+		"question": "A Ferris wheel has radius /10m/. The wheel makes one full rotation every /8/ minutes, starting at the lowest point. Write a sinusoidal equation modeling the height /h/ of a passenger over time /t/ and determine their height after /3/ minutes.",
+		"answer": "\\(h(t) = 10 - 10 cos((π/4) t) + 10\\)? Better: center at /10/, amplitude /10/, period /8/ ⇒ \\(ω = 2π/8 = π/4\\). Starting at lowest point means use cosine: \\(h(t) = 10 - 10 cos(π/4 t)\\). At /t=3/: \\(h(3) = 10 - 10 cos(3π/4) = 10 - 10(-\\sqrt{2}/2) = 10 + 5\\sqrt{2} ≈ 17.07 m\\).",
+		"solution": "Wheel center at /10/ (ground offset /0/ to /20/), amplitude /10/. Period /8/ gives \\(ω=π/4\\). Start lowest: /cos(0)=1/ so /h(0)=10-10=0/ (lowest). Thus \\(h(t)=10 -10 cos(π t/4)\\). Evaluate /t=3/: \\(cos(3π/4) = -\\sqrt{2}/2\\) ⇒ \\(h=10 -10(-\\sqrt{2}/2)=10 +5\\sqrt{2}≈17.07m\\)."
+	}
+]
