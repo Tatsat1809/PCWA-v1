@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provincial Exam Practice — All Units</title>
+    <link rel="stylesheet" href="./styles.css">
+    <!-- KaTeX for high-quality math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        /* Page-specific overrides */
+        body.provincial-grid {
+            padding: 4.4rem 2rem 3.2rem 2rem;
+            /* extra top padding so logo is visible above cards */
+            display: grid;
+            grid-template-columns: 1fr;
+            /* vertical list */
+            gap: 22px;
+            /* vertical spacing between cards */
+            align-items: start;
+            justify-items: start;
+            /* left-align the list */
+            background: var(--color-bg);
+            min-height: 100vh;
+            max-width: 1100px;
+            /* slightly narrower page to leave room for panels */
+            margin: 0 auto 0 0;
+            /* pin container to the left side of the viewport */
+        }
+
+        .unit-card {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            /* make cards noticeably shorter */
+            background: var(--color-primary);
+            /* blue card background */
+            border-radius: 10px;
+            box-shadow: var(--color-card-shadow);
+            padding: 0.75rem 0.9rem;
+            /* reduce padding */
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            align-items: stretch;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            overflow: hidden;
+            min-height: 56px;
+            /* even shorter */
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .unit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 28px rgba(30, 40, 80, 0.12);
+            z-index: 60;
+            /* bring the hovered card (and its panel) above other cards */
+        }
+
+        .unit-title {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Unit label and name styling inside the card title */
+        .unit-title .unit-label {
+            color: var(--color-accent);
+            /* golden label */
+            font-weight: 900;
+            min-width: 78px;
+            display: inline-block;
+        }
+
+        .unit-title .unit-name {
+            color: #fff;
+            /* white unit name */
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        /* description and actions are hidden until hover */
+        .unit-desc {
+            color: rgba(10, 10, 20, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.28s ease, opacity 0.22s ease, padding 0.18s ease, transform 0.22s ease;
+            /* small hide delay so panel doesn't vanish the instant pointer leaves */
+            transition-delay: 0.6s;
+            padding-top: 0;
+        }
+
+        .unit-actions {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.6rem;
+            justify-content: flex-start;
+            /* left-align actions within the panel */
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+            /* delay hiding to match .unit-desc linger so buttons stay visible while panel lingers */
+            transition-delay: 0.6s;
+            pointer-events: none;
+        }
+
+        /* Buttons inside the floating panel should contrast the blue card */
+        .unit-desc .btn-unit {
+            /* primary: blue background, white text */
+            --btn-bg: var(--color-primary);
+            --btn-color: var(--color-btn-text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.6rem 0.9rem;
+            border-radius: 10px;
+            border: none;
+            background: var(--btn-bg);
+            color: var(--btn-color);
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: var(--color-btn-shadow);
+            text-decoration: none;
+            transition: transform 0.14s ease, background 0.14s ease;
+            min-width: 100px;
+            padding: 0.5rem 0.8rem;
+        }
+
+        .unit-desc .btn-unit.secondary {
+            /* secondary: white background with blue text and subtle border */
+            background: #fff;
+            color: var(--color-primary);
+            border: 1px solid rgba(37, 56, 155, 0.14);
+            box-shadow: none;
+            font-weight: 700;
+        }
+
+        .btn-unit:focus {
+            outline: 3px solid rgba(255, 208, 64, 0.18);
+            outline-offset: 2px;
+        }
+
+        /* Make math look perfect inside unit cards */
+        .unit-card .katex {
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 720px) {
+            body.provincial-grid {
+                padding: 1rem;
+                gap: 16px;
+            }
+
+            .unit-card {
+                max-width: 100%;
+                min-height: 120px;
+            }
+        }
+
+        /* Reveal description and buttons when hovering or when focused (accessibility) */
+        .unit-card:hover .unit-desc,
+        .unit-card:focus-within .unit-desc,
+        .unit-desc:hover {
+            /* override hide delay so showing is immediate */
+            transition-delay: 0s;
+            max-height: 480px;
+            /* allow plenty of content */
+            opacity: 1;
+            padding-top: 0.25rem;
+        }
+
+        .unit-card:hover .unit-actions,
+        .unit-card:focus-within .unit-actions,
+        .unit-actions:hover {
+            /* override hide delay when showing */
+            transition-delay: 0s;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* On wide screens show the expanded content as a floating panel to the right */
+        @media (min-width: 900px) {
+
+            /* Keep the list centered but allow floating panels to overflow */
+            body.provincial-grid {
+                grid-template-columns: 1fr;
+                padding-left: 3.6rem;
+                padding-right: 3.6rem;
+                overflow: visible;
+            }
+
+            /* Make each card the positioned ancestor so absolutely-positioned panels
+         are placed relative to the card and won't be clipped by overflow:hidden */
+            .unit-card {
+                position: relative;
+                max-width: 420px;
+                min-height: 56px;
+                padding: 0.75rem 0.9rem;
+                overflow: visible;
+            }
+
+            /* Position the description as a floating panel to the right */
+            .unit-desc {
+                position: absolute;
+                left: calc(100% + 18px);
+                top: 50%;
+                transform: translate(6px, -50%);
+                /* vertically center beside the card */
+                width: 460px;
+                /* a bit wider for comfortable reading */
+                max-height: 520px;
+                background: var(--color-card-bg);
+                border-radius: 12px;
+                padding: 1.05rem 1rem;
+                box-shadow: 0 14px 36px rgba(30, 40, 80, 0.10);
+                opacity: 0;
+                transition: opacity 0.22s ease, transform 0.22s ease;
+                /* small hide delay for floating panels */
+                transition-delay: 0.6s;
+                z-index: 40;
+                pointer-events: none;
+                /* enable on reveal */
+            }
+
+            /* small arrow pointer */
+            .unit-desc::before {
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                width: 16px;
+                height: 16px;
+                background: var(--color-card-bg);
+                box-shadow: 0 4px 10px rgba(30, 40, 80, 0.06);
+                z-index: 39;
+            }
+
+            /* When the panel is floating the actions live inside it; keep them static
+         to allow natural flow and proper vertical alignment */
+            .unit-actions {
+                position: static;
+                z-index: 41;
+            }
+
+            /* Hover reveals the floating panel */
+            .unit-card:hover .unit-desc,
+            .unit-card:focus-within .unit-desc,
+            .unit-desc:hover {
+                /* override hide delay when showing */
+                transition-delay: 0s;
+                opacity: 1;
+                transform: translate(0, -50%);
+                pointer-events: auto;
+            }
+
+            .unit-card:hover .unit-actions,
+            .unit-card:focus-within .unit-actions,
+            .unit-actions:hover {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            /* Panel positioning helper variable (for future JS flip logic) */
+            .unit-card {
+                --panel-right-gap: 20px;
+            }
+        }
+
+        /* Ensure the top header (logo + title block) is centered on the page */
+        .provincial-header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* center the inner container */
+            align-items: center;
+            grid-column: 1 / -1;
+            /* span entire grid to avoid left-offsets */
+            margin-bottom: 0.9rem;
+        }
+
+        .provincial-header header {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Nudge the unit description content slightly to the right for better alignment */
+        .unit-desc ul {
+            margin-left: 0.6rem;
+        }
+
+        .unit-key {
+            margin-left: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        /* When JS sets .panel-open keep the panel interactive during the CSS hide delay */
+        .unit-card.panel-open .unit-desc,
+        .unit-card.panel-open .unit-actions {
+            pointer-events: auto !important;
+            transition-delay: 0s !important;
+            /* ensure immediate interactivity */
+        }
+
+        /* Footer Bar Styles */
+        .footer-bar {
+            margin-left: -3.95rem;
+            margin-bottom: -5rem;
+            background: var(--color-footer-bg);
+            color: var(--color-footer-text);
+            padding: 0.5rem 1rem;
+            font-size: 0.95rem;
+            text-align: center;
+            border-top-left-radius: 18px;
+            border-top-right-radius: 18px;
+            box-shadow: 0 -2px 12px rgba(30, 40, 80, 0.10);
+            margin-top: 2rem;
+            width: 79.4rem;
+        }
+
+        .footer-resources {
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-bar .resource-link {
+            color: #fffde7;
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 8px;
+            padding: 0.2rem 0.7rem;
+            margin: 0 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .footer-bar .resource-link:hover,
+        .footer-bar .resource-link:focus {
+            background: #fffde7;
+            color: #3949ab;
+        }
+
+        .footer-text {
+            font-size: 0.5rem;
+            font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.2rem;
+            letter-spacing: 0.5px;
+            color: #ffe082;
+            white-space: nowrap;
+            /* Add this line */
+        }
+
+        .footer-bar span {
+            display: block;
+        }
+
+        .footer-bar .footer-copyright {
+            font-size: 0.85rem;
+            color: #c5cae9;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="provincial-grid">
+    <a href="/index.html" class="logo-link" aria-label="Go to homepage">
+        <span class="logo-text">PC40S</span>
+    </a>
+
+    <div class="container provincial-header" style="max-width:900px; margin: 0 auto 1.2rem;">
+        <header style="margin-bottom: 1rem;">
+            <h1 style="font-size:2.7rem; margin-bottom:0.5rem; margin-left: 0rem;">Pre-Calculus 40S Provincial Exam
+            </h1>
+            <p style="font-size:1.35rem; color: #283593; margin-left: 0rem;">Explore quick concepts of all the units
+                and resources for Provincial Exam</p>
+        </header>
+    </div>
+    <!-- 8 Unit cards -->
+    <section class="unit-card" aria-label="Unit 1 card">
+        <div class="unit-title"><span class="unit-label">Unit 1:</span><span class="unit-name">Unit Circle</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Relate degrees and radians for angles in standard position</li>
+                <li>Determine exact sin, cos, and tan values using the unit circle</li>
+                <li>Use reference angles to find trig values in all quadrants</li>
+                <li>Connect special triangles (30°–60°–90°, 45°–45°–90°) to coordinates on the circle</li>
+                <li>Apply periodic properties of trig functions</li>
+                <li>Solve problems involving coterminal and related angles</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>$\sin^{2}(\theta) + \cos^{2}(\theta) = 1$</li>
+                    <li>$\tan(\theta) = \dfrac{\sin(\theta)}{\cos(\theta)}$</li>
+                    <li>Radian–degree conversion: $\pi\ \text{rad} = 180^\circ$</li>
+                    <li>Arc length: $s = r\theta$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit1/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit1/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 2 card">
+        <div class="unit-title"><span class="unit-label">Unit 2:</span><span class="unit-name">Transformations</span>
+        </div>
+        <div class="unit-desc">
+            <ul>
+                <li>Describe effects of horizontal/vertical shifts, stretches, and reflections</li>
+                <li>Use mapping rule and master form y = a f(b(x − h)) + k</li>
+                <li>Sketch and analyze absolute value, reciprocal, and inverse functions</li>
+                <li>Identify non-permissible values and transformation order</li>
+                <li>Graph sinusoidal (sine/cosine) functions with amplitude, period, phase shift</li>
+                <li>Model real-world transformations</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>Period of trig function: $P = \dfrac{2\pi}{|b|}$</li>
+                    <li>Mapping rule: $(x, y) \to \big(\tfrac{x - h}{b},\ a\,y + k\big)$</li>
+                    <li>Reciprocal: $y = \dfrac{1}{f(x)}$</li>
+                    <li>Inverse reflection: across line $y = x$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit2/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit2/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 3 card">
+        <div class="unit-title"><span class="unit-label">Unit 3:</span><span class="unit-name">Radicals &
+                Rationals</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Simplify and combine radical/rational expressions</li>
+                <li>Convert between radical and rational exponent forms</li>
+                <li>Rationalize denominators properly</li>
+                <li>Solve equations with radicals or rational exponents</li>
+                <li>Identify domain restrictions</li>
+                <li>Apply radicals in geometric and real-world contexts</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>$a^{m/n} = \sqrt[n]{a^{m}}$</li>
+                    <li>Product rule: $\sqrt{a}\cdot\sqrt{b} = \sqrt{a\cdot b}$</li>
+                    <li>Quotient rule: $\dfrac{\sqrt{a}}{\sqrt{b}} = \sqrt{\dfrac{a}{b}}$</li>
+                    <li>Rationalization: multiply by conjugate if denominator has two terms</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit3/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit3/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 4 card">
+        <div class="unit-title"><span class="unit-label">Unit 4:</span><span class="unit-name">Exponents &
+                Logarithms</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Simplify using exponent laws</li>
+                <li>Convert between exponential and logarithmic forms</li>
+                <li>Apply log laws: product, quotient, and power</li>
+                <li>Solve exponential/logarithmic equations algebraically</li>
+                <li>Model exponential growth/decay situations</li>
+                <li>Analyze exp/log graphs (domain, range, asymptotes)</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>$b^{x} = y \iff \log_{b}(y) = x$</li>
+                    <li>$\log_{b}(MN) = \log_{b}M + \log_{b}N$</li>
+                    <li>$\log_{b}\!\left(\dfrac{M}{N}\right) = \log_{b}M - \log_{b}N$</li>
+                    <li>$\log_{b}(M^{k}) = k\,\log_{b}M$</li>
+                    <li>Exponential growth: $y = a\,b^{t}$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit4/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit4/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 5 card">
+        <div class="unit-title"><span class="unit-label">Unit 5:</span><span class="unit-name">Polynomials</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Identify degree, leading coefficient, and end behavior</li>
+                <li>Factor using common, grouping, synthetic division methods</li>
+                <li>Apply Factor and Remainder Theorems</li>
+                <li>Sketch using zeros, multiplicities, and intercepts</li>
+                <li>Solve polynomial equations and inequalities</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>Remainder Theorem: $f(c) =$ remainder when divided by $(x - c)$</li>
+                    <li>Factor Theorem: $(x - c)$ is a factor if $f(c) = 0$</li>
+                    <li>Sum of zeros = $-\dfrac{\text{coeff of }x^{n-1}}{\text{coeff of }x^{n}}$</li>
+                    <li>Polynomial form: $f(x) = a_n x^n + a_{n-1} x^{n-1} + \dots + a_0$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit5/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit5/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 6 card">
+        <div class="unit-title"><span class="unit-label">Unit 6:</span><span class="unit-name">Permutations,
+                Combinations & Binomial Theorem</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Differentiate between permutations and combinations</li>
+                <li>Compute arrangements and selections with or without repetition</li>
+                <li>Apply factorial notation correctly</li>
+                <li>Expand binomials using the Binomial Theorem</li>
+                <li>Identify specific terms or coefficients in an expansion</li>
+                <li>Apply counting principles to probability problems</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>$P(n,r) = \dfrac{n!}{(n-r)!}$</li>
+                    <li>$C(n,r) = \dfrac{n!}{r!(n-r)!}$</li>
+                    <li>Binomial Theorem: $(a+b)^n = \sum_{r=0}^n \binom{n}{r} a^{n-r} b^{r}$</li>
+                    <li>Specific term: $T_{r+1} = \binom{n}{r} a^{n-r} b^{r}$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit6/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit6/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 7 card">
+        <div class="unit-title"><span class="unit-label">Unit 7:</span><span class="unit-name">Trigonometry
+                Identities</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Apply angle addition and subtraction identities</li>
+                <li>Find exact values of special angles</li>
+                <li>Simplify or prove trig identities step-by-step</li>
+                <li>Use double- and half-angle formulas</li>
+                <li>Solve trig equations in specified intervals</li>
+                <li>Verify identities by converting to sin and cos</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>$\sin(A\pm B)=\sin A\cos B \pm \cos A\sin B$</li>
+                    <li>$\cos(A\pm B)=\cos A\cos B \mp \sin A\sin B$</li>
+                    <li>$\sin(2A)=2\sin A\cos A$</li>
+                    <li>$\cos(2A)=\cos^{2}A-\sin^{2}A=1-2\sin^{2}A=2\cos^{2}A-1$</li>
+                    <li>$\tan(2A)=\dfrac{2\tan A}{1-\tan^{2}A}$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit7/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit7/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="unit-card" aria-label="Unit 8 card">
+        <div class="unit-title"><span class="unit-label">Unit 8:</span><span class="unit-name">Functions</span></div>
+        <div class="unit-desc">
+            <ul>
+                <li>Identify domain, range, and notation of a function</li>
+                <li>Determine inverse and composite functions</li>
+                <li>Interpret intercepts, intervals, and asymptotes</li>
+                <li>Work with piecewise-defined and restricted functions</li>
+                <li>Model real data using linear, quadratic, and exponential relations</li>
+                <li>Analyze transformations within function families</li>
+            </ul>
+            <div class="unit-key">Key Formulas &amp; Concepts:
+                <ul>
+                    <li>Function notation: $f(x)$ means “value of $f$ at $x$”</li>
+                    <li>Inverse: $f^{-1}(x)$ satisfies $f(f^{-1}(x)) = x$</li>
+                    <li>Composition: $(f\circ g)(x) = f(g(x))$</li>
+                    <li>Average rate of change: $\dfrac{f(b)-f(a)}{b-a}$</li>
+                </ul>
+            </div>
+            <div class="unit-actions">
+                <a class="btn-unit" href="/unit8/overview.html">Overview</a>
+                <a class="btn-unit secondary" href="/unit8/practice.html">Practice</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Ensure KaTeX auto-render runs after scripts load
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.renderMathInElement) {
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false }
+                    ],
+                    throwOnError: false
+                });
+            }
+        });
+    </script>
+
+    <!-- Past exam papers callout: placed immediately above the footer -->
+    <div class="resource-callout"
+        style="max-width:900px; margin: 0 auto 1rem; padding:0.9rem 1rem; background: rgba(57,73,171,0.05); border-radius:10px;">
+        <p style="margin:0; font-size:1rem; color:var(--color-text); text-align:center;">
+            Pre-Calculus Provincial exam past year exam papers link:
+            <a href="https://www.edu.gov.mb.ca/k12/assess/archives/index.html" target="_blank" rel="noopener"
+                style="color: var(--color-footer-text); background: rgba(0, 0, 0, 0.06); padding:0.25rem 0.6rem; border-radius:6px; text-decoration:none; font-weight:700; margin-left:0.6rem; color: black;">
+                Manitoba Education archives
+            </a>
+        </p>
+    </div>
+
+    <footer class="footer-bar">
+        <div class="footer-resources">
+            <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+            <a class="resource-link" href="#" download>Past Exam Paper</a>
+            <a class="resource-link" href="#" download>Summary Notes</a>
+        </div>
+        <div class="footer-text">
+            Empowering Manitoba students to succeed in Pre-Calculus 40S.
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Light/Dark Mode Toggle Switch (site-wide, same as other pages) -->
+    <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
+        <span class="toggle-handle"></span>
+    </button>
+
+    <script>
+        // Light/Dark Mode Toggle (Switch Style) - copied from index.html for consistency
+        const themeBtn = document.getElementById('themeToggleBtn');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('theme');
+        function setTheme(mode) {
+            if (mode === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeBtn.classList.add('on');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.classList.remove('on');
+            }
+            localStorage.setItem('theme', mode);
+        }
+        // Initial theme
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme(prefersDark ? 'dark' : 'light');
+        }
+        themeBtn.addEventListener('click', function () {
+            const current = document.documentElement.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    </script>
+    <script>
+        // Keep the floating panel interactive for the same linger duration used in CSS
+        (function () {
+            const LINGER_MS = 600; // must match CSS transition-delay
+            const cards = document.querySelectorAll('.unit-card');
+            cards.forEach(card => {
+                let closeTimer = null;
+                function openImmediate() {
+                    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+                    card.classList.add('panel-open');
+                }
+                function scheduleClose() {
+                    if (closeTimer) clearTimeout(closeTimer);
+                    closeTimer = setTimeout(() => { card.classList.remove('panel-open'); closeTimer = null; }, LINGER_MS);
+                }
+
+                card.addEventListener('mouseenter', openImmediate);
+                card.addEventListener('mouseleave', scheduleClose);
+
+                // keyboard focus handling
+                card.addEventListener('focusin', openImmediate);
+                card.addEventListener('focusout', scheduleClose);
+            });
+        })();
+    </script>
+</body>
+
+</html>
