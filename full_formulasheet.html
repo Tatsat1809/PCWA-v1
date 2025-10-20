@@ -1,147 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-    body { min-height: 100vh; display: flex; flex-direction: column; }
-    .container { flex: 1 0 auto; }
-    footer.footer-bar { flex-shrink: 0; }
-  </style>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Unit 1 Formula Sheet | PC40S</title>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- MathJax for beautiful math rendering -->
+  <title>Full Formula Sheet — Units 1–8 | PC40S</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 20px;
+      line-height: 1.45;
+      color: #111
+    }
+
+    .unit-section {
+      max-width: 1100px;
+      margin: 0 auto 36px;
+      padding: 18px;
+      border-radius: 8px;
+      background: #fff
+    }
+
+    .unit-section h2 {
+      margin-top: 0
+    }
+
+    .toc {
+      max-width: 900px;
+      margin: 0 auto 24px;
+      padding: 12px
+    }
+
+    .unit-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .unit-link {
+      padding: 6px 10px;
+      background: #e8eefc;
+      border-radius: 6px;
+      color: #0b63d6;
+      text-decoration: none
+    }
+
+    /* Move bullet lists and ordered lists inside unit sections slightly to the right */
+    .unit-section ul, .unit-section ol {
+      margin-left: 2rem !important;
+      padding-left: 1.15rem !important;
+    }
+
+    /* Footer Bar Styles */
+    .footer-bar {
+      margin-left: -1.15rem;
+      width: 103%;
+      margin-bottom: -5rem;
+      background: var(--color-footer-bg);
+      color: var(--color-footer-text);
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      text-align: center;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      box-shadow: 0 -2px 12px rgba(30, 40, 80, 0.10);
+      margin-top: 2rem;
+    }
+
+    .footer-resources {
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-bar .resource-link {
+      color: #fffde7;
+      background: rgba(255, 255, 255, 0.10);
+      border-radius: 8px;
+      padding: 0.2rem 0.7rem;
+      margin: 0 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .footer-bar .resource-link:hover,
+    .footer-bar .resource-link:focus {
+      background: #fffde7;
+      color: #3949ab;
+    }
+
+    .footer-text {
+      font-size: 0.5rem;
+      font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.5px;
+      color: #ffe082;
+      white-space: nowrap;
+      /* Add this line */
+    }
+
+    .footer-bar span {
+      display: block;
+    }
+
+    .footer-bar .footer-copyright {
+      font-size: 0.85rem;
+      color: #c5cae9;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .footer-bar {
+        padding: 1.2rem 0.5rem 0.8rem 0.5rem;
+        border-radius: 12px 12px 0 0;
+      }
+
+      .footer-text {
+        font-size: 1.05rem;
+      }
+    }
+
+    .logo-text {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-weight: 900;
+      font-size: 2.6rem;
+      color: #3949ab;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ffe082 0%, #1976d2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 1px 2px 8px rgba(60, 60, 100, 0.08);
+      transition: opacity 0.2s;
+    }
+
+    .logo-text {
+      text-decoration: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+
+    .logo-link:hover .logo-text,
+    .logo-link:focus .logo-text {
+      opacity: 0.7;
+    }
+
+    /* Ensure header is reference for absolute logo placement */
+    header { position: relative }
+
+  /* Place logo closer to the left of the header area and remove underlines */
+  .site-logo { position: absolute; left: 0px; top: 8%; transform: translateY(-8%); text-decoration: none; }
+    .site-logo, .site-logo * { text-decoration: none !important; color: inherit }
+
+  </style>
+  <!-- MathJax -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
-  <a href="../index.html" class="logo-link" aria-label="Go to homepage">
-    <span class="logo-text">PC40S</span>
-  </a>
-  <div class="container" style="max-width: 900px;">
-    <header>
-      <h1>Unit 1: Unit Circle</h1>
-      <p class="unit-desc">Formula Sheet</p>
-    </header>
-    <main>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Unit Circle Equation</h2>
-        <div style="font-size:1.3em; margin:1em 0; text-align:center;">
-          $$x^2 + y^2 = 1$$
-        </div>
-        <p>All points (x, y) on the unit circle satisfy this equation. The radius is always 1.</p>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Degrees & Radians</h2>
-        <ul style="margin-left:1.5em;">
-          <li>$$360^\circ = 2\pi \text{ radians}$$</li>
-          <li>$$1^\circ = \frac{\pi}{180} \text{ radians}$$</li>
-          <li>$$1 \text{ radian} = \frac{180^\circ}{\pi}$$</li>
-        </ul>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Key Angles on the Unit Circle</h2>
-        <table style="width:100%;max-width:420px;margin:0 auto 1em auto;text-align:center;border-collapse:collapse;">
-          <tr style="background:#f0f4ff;"><th>Angle</th><th>Radians</th><th>sin θ</th><th>cos θ</th><th>tan θ</th></tr>
-          <tr><td>0°</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
-          <tr><td>30°</td><td>π/6</td><td>1/2</td><td>√3/2</td><td>1/√3</td></tr>
-          <tr><td>45°</td><td>π/4</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
-          <tr><td>60°</td><td>π/3</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
-          <tr><td>90°</td><td>π/2</td><td>1</td><td>0</td><td>undefined</td></tr>
-        </table>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Pythagorean Identity</h2>
-        <div style="font-size:1.3em; margin:1em 0; text-align:center;">
-          $$\sin^2\theta + \cos^2\theta = 1$$
-        </div>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Basic Trig Functions</h2>
-        <ul style="margin-left:1.5em;">
-          <li>$$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}$$</li>
-          <li>$$\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}$$</li>
-          <li>$$\tan\theta = \frac{\text{opposite}}{\text{adjacent}} = \frac{\sin\theta}{\cos\theta}$$</li>
-        </ul>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Reference Angles & Signs</h2>
-        <ul style="margin-left:1.5em;">
-          <li>Reference angle: The acute angle formed with the x-axis.</li>
-          <li>Signs: <b>All Students Take Calculus</b> (ASTC) mnemonic:
-            <ul style="margin-left:1.5em;">
-              <li>All trig functions positive in Quadrant I</li>
-              <li>Sine & Cosecant positive in Quadrant II</li>
-              <li>Tangent & Cotangent positive in Quadrant III</li>
-              <li>Cosine & Secant positive in Quadrant IV</li>
-            </ul>
-          </li>
-        </ul>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Arc Length Formulas</h2>
-        <ul style="margin-left:1.5em;">
-          <li>Angle in degrees: $$\ell = \frac{\theta}{360^\circ} \cdot 2\pi r$$</li>
-          <li>Angle in radians: $$\ell = r\theta$$</li>
-        </ul>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Coterminal Angles</h2>
-        <ul style="margin-left:1.5em;">
-          <li>Degrees: $$\theta + 360^\circ \times k$$</li>
-          <li>Radians: $$\theta + 2\pi k$$</li>
-          <li>where k is any integer</li>
-        </ul>
-      </section>
-      <section class="question-card" style="margin-bottom:2rem;">
-        <h2>Even-Odd & Symmetry Identities</h2>
-        <ul style="margin-left:1.5em;">
-          <li>$$\sin(-\theta) = -\sin\theta$$</li>
-          <li>$$\cos(-\theta) = \cos\theta$$</li>
-          <li>$$\tan(-\theta) = -\tan\theta$$</li>
-        </ul>
-      </section>
-    </main>
-  </div>
+  <header style="text-align:center; max-width:1100px;margin:0 auto 18px;padding-top:26px;">
+    <a class="site-logo" href="./index.html" aria-label="PC40S homepage">
+      <span class="logo-text">PC40S</span>
+    </a>
+  <h1 style="margin:30px 0 6px 0">Full Formula Sheet — Units 1–8</h1>
+    <p style="margin:0;color:#444">Combined formulas and key identities from Units 1 through 8.</p>
+  </header>
+
+  <nav class="toc" style="margin-top:8px;">
+    <strong>Jump to unit:</strong>
+    <div class="unit-nav">
+      <a class="unit-link" href="#unit1">Unit 1</a>
+      <a class="unit-link" href="#unit2">Unit 2</a>
+      <a class="unit-link" href="#unit3">Unit 3</a>
+      <a class="unit-link" href="#unit4">Unit 4</a>
+      <a class="unit-link" href="#unit5">Unit 5</a>
+      <a class="unit-link" href="#unit6">Unit 6</a>
+      <a class="unit-link" href="#unit7">Unit 7</a>
+      <a class="unit-link" href="#unit8">Unit 8</a>
+    </div>
+  </nav>
+
+  <!-- Unit 1 -->
+  <section id="unit1" class="unit-section">
+    <h2>Unit 1 — Unit Circle</h2>
+    <div>
+      <p><strong>Unit circle equation:</strong></p>
+      <div style="font-size:1.2em; text-align:center;">$$x^2 + y^2 = 1$$</div>
+      <p>All points \((x,y)\) on the unit circle satisfy this equation. Radius \(= 1\).</p>
+
+      <h3>Degrees &amp; Radians</h3>
+      <ul>
+        <li>$$360^\circ = 2\pi \text{ radians}$$</li>
+        <li>$$1^\circ = \frac{\pi}{180} \text{ radians}$$</li>
+        <li>$$1 \text{ radian} = \frac{180^\circ}{\pi}$$</li>
+      </ul>
+
+      <h3>Key identities</h3>
+      <p>$$\sin^2\theta + \cos^2\theta = 1$$</p>
+
+      <h3>Basic trig functions</h3>
+      <ul>
+        <li>$$\sin\theta = \frac{\text{opposite}}{\text{hypotenuse}}$$</li>
+        <li>$$\cos\theta = \frac{\text{adjacent}}{\text{hypotenuse}}$$</li>
+        <li>$$\tan\theta = \frac{\sin\theta}{\cos\theta}$$</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Unit 2 -->
+  <section id="unit2" class="unit-section">
+    <h2>Unit 2 — Transformations & Mapping</h2>
+    <div>
+      <h3>Master form &amp; parameters</h3>
+      <p>Master form: \(y = a\) &middot; \(f(b(x + c)) + d\)
+      <ul>
+        <li>a: vertical stretch/compression by \(|a|\); reflect across \(x\)-axis if \(a\) &lt; \(0\)</li>
+        <li>b: horizontal stretch/compression (scale \(= 1/|b\)); reflect across \(y\)-axis if \(b\) &lt; \(0\)</li>
+        <li>c: horizontal shift (note sign inside)</li>
+        <li>d: vertical shift</li>
+      </ul>
+      </p>
+
+      <h3>Mapping rule</h3>
+      <p>If \((x,y)\) is on \(y=f(x)\), then on \(y=a f(b(x+c))+d\) the corresponding point is:</p>
+      <p>\(x' = x/b - c\), &nbsp; \(y' = a y + d\)</p>
+    </div>
+  </section>
+
+  <!-- Unit 3 -->
+  <section id="unit3" class="unit-section">
+    <h2>Unit 3 — Radicals &amp; Rationals</h2>
+    <div>
+      <h3>Radical functions</h3>
+      <p>Parent functions: \(y = \sqrt{x}\) (domain \(x &ge; 0\)) and \(y = \sqrt[3]{x})\) (all reals).</p>
+      <p>General transform: \(y = a \sqrt{b(x+c)} + d\)</p>
+
+      <h3>Rational functions</h3>
+      <p>\(R(x) = P(x)/Q(x)\). Domain excludes roots of \(Q\). Vertical asymptotes where denominator zeros remain after
+        cancellation; holes where factors cancel.</p>
+      <p>Horizontal asymptotes depend on degrees of numerator/denominator.</p>
+    </div>
+  </section>
+
+  <!-- Unit 4 -->
+  <section id="unit4" class="unit-section">
+    <h2>Unit 4 — Exponents &amp; Logarithms</h2>
+    <div>
+      <h3>Exponential functions</h3>
+      <p>General: \(y = a b^{kx} + d\). Domain: all reals. Horizontal asymptote: \(y = d\).</p>
+
+      <h3>Logarithms</h3>
+      <p>Definition: \(log_b(N)=e\) iff \(b^e=N\). Domain: \((0,∞)\). Properties: product, quotient, power, change of
+        base.</p>
+    </div>
+  </section>
+
+  <!-- Unit 5 -->
+  <section id="unit5" class="unit-section">
+    <h2>Unit 5 — Polynomial Functions</h2>
+    <div>
+      <h3>Core facts</h3>
+      <ul>
+        <li>Polynomial: \(f(x)=a_n x^n + ... + a_0\). Degree \(= n.\)</li>
+        <li>End behaviour determined by degree parity and leading coefficient.</li>
+        <li>Multiplicity: odd \(\)= cross, even \(=\) bounce.</li>
+      </ul>
+      <h3>Graphing checklist</h3>
+      <ol>
+        <li>Factor, find zeros and multiplicities.</li>
+        <li>Find \(y\)-intercept \(f(0)\).</li>
+        <li>Sketch end behaviour and turning points \((≤ n−1)\).</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Unit 6 -->
+  <section id="unit6" class="unit-section">
+    <h2>Unit 6 — Permutations, Combinations &amp; Binomial Theorem</h2>
+    <div>
+      <h3>Factorials &amp; counting</h3>
+      <ul>
+        <li>\(n! = n·(n−1)·...·1\), and \(0! = 1\)</li>
+        <li>\(P(n,k) = n!/(n−k)!\), \(C(n,k) = n!/(k!(n−k)!)\)</li>
+      </ul>
+
+      <h3>Binomial theorem</h3>
+      <p>\((a+b)^n = Σ_{k=0}^n C_{(n,k)} a^{n−k} b^k\)</p>
+    </div>
+  </section>
+
+  <!-- Unit 7 -->
+  <section id="unit7" class="unit-section">
+    <h2>Unit 7 — Trigonometric Identities</h2>
+    <div>
+      <h3>Addition &amp; subtraction</h3>
+      <ul>
+        <li>\(sin(A±B) = sinA cosB ± cosA sinB\)</li>
+        <li>\(cos(A±B) = cosA cosB ∓ sinA sinB\)</li>
+        <li>\(tan(A±B) = (tanA ± tanB)/(1 ∓ tanA tanB)\)</li>
+      </ul>
+
+      <h3>Double-angle</h3>
+      <ul>
+        <li>\(sin2a = 2 sin a cos a\)</li>
+        <li>\(cos2a = cos^2 a − sin^2 a = 2 cos^2 a − 1 = 1 − 2 sin^2 a\)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Unit 8 -->
+  <section id="unit8" class="unit-section">
+    <h2>Unit 8 — Functions</h2>
+    <div>
+      <h3>Notation &amp; operations</h3>
+      <ul>
+        <li>\((f+g)(x) = f(x)+g(x)\), \((f·g)(x)=f(x)g(x)\), \((f/g)(x)=f(x)/g(x)\) where \(g(x)≠0\)</li>
+        <li>\((f∘g)(x)=f(g(x))\). Domain caution: \(g(x)\) must be in domain\((f)\).</li>
+      </ul>
+
+      <h3>Domains</h3>
+      <p>Domain\((f+g)\)=Domain\((f)\) ∩ Domain\((g)\). For composition use { \(x\) in Domain\((g)\): \(g(x)\) in
+        Domain\((f)\) }.</p>
+    </div>
+  </section>
+
   <footer class="footer-bar">
     <div class="footer-resources">
-      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
+      <a class="resource-link" href="full_formulasheet.html">Formula Sheet</a>
+      <a class="resource-link" href="#" download>Past Exam Paper</a>
+      <a class="resource-link" href="#" download>Summary Notes</a>
     </div>
     <div class="footer-text">
-      Practice makes progress!
+      By students, for students — a Grade 12 student initiative helping Manitoba’s math learners succeed.
     </div>
+    <p style="font-style: italic; margin-top: 4px;">Made with Care, Caffeine & a good Playlist.</p>
     <div class="footer-copyright">
-      &copy; 2025 PC40S. All rights reserved.
+      &copy; 2025 Pre-Calc 40S Practice Platform. All rights reserved.
     </div>
   </footer>
+
+  <!-- Light/Dark Mode Toggle Switch (match index.html) -->
   <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-      <span class="toggle-handle"></span>
-    </button>
+    <span class="toggle-handle"></span>
+  </button>
   <script>
-    // Light/Dark Mode Toggle (Switch Style)
-    const themeBtn = document.getElementById('themeToggleBtn');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    function setTheme(mode) {
-      if (mode === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeBtn.classList.add('on');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeBtn.classList.remove('on');
-      }
-      localStorage.setItem('theme', mode);
-    }
-    if (savedTheme) {
-      setTheme(savedTheme);
+  // Light/Dark Mode Toggle (Switch Style) — copied from index.html to match behavior and styling
+  const themeBtn = document.getElementById('themeToggleBtn');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeBtn.classList.add('on');
     } else {
-      setTheme(prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.classList.remove('on');
     }
-    themeBtn.addEventListener('click', function() {
-      const current = document.documentElement.getAttribute('data-theme');
-      setTheme(current === 'dark' ? 'light' : 'dark');
-    });
+    localStorage.setItem('theme', mode);
+  }
+  // Initial theme
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+  themeBtn.addEventListener('click', function() {
+    const current = document.documentElement.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
   </script>
 </body>
+
 </html>
