@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-    body { min-height: 100vh; display: flex; flex-direction: column; }
-    .container { flex: 1 0 auto; }
-    footer.footer-bar { flex-shrink: 0; }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1 0 auto;
+    }
+
+    footer.footer-bar {
+      flex-shrink: 0;
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -15,6 +32,7 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
   <a href="../index.html" class="logo-link" aria-label="Go to homepage">
     <span class="logo-text">PC40S</span>
@@ -39,7 +57,8 @@
           <ul style="margin-left: 1.5em;">
             <li>Exponential \(y = b^x\) \((b > 0, b ≠ 1)\): Domain: all real \(x\); Range: \((0, ∞)\)</li>
             <li>Logarithmic \(y = \log_b(x)\): Domain: \((0, ∞)\); Range: all real \(y\)</li>
-            <li>Inverse mapping: If exponential has \((x, y)\), log has \((y, x)\). So domain(log) = range(exp), range(log) = domain(exp).</li>
+            <li>Inverse mapping: If exponential has \((x, y)\), log has \((y, x)\). So domain(log) = range(exp),
+              range(log) = domain(exp).</li>
           </ul>
         </section>
         <section class="question-card">
@@ -62,7 +81,7 @@
           <h2>Exponential Graph Behavior</h2>
           <ul style="margin-left: 1.5em;">
             <li>\(b > 1\): increasing (rises to right). Example: \(y = 2^x\)</li>
-            <li>\(0 < b < 1\): decreasing (decay). Example: \(y = (1/2)^x\)</li>
+            <li>\(0 < b < 1\): decreasing (decay). Example: \(y=(1/2)^x\)</li>
             <li>Parent \(y = b^x\) has HA: \(y = 0\). For \(y = a b^{k(x + c)} + d\), HA is \(y = d\).</li>
           </ul>
         </section>
@@ -93,7 +112,8 @@
           <ul style="margin-left: 1.5em;">
             <li>Change of base: \(\log_b(x) = \frac{\ln(x)}{\ln(b)}\) or \(\frac{\log_{10}(x)}{\log_{10}(b)}\)</li>
             <li>No calculator: find two nearby powers of \(b\), interpolate</li>
-            <li>Example: \(\log_2(10)\) is between \(3\) and \(4\) (since \(2^3 = 8\), \(2^4 = 16\)), estimate \(≈ 3.3\)</li>
+            <li>Example: \(\log_2(10)\) is between \(3\) and \(4\) (since \(2^3 = 8\), \(2^4 = 16\)), estimate \(≈ 3.3\)
+            </li>
           </ul>
         </section>
         <section class="question-card">
@@ -121,7 +141,8 @@
           <h2>Word Problems: Growth, Decay, and Models</h2>
           <ul style="margin-left: 1.5em;">
             <li>Discrete: \(A(t) = A_0 b^t\), doubling time: \(T_{double} = \log_b(2)\)</li>
-            <li>Continuous: \(A(t) = A_0 e^{kt}\), doubling: \(T_{double} = \frac{\ln(2)}{k}\), half-life: \(T_{half} = \frac{-\ln(2)}{k}\)</li>
+            <li>Continuous: \(A(t) = A_0 e^{kt}\), doubling: \(T_{double} = \frac{\ln(2)}{k}\), half-life: \(T_{half} =
+              \frac{-\ln(2)}{k}\)</li>
             <li>Translate words to formula, substitute, solve for unknown using logs, check units, interpret</li>
           </ul>
         </section>
@@ -135,8 +156,10 @@
         <section class="question-card">
           <h2>Quick Mapping Rules</h2>
           <ul style="margin-left: 1.5em;">
-            <li>Exponential: (\(x_p, y_p\)) on parent \(y_p = b^{x_p}\), transformed: \(x = x_p/k - c\), \(y = a y_p + d\)</li>
-            <li>Log: \((x_p, y_p)\) on parent \(y_p = \log_b(x_p)\), transformed: \(x = x_p/k - c\), \(y = a y_p + d\)</li>
+            <li>Exponential: (\(x_p, y_p\)) on parent \(y_p = b^{x_p}\), transformed: \(x = x_p/k - c\), \(y = a y_p +
+              d\)</li>
+            <li>Log: \((x_p, y_p)\) on parent \(y_p = \log_b(x_p)\), transformed: \(x = x_p/k - c\), \(y = a y_p + d\)
+            </li>
             <li>Inverse: if exponential has \((x, y)\), log has \((y, x)\) (reflect across \(y = x\))</li>
           </ul>
         </section>
@@ -155,9 +178,9 @@
   </div>
   <footer class="footer-bar">
     <div class="footer-resources">
-      <a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
-      <a class="resource-link" href="#" download>Past Exam Paper</a>
-      <a class="resource-link" href="#" download>Summary Notes</a>
+      <a class="resource-link" href="full_formulasheet.html" target="_blank">Formula Sheet</a>
+      <a class="resource-link" href="https://www.edu.gov.mb.ca/k12/assess/archives/index.html" target="_blank">Past Exam
+        Papers</a>
     </div>
     <div class="footer-text">
       By students, for students — a Grade 12 student initiative helping Manitoba’s math learners succeed.
@@ -167,33 +190,33 @@
     </div>
   </footer>
   <button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-      <span class="toggle-handle"></span>
-    </button>
+    <span class="toggle-handle"></span>
+  </button>
   <script>
-  // Light/Dark Mode Toggle (Switch Style)
-  const themeBtn = document.getElementById('themeToggleBtn');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const savedTheme = localStorage.getItem('theme');
-  function setTheme(mode) {
-    if (mode === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeBtn.classList.add('on');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      themeBtn.classList.remove('on');
+    // Light/Dark Mode Toggle (Switch Style)
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeBtn.classList.add('on');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        themeBtn.classList.remove('on');
+      }
+      localStorage.setItem('theme', mode);
     }
-    localStorage.setItem('theme', mode);
-  }
-  if (savedTheme) {
-    setTheme(savedTheme);
-  } else {
-    setTheme(prefersDark ? 'dark' : 'light');
-  }
-  themeBtn.addEventListener('click', function() {
-    const current = document.documentElement.getAttribute('data-theme');
-    setTheme(current === 'dark' ? 'light' : 'dark');
-  });
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+    themeBtn.addEventListener('click', function () {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
   </script>
 </body>
+
 </html>
- 

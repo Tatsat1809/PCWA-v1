@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<style>
-		html, body { height: 100%; margin: 0; padding: 0; }
-		body { min-height: 100vh; display: flex; flex-direction: column; }
-		.container { flex: 1 0 auto; }
-		footer.footer-bar { flex-shrink: 0; }
+		html,
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.container {
+			flex: 1 0 auto;
+		}
+
+		footer.footer-bar {
+			flex-shrink: 0;
+		}
 	</style>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -14,6 +31,7 @@
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
 	<a href="../index.html" class="logo-link" aria-label="Go to homepage">
 		<span class="logo-text">PC40S</span>
@@ -33,13 +51,15 @@
 					<ul style="margin-left: 1.5em;">
 						<li>Definition: \( n! = n \cdot (n-1) \cdot (n-2) \cdots 2 \cdot 1 \), for \( n \geq 1 \).</li>
 						<li>Convention: \( 0! = 1 \).</li>
-						<li>Fast cancellations: \( \frac{(n+2)!}{n!} = (n+2)(n+1) \), \( \frac{n!}{(n-2)!} = n(n-1) \).</li>
+						<li>Fast cancellations: \( \frac{(n+2)!}{n!} = (n+2)(n+1) \), \( \frac{n!}{(n-2)!} = n(n-1) \).
+						</li>
 					</ul>
 				</section>
 				<section class="question-card">
 					<h2>Counting Principle</h2>
 					<ul style="margin-left: 1.5em;">
-						<li>If Task A has \( m \) ways and for each, Task B has \( n \) ways, then A then B has \( m \cdot n \) ways.</li>
+						<li>If Task A has \( m \) ways and for each, Task B has \( n \) ways, then A then B has \( m
+							\cdot n \) ways.</li>
 						<li>Extend by multiplication for more steps.</li>
 					</ul>
 				</section>
@@ -47,14 +67,36 @@
 					<h2>Permutations vs Combinations</h2>
 					<table class="formula-table" style="width:100%;margin-bottom:1em;text-align:center;">
 						<thead>
-							<tr><th>Feature</th><th>Permutation</th><th>Combination</th></tr>
+							<tr>
+								<th>Feature</th>
+								<th>Permutation</th>
+								<th>Combination</th>
+							</tr>
 						</thead>
 						<tbody>
-							<tr><td>Order matters?</td><td>Yes</td><td>No</td></tr>
-							<tr><td>Formula</td><td>\( P(n, k) = \frac{n!}{(n-k)!} \)</td><td>\( C(n, k) = \frac{n!}{k!(n-k)!} \)</td></tr>
-							<tr><td>Example</td><td>\( P(4,3) = 24 \)</td><td>\( C(5,2) = 10 \)</td></tr>
-							<tr><td>Relation</td><td colspan="2">\( P(n,k) = C(n,k) \cdot k! \)</td></tr>
-							<tr><td>Symmetry</td><td colspan="2">\( C(n,k) = C(n,n-k) \)</td></tr>
+							<tr>
+								<td>Order matters?</td>
+								<td>Yes</td>
+								<td>No</td>
+							</tr>
+							<tr>
+								<td>Formula</td>
+								<td>\( P(n, k) = \frac{n!}{(n-k)!} \)</td>
+								<td>\( C(n, k) = \frac{n!}{k!(n-k)!} \)</td>
+							</tr>
+							<tr>
+								<td>Example</td>
+								<td>\( P(4,3) = 24 \)</td>
+								<td>\( C(5,2) = 10 \)</td>
+							</tr>
+							<tr>
+								<td>Relation</td>
+								<td colspan="2">\( P(n,k) = C(n,k) \cdot k! \)</td>
+							</tr>
+							<tr>
+								<td>Symmetry</td>
+								<td colspan="2">\( C(n,k) = C(n,n-k) \)</td>
+							</tr>
 						</tbody>
 					</table>
 				</section>
@@ -88,8 +130,10 @@
 				<section class="question-card">
 					<h2>Block & Complement Techniques</h2>
 					<ul style="margin-left: 1.5em;">
-						<li>Block method: group required-adjacent persons as one “super-person”; multiply by internal arrangements.</li>
-						<li>Complement method: count total arrangements then subtract arrangements that violate the restriction.</li>
+						<li>Block method: group required-adjacent persons as one “super-person”; multiply by internal
+							arrangements.</li>
+						<li>Complement method: count total arrangements then subtract arrangements that violate the
+							restriction.</li>
 					</ul>
 				</section>
 				<section class="question-card">
@@ -111,13 +155,22 @@
 				<section class="question-card">
 					<h2>Binomial Coefficients & Pascal’s Triangle</h2>
 					<div style="margin-bottom:1em; text-align:center;">
-						<div style="font-size:1.15em; font-weight:600; margin-bottom:0.5em;">Pascal's Triangle (Rows 0–4)</div>
-						<div style="font-family: 'Consolas', 'Courier New', monospace; font-size: 1.15em; line-height: 1.7; display: inline-block; text-align: center;">
-							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-							<div style="margin-bottom:2px;">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;</div>
-							<div style="margin-bottom:2px;">&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</div>
-							<div style="margin-bottom:2px;">1&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;1</div>
+						<div style="font-size:1.15em; font-weight:600; margin-bottom:0.5em;">Pascal's Triangle (Rows
+							0–4)</div>
+						<div
+							style="font-family: 'Consolas', 'Courier New', monospace; font-size: 1.15em; line-height: 1.7; display: inline-block; text-align: center;">
+							<div style="margin-bottom:2px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							</div>
+							<div style="margin-bottom:2px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">
+								&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;
+							</div>
+							<div style="margin-bottom:2px;">
+								&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;</div>
+							<div style="margin-bottom:2px;">
+								1&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;1</div>
 						</div>
 					</div>
 					<ul style="margin-left: 1.5em;">
@@ -149,9 +202,9 @@
 	</div>
 	<footer class="footer-bar">
 		<div class="footer-resources">
-			<a class="resource-link" href="#" download>Formula Sheet (PDF)</a>
-			<a class="resource-link" href="#" download>Past Exam Paper</a>
-			<a class="resource-link" href="#" download>Summary Notes</a>
+			<a class="resource-link" href="full_formulasheet.html" target="_blank">Formula Sheet</a>
+			<a class="resource-link" href="https://www.edu.gov.mb.ca/k12/assess/archives/index.html"
+				target="_blank">Past Exam Papers</a>
 		</div>
 		<div class="footer-text">
 			By students, for students — a Grade 12 student initiative helping Manitoba’s math learners succeed.
@@ -161,32 +214,33 @@
 		</div>
 	</footer>
 	<button id="themeToggleBtn" aria-label="Toggle light/dark mode" title="Toggle light/dark mode">
-			<span class="toggle-handle"></span>
-		</button>
+		<span class="toggle-handle"></span>
+	</button>
 	<script>
-	// Light/Dark Mode Toggle (Switch Style)
-	const themeBtn = document.getElementById('themeToggleBtn');
-	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-	const savedTheme = localStorage.getItem('theme');
-	function setTheme(mode) {
-		if (mode === 'dark') {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			themeBtn.classList.add('on');
-		} else {
-			document.documentElement.setAttribute('data-theme', 'light');
-			themeBtn.classList.remove('on');
+		// Light/Dark Mode Toggle (Switch Style)
+		const themeBtn = document.getElementById('themeToggleBtn');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const savedTheme = localStorage.getItem('theme');
+		function setTheme(mode) {
+			if (mode === 'dark') {
+				document.documentElement.setAttribute('data-theme', 'dark');
+				themeBtn.classList.add('on');
+			} else {
+				document.documentElement.setAttribute('data-theme', 'light');
+				themeBtn.classList.remove('on');
+			}
+			localStorage.setItem('theme', mode);
 		}
-		localStorage.setItem('theme', mode);
-	}
-	if (savedTheme) {
-		setTheme(savedTheme);
-	} else {
-		setTheme(prefersDark ? 'dark' : 'light');
-	}
-	themeBtn.addEventListener('click', function() {
-		const current = document.documentElement.getAttribute('data-theme');
-		setTheme(current === 'dark' ? 'light' : 'dark');
-	});
+		if (savedTheme) {
+			setTheme(savedTheme);
+		} else {
+			setTheme(prefersDark ? 'dark' : 'light');
+		}
+		themeBtn.addEventListener('click', function () {
+			const current = document.documentElement.getAttribute('data-theme');
+			setTheme(current === 'dark' ? 'light' : 'dark');
+		});
 	</script>
 </body>
+
 </html>
