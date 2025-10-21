@@ -23,6 +23,28 @@
     footer.footer-bar {
       flex-shrink: 0;
     }
+    /* Scoped responsive tweak for Unit 6 title to avoid collision with logo */
+    header h1 {
+      font-size: 2.4rem;
+    }
+    @media (max-width: 900px) {
+      header h1 { font-size: 1.75rem; }
+      header { padding-left: 3.2rem; }
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.25rem; }
+      header { padding-left: 3.6rem; }
+    }
+    @media (max-width: 352px) {
+      header { padding-left: 4.2rem; }
+      header h1 { font-size: 1.05rem; }
+    }
+    @media (max-width: 366px) and (min-width: 353px) {
+      header { margin-top: 1.2rem; }
+    }
+    @media (max-width: 352px) {
+      header { margin-top: 1.6rem; }
+    }
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -36,7 +58,7 @@
   </a>
   <div class="container">
     <header>
-      <h1>Unit 6: Permutations, Combinations & Binomial Theorem</h1>
+      <h1>Unit 6: P&C & Binomial Theorem</h1>
       <p>Explore concepts, practice, and resources for Unit 6: Permutations, Combinations & Binomial Theorem</p>
     </header>
     <nav class="unit-nav-vertical" aria-label="Unit Navigation" style="position: relative;">

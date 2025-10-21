@@ -74,12 +74,7 @@
     transition: background 0.2s, transform 0.2s, opacity 0.2s;
     opacity: 0.95;
 }
-#scrollToTopBtn:hover, #scrollToTopBtn:focus {
-    background: var(--color-btn-hover);
-    color: #fffde7;
-    transform: translateY(-2px) scale(1.08);
-    outline: none;
-}
+        
 @media (max-width: 600px) {
     #scrollToTopBtn {
         right: 1.1rem;
@@ -238,7 +233,14 @@ header p {
     margin-bottom: 0.2rem;
     letter-spacing: 0.5px;
     color: #ffe082;
-    white-space: nowrap; /* Add this line */
+    /* allow the footer sentence to wrap naturally and stay readable */
+    white-space: normal;
+    display: inline-block;
+    max-width: min(56ch, 90%);
+    line-height: 1.2;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
 .footer-bar span {
@@ -307,16 +309,19 @@ h3 {
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
+    align-items: center; /* center the buttons horizontally */
 }
 
 .nav-btn, button.nav-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 120px;
-    padding: 0.7rem 1rem;
+    /* Make each nav button a long pill; limit by max-width to avoid overflowing */
+    width: 100%;
+    max-width: 680px; /* long stick on wide screens */
+    padding: 0.9rem 1.1rem;
     font-size: 18px;
-    border-radius: 12px;
+    border-radius: 999px; /* full pill */
     border: none;
     background: var(--color-primary);
     color: var(--color-btn-text);
@@ -326,7 +331,7 @@ h3 {
     outline: none;
     text-decoration: none;
     font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
 }
 
@@ -578,4 +583,61 @@ h3 {
 }
 [data-theme="dark"] #themeToggleBtn.on .toggle-handle {
   background: #444950;
+}
+
+/* Practice page controls - scoped so .nav-btn (site nav) is not affected */
+.practice-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+.practice-controls .practice-btn {
+    min-width: 88px;
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-btn-text);
+    cursor: pointer;
+    box-shadow: var(--color-btn-shadow);
+}
+.practice-controls label {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    font-size: 0.95rem;
+}
+.practice-controls input[type="number"] {
+    width: 3.2em; /* keeps small but consistent */
+    padding: 0.15rem 0.25rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.12);
+}
+
+/* Responsive layer: fluid typography and layout adjustments */
+@media (min-width: 480px) and (max-width: 1200px) {
+    :root {
+        --fluid-type: calc(1rem + 0.2vw);
+    }
+    header h1 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
+    header p { font-size: clamp(1rem, 1.9vw, 1.25rem); }
+    .container { padding: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+    .container { padding: 1rem; }
+    header h1 { font-size: 1.4rem; }
+    header p { font-size: 1rem; }
+    .nav-grid { gap: 0.6rem; }
+    .nav-btn { font-size: 15px; padding: 0.6rem 0.8rem; min-width: 100px; }
+    .cheat-sheet-panel { width: 100vw; position: fixed; left: 0; }
+    .footer-text { white-space: normal; text-align: center; }
+}
+
+@media (min-width: 900px) {
+    .nav-grid { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .nav-btn { min-width: 160px; }
 }

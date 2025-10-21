@@ -376,6 +376,61 @@
             opacity: 0.8;
             margin-top: 0.5rem;
         }
+        /* Responsive overrides (scoped to this page) */
+        /* Fix footer overflowing fixed-width and allow the footer text to wrap */
+        .footer-bar {
+            width: auto !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 0.8rem 1rem !important;
+            box-sizing: border-box;
+        }
+        .footer-text {
+            white-space: normal !important;
+            display: inline-block;
+            max-width: min(56ch, 90%);
+            line-height: 1.2;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            hyphens: auto;
+            text-align: center;
+            margin: 0.2rem auto;
+            color: var(--color-accent);
+        }
+
+        /* Make the provincial grid center and reduce top padding on smaller screens */
+        @media (max-width: 900px) {
+            body.provincial-grid {
+                padding: 1.2rem 1rem 2rem 1rem;
+                margin: 0 auto;
+                gap: 16px;
+                justify-items: center;
+                max-width: 100%;
+            }
+            .provincial-header header {
+                max-width: 100%;
+                padding: 0 0.6rem;
+            }
+            .provincial-header header h1 { font-size: 1.8rem !important; }
+            .unit-card { max-width: 100% !important; min-height: 100px; }
+        }
+
+        @media (max-width: 600px) {
+            body.provincial-grid { padding: 0.9rem 0.8rem; }
+            .provincial-header header h1 { font-size: 1.25rem !important; }
+            .provincial-header header { padding-left: 3.6rem; }
+            .unit-card { min-height: 120px; }
+        }
+
+        /* Handle the narrow collision window similarly to other pages */
+        @media (max-width: 366px) and (min-width: 353px) {
+            .provincial-header header { margin-top: 1.2rem; }
+        }
+        @media (max-width: 352px) {
+            .provincial-header header { margin-top: 1.6rem; padding-left: 4.2rem; }
+            .provincial-header header h1 { font-size: 1.05rem !important; }
+        }
     </style>
 </head>
 

@@ -48,14 +48,14 @@
     </header>
     <main>
       <div id="question-container"></div>
-      <div style="text-align:center; margin-top:2rem;">
-        <button id="prev-btn" class="nav-btn" style="margin-right:1em;">Previous</button>
-        <button id="solution-btn" class="nav-btn" style="margin-right:1em;">View Solution</button>
-        <button id="next-btn" class="nav-btn" style="margin-right:1em;">Next</button>
-        <label for="jump-to-q" style="margin-left:1em;">Go to:
-          <input id="jump-to-q" type="number" min="1" max="60" style="width:3em;">
+      <div class="practice-controls">
+        <button id="prev-btn" class="practice-btn">Previous</button>
+        <button id="solution-btn" class="practice-btn">View Solution</button>
+        <button id="next-btn" class="practice-btn">Next</button>
+        <label for="jump-to-q">Go to:
+          <input id="jump-to-q" type="number" min="1" max="60">
         </label>
-        <button id="jump-btn" class="nav-btn">Go</button>
+        <button id="jump-btn" class="practice-btn">Go</button>
       </div>
     </main>
   </div>
