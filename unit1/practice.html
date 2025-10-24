@@ -482,7 +482,7 @@
         "id": 35,
         "question": "Solve \\(sin(3θ) = 0\\) for /0 ≤ θ < 2π/.",
         "answer": "\\(θ = 0\\), \\(π/3\\), \\(2π/3\\), \\(π\\), \\(4π/3\\), \\(5π/3\\)",
-        "solution": "\\(sin(3θ) = 0\\) ⇒ \\(3θ = nπ\\) ⇒ \\(θ = nπ/3\\) for /n = 0/, /1/, /2/, /3/, /4/, /5/)."
+        "solution": "\\(sin(3θ) = 0\\) ⇒ \\(3θ = nπ\\) ⇒ \\(θ = nπ/3\\) for (/n = 0/, /1/, /2/, /3/, /4/, /5/)."
       },
       {
         "id": 36,
@@ -536,7 +536,7 @@
         "id": 44,
         "question": "A point on the unit circle is \\((-4/5, 3/5)\\).\na. Determine /sin(θ)/, /cos(θ)/, and /tan(θ)/.\nb. State the quadrant of /θ/.\nc. Give one coterminal angle of /θ/ in /(-π, π]/.",
         "answer": "a. \\(sin(θ) = 3/5\\), \\(cos(θ) = -4/5\\), \\(tan(θ) = -3/4\\); b. Quadrant /II/; c. \\(θ = arccos(-4/5) ≈ 2.498\\) radians.",
-        "solution": "a. \\(sin(θ) = 3/5\\), \\(cos(θ) = -4/5\\), \\(tan(θ) = -3/4\\).\nb. Since /x < 0/, /y > 0/, /θ/ is in Quadrant /II/.\nc. One coterminal angle in /(-π, π]/ is \\(arccos(-4/5) ≈ 2.498\\) radians."
+        "solution": "As on a unit circle, the general form of a point is /P(θ) = (cos(θ), sin(θ))/ ⇒ a. \\(sin(θ) = 3/5\\), \\(cos(θ) = -4/5\\), \\(tan(θ) = sin(θ)/cos(θ) = -3/4\\).\nb. Since /x < 0/, /y > 0/, /θ/ is in Quadrant /II/.\nc. One coterminal angle in /(-π, π]/ is \\(arccos(-4/5) ≈ 2.498\\) radians."
       },
       {
         "id": 45,
@@ -547,20 +547,20 @@
       {
         "id": 46,
         "question": "Verify the identity /sin²(θ) + cos²(θ) = 1/ by substituting \\(θ = 2π/3\\).",
-        "answer": "/1/",
+        "answer": "/LHS = RHS/",
         "solution": "\\(sin(2π/3) = \\sqrt{3}/2\\), \\(cos(2π/3) = -1/2\\). (\\(\\sqrt{3}/2)² + (-1/2)² = 3/4 + 1/4 = 1\\)."
       },
       {
         "id": 47,
         "question": "Solve \\(cos(θ) = sin(π/3 - θ)\\) for /0 ≤ θ < 2π/.",
         "answer": "\\(θ = π/6\\), \\(5π/6\\)",
-        "solution": "\\(cos(θ) = sin(π/3 - θ)\\) ⇒ \\(cos(θ) = cos(π/2 - (π/3 - θ)) = cos(π/6 + θ)\\). So, \\(θ = π/6\\), \\(5π/6\\)."
+        "solution": "\\(cos(θ) = sin(π/3 - θ)\\) ⇒ Using the identity \\(sin(x) = cos(π/2 - x)\\) ⇒ \\(cos(θ) = cos(π/2 - (π/3 - θ)) = cos(π/6 + θ)\\). So, \\(θ = π/6\\), \\(5π/6\\)."
       },
       {
         "id": 48,
         "question": "A rotating beacon has an angular speed of \\(π/6\\) radians per second.\na. How many radians does it rotate through in /10/ seconds?\nb. Express this angle in degrees.\nc. If the light is /2/ m from the axis of rotation, what arc length does it trace in /10/ seconds?",
-        "answer": "a. /5π/ radians; b. /900°/; c. /10π/ m",
-        "solution": "a. \\(θ = (π/6) × 10 = 5π\\) radians.\nb. \\(5π × 180/π = 900°\\).\nc. Arc length /= rθ = 2 × 5π = 10π/ m."
+        "answer": "a. \\(5π/3\\) radians; b. /300°/; c. /10π/ m",
+        "solution": "a. \\(θ = (π/6) × 10 = 5π/3\\) radians.\nb. \\(5π/3 × 180/π = 300°\\).\nc. Arc length \\(= rθ = 2 × 5π/3 = 10π/3\\) m."
       },
       {
         "id": 49,
@@ -572,15 +572,16 @@
         "id": 50,
         "question": "For \\(θ = 450°\\),\na. Express θ in radians in /[0, 2π)/.\nb. Determine the exact values of /sin(θ)/ and /cos(θ)/.\nc. Find the arc length subtended on a circle of radius /7/ cm.",
         "choices": [
-          "a. \\(5π/2\\); b. /sin(450°) = 1/, /cos(450°) = 0/; c. \\(35π/2\\) cm",
           "a. \\(π/2\\); b. /sin(450°) = 1/, /cos(450°) = 0/; c. \\(7π/2\\) cm",
-          "a. \\(3π/2\\); b. /sin(450°) = -1/, /cos(450°) = 0/; c. \\(21π/2\\) cm",
-          "a. \\(2π\\); b. /sin(450°) = 0/, /cos(450°) = 1/; c. \\(14π\\) cm"
+          "b. \\(5π/2\\); b. /sin(450°) = 1/, /cos(450°) = 0/; c. \\(35π/2\\) cm",
+          "c. \\(3π/2\\); b. /sin(450°) = -1/, /cos(450°) = 0/; c. \\(21π/2\\) cm",
+          "d. \\(2π\\); b. /sin(450°) = 0/, /cos(450°) = 1/; c. \\(14π\\) cm"
         ],
-        "answer": 0,
+        "answer": "Option - /(B)/",
         "solution": "a. \\(450° = 5π/2\\) radians.\nb. /sin(450°) = sin(90°) = 1/, /cos(450°) = cos(90°) = 0/.\nc. Arc length \\(= (450/360) × 2π × 7 = (5/4) × 14π = 35π/2\\) cm."
       }
     ]
+    
 
 
   </script>
