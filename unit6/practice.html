@@ -216,18 +216,21 @@
     <script>
         const questions = [
             {
+                "id": 1,
                 "type": "short_answer",
                 "question": "Explain what '/n!/' (n factorial) means and compute /6!/.",
                 "answer": "/n! = n·(n-1)·(n-2)·...·1/. /6! = 6·5·4·3·2·1 = 720/.",
                 "solution": "Factorial definition: multiply all positive integers from /1/ to /n/. So /6! = 6×5×4×3×2×1 = 720/."
             },
             {
+                "id": 2,
                 "type": "short_answer",
                 "question": "Using the counting principle: /5/ choices for appetizer, /4/ for main course, and /3/ for dessert. How many different meal combinations?",
                 "answer": "/5 × 4 × 3 = 60/ combinations.",
                 "solution": "By the Fundamental Counting Principle multiply the number of independent choices: /5·4·3 = 60/."
             },
             {
+                "id": 3,
                 "type": "mcq",
                 "question": "A lock code has /4/ digits, each digit /0–9/. How many possible codes?",
                 "choices": [
@@ -240,12 +243,14 @@
                 "solution": "Each digit has /10/ choices and digits are independent, so /10·10·10·10 = 10^4 = 10000/."
             },
             {
+                "id": 4,
                 "type": "short_answer",
                 "question": "From /3/ shirts, /2/ pants, /2/ shoes, how many outfits?",
                 "answer": "/3 × 2 × 2 = 12/ outfits.",
                 "solution": "Multiply choices for each clothing category: /3·2·2 = 12/."
             },
             {
+                "id": 5,
                 "type": "mcq",
                 "question": "How many /5/-letter strings using distinct letters from /26/-letter alphabet?",
                 "choices": [
@@ -258,12 +263,14 @@
                 "solution": "Number of permutations without repetition: /26×25×24×23×22 = 7,893,600/."
             },
             {
+                "id": 6,
                 "type": "short_answer",
                 "question": "How many different /8/-digit numbers can you form if repetition is allowed?",
                 "answer": "/9 × 10^7 = 90,000,000/ (if leading zero not allowed) or /10^8 = 100,000,000/ (if leading zero allowed).",
                 "solution": "If leading zero allowed: /10/ choices per position → /10^8/. If leading zero not allowed (first digit /1–9/): /9·10^7/. Clarify convention before choosing."
             },
             {
+                "id": 7,
                 "type": "mcq",
                 "question": "A license plate: /3/ letters followed by /3/ digits. Letters and digits may repeat. How many possible plates?",
                 "choices": [
@@ -276,6 +283,7 @@
                 "solution": "Each letter slot: /26/ choices; each digit: /10/ choices. Multiply: /26^3·10^3 = 17,576,000/."
             },
             {
+                "id": 8,
                 "type": "mcq",
                 "question": "In how many ways can you arrange the letters in the word 'MATH'?",
                 "choices": [
@@ -288,12 +296,14 @@
                 "solution": "All letters distinct, so permutations: /4! = 24/."
             },
             {
+                "id": 9,
                 "type": "short_answer",
                 "question": "What is the difference between permutation and combination? Give examples.",
-                "answer": "Permutation: order matters (e.g., seating arrangements). Combination: order doesn't matter (e.g., choosing committee).",
+                "answer": "Permutation: order matters - it counts selection and arrangement (e.g., seating arrangements). Combination: order doesn't matter - it just counts selection and not arrangement (e.g., choosing committee).",
                 "solution": "Permutations count ordered arrangements, combinations count unordered selections. Example: /3/ people A,B,C: permutations of /2/ are AB, BA, AC, CA, BC, CB (/6/); combinations of /2/ are {A,B}, {A,C}, {B,C} (/3/)."
             },
             {
+                "id": 10,
                 "type": "mcq",
                 "question": "How many ways to choose 3 students from a class of /10/ to be on a committee?",
                 "choices": [
@@ -306,6 +316,7 @@
                 "solution": "Use combinations: /10/ choose /3/ = \\(10!/3!7!\\) /= 120/."
             },
             {
+                "id": 11,
                 "type": "mcq",
                 "question": "How many ways to seat /5/ students in /5/ chairs in a row?",
                 "choices": [
@@ -318,12 +329,14 @@
                 "solution": "Number of permutations of /5/ distinct people: /5! = 120/."
             },
             {
+                "id": 12,
                 "type": "short_answer",
                 "question": "How many /4/-letter strings from A,B,C,D,E with no repeats?",
                 "answer": "/P(5,4) = 5·4·3·2 = 120/.",
                 "solution": "Permutations without repetition: /P(5,4) =/ \\(5!/(5-4)!\\) /= 120/."
             },
             {
+                "id": 13,
                 "type": "mcq",
                 "question": "From /8/ people, how many ways to pick a president, vice-president, and secretary (distinct roles)?",
                 "choices": [
@@ -336,6 +349,7 @@
                 "solution": "Ordered selection of /3/ roles: /P(8,3) = 8·7·6 = 336/."
             },
             {
+                "id": 14,
                 "type": "mcq",
                 "question": "In how many ways can /8/ books be arranged on a shelf?",
                 "choices": [
@@ -348,24 +362,28 @@
                 "solution": "Permutations of /8/ distinct items: /8! = 40320/."
             },
             {
+                "id": 15,
                 "type": "short_answer",
                 "question": "A team of /4/ chosen from /10/, but order matters (roles). How many ordered teams?",
                 "answer": "/P(10,4) = 10·9·8·7 = 5040/.",
                 "solution": "Ordered selections: /P(10,4) =/ \\(10!/(10-4)!\\) /= 5040/."
             },
             {
+                "id": 16,
                 "type": "short_answer",
                 "question": "From /9/ women and /6/ men, pick committee of /5/ with exactly /3/ women and /2/ men. How many ways?",
                 "answer": "/C(9,3)·C(6,2) = 84 × 15 = 1,260/.",
                 "solution": "Choose /3/ women from /9/ and /2/ men from /6/, multiply independent choices: /84·15 = 1260/."
             },
             {
+                "id": 17,
                 "type": "short_answer",
                 "question": "/6/ students want to stand in a circle. How many circular arrangements (rotations same)?",
                 "answer": "/(6-1)! = 5! = 120/.",
                 "solution": "Circular permutations: /(n-1)!/ for arrangements up to rotation. So /5! = 120/."
             },
             {
+                "id": 18,
                 "type": "mcq",
                 "question": "In how many ways can you choose /3/ out of /7/ books to take with you?",
                 "choices": [
@@ -378,6 +396,7 @@
                 "solution": "Combinations: /7/ choose /3 =/ \\(7!/(3!4!)\\) /= 35/."
             },
             {
+                "id": 19,
                 "type": "mcq",
                 "question": "Simplify \\(7!/(5!2!)\\).",
                 "choices": [
@@ -390,6 +409,7 @@
                 "solution": "Cancel /5!/: gives \\((7·6)/(2·1)\\) /=/ \\(42/2\\) /= 21/."
             },
             {
+                "id": 20,
                 "type": "mcq",
                 "question": "Solve for /n/: \\(n!/(n-3)!\\) /= 120/.",
                 "choices": [
@@ -402,54 +422,63 @@
                 "solution": "\\(n!/(n-3)!\\) /= n(n-1)(n-2)/. Try /n=6/: /6·5·4 = 120/, so /n=6/."
             },
             {
+                "id": 21,
                 "type": "short_answer",
-                "question": "Simplify /C(8,3) + C(8,2)/.",
-                "answer": "/C(8,3)=56/, /C(8,2)=28/ ⇒ /sum = 84/, which equals /C(9,3)/.",
-                "solution": "Compute values or use identity /C(n,k)+C(n,k-1)=C(n+1,k)/. So /C(8,3)+C(8,2)=C(9,3)=84/."
+                "question": "Simplify \\(\\binom{8}{3} + \\binom{8}{2}\\).",
+                "answer": "\\(\\binom{8}{3}=56\\), \\(\\binom{8}{2}=28\\) ⇒ \\(sum = 84\\), which equals \\(\\binom{9}{3}\\).",
+                "solution": "Compute values or use identity \\(\\binom{n}{k}+\\binom{n}{k-1}=\\binom{n+1}{k}\\). So \\(\\binom{8}{3}+\\binom{8}{2}=\\binom{9}{3}=84\\)."
             },
             {
+                "id": 22,
                 "type": "short_answer",
-                "question": "Show that /P(n,r) = r! · C(n,r)/.",
-                "answer": "/P(n,r)=/ \\(n!/(n-r)!\\) and /C(n,r)=/ \\(n!/(r!(n-r)!)/\\) ⇒ /r!·C(n,r)=n!/(n-r)! = P(n,r)/.",
-                "solution": "Algebraic substitution shows equality; multiply /C(n,r)/ by /r!/ to recover permutations."
+                "question": "Show that \\({}^{n}P_{r} = r! · \\binom{n}{r}\\).",
+                "answer": "\\({}^{n}P_{r}\\) = \\(n!/(n-r)!\\) and \\(\\binom{n}{r}\\) = \\(n!/(r!(n-r)!)\\) ⇒ \\(r!·\\binom{n}{r} = n!/(n-r)! = {}^{n}P_{r}\\).",
+                "solution": "Algebraic substitution shows equality; multiply \\(\\binom{n}{r}\\) by /r!/ to recover permutations."
             },
             {
+                "id": 23,
                 "type": "short_answer",
-                "question": "Solve for /n/: /C(n,2) = 28/.",
-                "answer": "/C(n,2)=/ \\(n(n-1)/2\\) /= 28/ ⇒ /n(n-1)=56/ ⇒ /n=8/ (since /8·7=56/).",
+                "question": "Solve for /n/: \\(\\binom{n}{2} = 28\\).",
+                "answer": "\\(\\binom{n}{2}=\\) \\(n(n-1)/2\\) /= 28/ ⇒ /n(n-1)=56/ ⇒ /n=8/ (since /8·7=56/).",
                 "solution": "Solve quadratic /n^2 - n -56 = 0/; positive integer root /n=8/."
             },
             {
+                "id": 24,
                 "type": "short_answer",
                 "question": "Write out Pascal's triangle rows for /n = 0/ to /n = 5/.",
                 "answer": "/n=0/: /1/; /n=1/: /1/ /1/; /n=2/: /1/ /2/ /1/; /n=3/: /1/ /3/ /3/ /1/; /n=4/: /1/ /4/ /6/ /4/ /1/; /n=5/: /1/ /5/ /10/ /10/ /5/ /1/.",
-                "solution": "Each row gives binomial coefficients /C(n,k)/. Build rows by summing adjacent entries."
+                "solution": "Each row gives binomial coefficients \\(\\binom{n}{k}\\). Build rows by summing adjacent entries."
             },
             {
+                "id": 25,
                 "type": "short_answer",
                 "question": "Using Pascal's triangle, what are binomial coefficients for /(x+y)^6/?",
                 "answer": "Row /n=6/: /1/, /6/, /15/, /20/, /15/, /6/, /1/.",
-                "solution": "Coefficients are /C(6,0)...C(6,6)/: /1,6,15,20,15,6,1/."
+                "solution": "Coefficients are \\(\\binom{6}{0}...\\binom{6}{6}\\): /1,6,15,20,15,6,1/."
             },
             {
+                "id": 26,
                 "type": "short_answer",
                 "question": "Expand /(x+y)^3/ using binomial theorem.",
                 "answer": "/(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3/.",
                 "solution": "Use coefficients /1/, /3/, /3/, /1/ and powers decreasing/increasing."
             },
             {
+                "id": 27,
                 "type": "short_answer",
                 "question": "Expand /(a+b)^4/ completely.",
                 "answer": "/(a+b)^4 = a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4/.",
                 "solution": "Binomial coefficients /1/, /4/, /6/, /4/, /1/ applied to powers of /a/ and /b/."
             },
             {
+                "id": 28,
                 "type": "short_answer",
-                "question": "How many total terms in expansion of /(x+y)^10/?",
+                "question": "How many total terms in expansion of \\((x+y)^{10}\\)?",
                 "answer": "/11/ terms (from /k=0/ to /k=10/).",
                 "solution": "Number of terms = /n+1/ for /(x+y)^n/. So /11/ terms."
             },
             {
+                "id": 29,
                 "type": "mcq",
                 "question": "In expansion of /(x+2)^5/, what is coefficient of /x^3/?",
                 "choices": [
@@ -459,127 +488,148 @@
                     "/10/"
                 ],
                 "answer": "/40/",
-                "solution": "General term: /C(5,k) x^k 2^{5-k}/. For /k=3/: /C(5,3)=10/ and /2^{2}=4/ → /10·4 = 40/."
+                "solution": "General term: \\(\\binom{5}{k} x^k 2^{5-k}\\). For /k=3/: \\(\\binom{5}{3}=10\\) and /2^{2}=4/ → /10·4 = 40/."
             },
             {
+                "id": 30,
                 "type": "short_answer",
                 "question": "In /(1+x)^8/, which term contains /x^5/ and what is its coefficient?",
-                "answer": "Term is /C(8,5)x^5 = 56 x^5/.",
-                "solution": "Coefficient /C(8,5)=56/."
+                "answer": "Term is \\(\\binom{8}{5}x^5 = 56 x^5\\).",
+                "solution": "Coefficient \\(\\binom{8}{5}=56\\)."
             },
             {
+                "id": 31,
                 "type": "short_answer",
                 "question": "In /(2+3x)^7/, find the term containing /x^4/.",
-                "answer": "Term: /C(7,4)·2^{3}·(3x)^4 = 35·8·81 x^4 = 35·648 x^4 = 22,680 x^4/.",
-                "solution": "Use term /C(7,k)·2^{7-k}·(3x)^k/ with /k=4/. Compute coefficients accordingly."
+                "answer": "Term: \\(\\binom{7}{4}·2^{3}·(3x)^4 = 35·8·81 x^4 = 35·648 x^4 = 22,680 x^4\\).",
+                "solution": "Use term \\(\\binom{7}{k}·2^{7-k}·(3x)^k\\) with /k=4/. Compute coefficients accordingly."
             },
             {
+                "id": 32,
                 "type": "short_answer",
                 "question": "In /(x-1)^6/, find the constant term.",
-                "answer": "Constant term is /C(6,0)x^6(-1)^0/. Actually constant is when power of /x/ is /0/ → /k=6/: /C(6,6) x^0(-1)^6 = 1/ → /1/.",
-                "solution": "General term /C(6,k) x^{6-k}(-1)^k/. For constant, /6-k=0/ ⇒ /k=6/ giving /(-1)^6=1/. So constant /=1/."
+                "answer": "Constant term is \\(\\binom{6}{0}x^6(-1)^0\\). Actually constant is when power of /x/ is /0/ → /k=6/: /\\binom{6}{6} x^0(-1)^6 = 1/ → /1/.",
+                "solution": "General term \\(\\binom{6}{k} x^{6-k}(-1)^k\\). For constant, /6-k=0/ ⇒ /k=6/ giving /(-1)^6=1/. So constant /=1/."
             },
             {
+                "id": 33,
                 "type": "short_answer",
                 "question": "In /(3+x)^9/, what is the /4th/ term? (Use standard indexing: /1st/ term /= k=0/)",
-                "answer": "/4th/ term corresponds to /k=3/: /C(9,3)·3^{6}·x^{3} = 84·729·x^3 = 61,236 x^3/.",
-                "solution": "Term index /k/ gives /C(9,k) 3^{9-k} x^{k}/. For /k=3/ compute values."
+                "answer": "/4th/ term corresponds to /k=3/: \\(\\binom{9}{3}·3^{6}·x^{3} = 84·729·x^3 = 61,236 x^3\\).",
+                "solution": "Term index /k/ gives \\(\\binom{9}{k} 3^{9-k} x^{k}\\). For /k=3/ compute values."
             },
             {
+                "id": 34,
                 "type": "short_answer",
                 "question": "In expansion of /(1+x)^n/, when do middle term(s) occur?",
-                "answer": "If /n/ is even, a single middle term at /k =/ \\(n/2\\). If /n/ is odd, two middle terms at /k =/ \\((n-1)/2\\) and /k=\\((n+1)/2\\). ",
+                "answer": "If /n/ is even, a single middle term at \\(k = n/2 + 1\\). If /n/ is odd, two middle terms at \\(k = (n+1)/2\\) and \\(k = (n+3)/2\\). ",
                 "solution": "Number of terms /n+1/. Middle position(s) depend on parity of /n/ as described."
             },
             {
+                "id": 35,
                 "type": "short_answer",
                 "question": "In /(2x+1)^5/, what is the term of degree /x^3/?",
-                "answer": "Term when /k=3/: /C(5,3)(2x)^3·1^{2} = 10·8 x^3 = 80 x^3/.",
-                "solution": "Use general term /C(5,k)(2x)^k/. For /k=3/ compute coefficient /10·8=80/."
+                "answer": "Term when /k=3/: \\(\\binom{5}{3}(2x)^3·1^{2} = 10·8 x^3 = 80 x^3\\).",
+                "solution": "Use general term \\(\\binom{5}{k}(2x)^k\\). For /k=3/ compute coefficient /10·8=80/."
             },
             {
+                "id": 36,
                 "type": "short_answer",
                 "question": "Expand /(x+1)^6/ up to /x^3/ term.",
                 "answer": "/(x+1)^6 = x^6 + 6x^5 + 15x^4 + 20x^3 + .../",
                 "solution": "Use binomial coefficients: /1/,/6/,/15/,/20/ for first four terms descending."
             },
             {
+                "id": 37,
                 "type": "short_answer",
                 "question": "In /(x+2)^{10}/, determine which term has /x^7/ and state its coefficient.",
-                "answer": "Term /x^7/ corresponds to /k=7/: coefficient /C(10,7)·2^{3} = 120·8 = 960/.",
-                "solution": "General term /C(10,k)x^k 2^{10-k}/. For /k=7/ compute /C(10,7)=120/ and /2^3=8/."
+                "answer": "Term /x^7/ corresponds to /k=7/: coefficient \\(\\binom{10}{7}·2^{3} = 120·8 = 960\\).",
+                "solution": "General term \\(\\binom{10}{k} x^k 2^{10-k}\\). For /k=7/ compute \\(\\binom{10}{7}=120\\) and \\(2^3=8\\)."
             },
             {
+                "id": 38,
                 "type": "short_answer",
                 "question": "In /(1+x^2)^5/, how many terms in expansion and give general form of terms.",
-                "answer": "/6/ terms /(k=0..5)/. General term: /C(5,k)·1^{5-k}·(x^2)^k = C(5,k) x^{2k}/.",
+                "answer": "/6/ terms /(k=0..5)/. General term: \\(\\binom{5}{k}·1^{5-k}·(x^2)^k = \\binom{5}{k} x^{2k}\\).",
                 "solution": "Substitute /(x^2)/ for second variable in binomial theorem; /k/ runs /0..5/ giving powers /x^{0,2,4,6,8,10}/."
             },
             {
+                "id": 39,
                 "type": "short_answer",
                 "question": "In expansion of /(1+x)^n/, coefficient of /x^2/ is /15/. Find /n/.",
-                "answer": "/C(n,2)=15/ ⇒ /n(n-1)/2=15/ ⇒ /n(n-1)=30/ ⇒ /n=6/.",
+                "answer": "\\(\\binom{n}{2}=15\\) ⇒ \\(n(n-1)/2=15\\) ⇒ \\(n(n-1)=30\\) ⇒ \\(n=6\\).",
                 "solution": "Solve quadratic /n^2 - n -30 =0/; integer solution /n=6/."
             },
             {
+                "id": 40,
                 "type": "short_answer",
                 "question": "Expansion of /(a+x)^5/ has term /10 x^2/. What is /a/?",
-                "answer": "Term /x^2/ coefficient: /C(5,2) a^{3} = 10 a^3 = 10/ ⇒ /a^3 =1/ ⇒ /a=1/.",
-                "solution": "Use general term /C(5,2) a^{5-2} x^2/ and solve for /a/. Real positive /a = 1/."
+                "answer": "Term /x^2/ coefficient: \\(\\binom{5}{2} a^{3} = 10 a^3 = 10\\) ⇒ /a^3 =1/ ⇒ /a=1/.",
+                "solution": "Use general term \\(\\binom{5}{2} a^{5-2} x^2\\) and solve for /a/. Real positive /a = 1/."
             },
             {
+                "id": 41,
                 "type": "short_answer",
                 "question": "In /(x+k)^4/, coefficient of /x^2/ is /54/. Find positive /k/. ",
-                "answer": "Coefficient: /C(4,2) k^{2} = 6 k^2 = 54/ ⇒ /k^2 =9/ ⇒ /k =3/.",
+                "answer": "Coefficient: \\(\\binom{4}{2} k^{2} = 6 k^2 = 54\\) ⇒ /k^2 =9/ ⇒ /k =3/.",
                 "solution": "Solve /6k^2=54/ ⇒ /k^2=9/ ⇒ positive /k=3/."
             },
             {
+                "id": 42,
                 "type": "short_answer",
                 "question": "Binomial expansion of /(1+x)^n/ has the /4th/ term equal to /35 x^3/. Find /n/. ",
-                "answer": "/4th/ term corresponds to /k=3/: /C(n,3)=35/ ⇒ /n/ choose /3 =35/ ⇒ /n=7/.",
-                "solution": "/C(7,3)=35/. Solve integer /n/ with /C(n,3)=35/ → /n=7/."
+                "answer": "/4th/ term corresponds to /k=3/: \\(\\binom{n}{3}=35\\) ⇒ \\(\\binom{n}{3} = 35\\) ⇒ /n=7/.",
+                "solution": "\\(\\binom{7}{3}=35\\). Solve integer /n/ with \\(\\binom{n}{3}=35\\) → /n=7/."
             },
             {
+                "id": 43,
                 "type": "short_answer",
                 "question": "In expansion of /(2+x)^n/, coefficient of /x^3/ is /120/. What is /n/?",
                 "answer": "Coefficient: /C(n,3)·2^{n-3} = 120/. Try /n=5/: /C(5,3)=10/, /2^{2}=4/ → /40/. /n=6/: /C(6,3)=20/, /2^{3}=8/ → /160/. /n=5/ gives /40/, /n=6/ gives /160/; no integer /n/ between gives /120/. Try /n=7/: /C(7,3)=35/, /2^{4}=16/ → /560/. There's no /n/ integer producing /120/ with integer powers of /2/—so re-check: if coefficient is /120/ and /2^{n-3}=1/ then /C(n,3)=120/ ⇒ /n/ large. Alternatively, if the intention was coefficient of /x^3/ equals /120/ when expanded as /(x+2)^n/ maybe different conventions."
             },
             {
+                "id": 44,
                 "type": "short_answer",
                 "question": "In /(x+3)^m/ the term containing /x^4/ has coefficient /126/. Find /m/. ",
                 "answer": "Coefficient: /C(m,4)·3^{m-4} =126/. Try /m=6/: /C(6,4)=15·3^{2}=15·9=135/. /m=7/: /C(7,4)=35·3^{3}=35·27=945/. /m=5/: /C(5,4)=5·3^{1}=15/. Since /126/ is small, check /m=4/: /C(4,4)=1·3^0=1/. There is no small integer /m/ satisfying this; possibly the coefficient /126/ corresponds to binomial coefficient alone /C(9,4)=126/ when /3^{m-4}=1/ ⇒ /m=4/ contradicts. If coefficient equals /126/ and base term factor is /1/, then /C(9,4)=126/ ⇒ /m=9/ and /3^{5}=243/ so too big. Clarify the problem; common intended answer: /m=9/ if coefficient refers to binomial coefficient only."
             },
             {
+                "id": 45,
                 "type": "short_answer",
                 "question": "In \\((1 + x/n)^n\\), approximate binomial term of /x^1/ as /n/ large.",
                 "answer": "Coefficient ~ /n ·/ \\((1/n)\\) /= 1/ for the linear term, so term ≈ /x/.",
                 "solution": "Using binomial expansion: /C(n,1)/ \\((1/n)\\) /x = n ·/ \\((1/n)\\) /x = x/. For large /n/ higher-order corrections are small; this connects to /e^x/ expansion."
             },
             {
+                "id": 46,
                 "type": "short_answer",
                 "question": "A band has /12/ members. How many ways to select a captain and co-captain?",
                 "answer": "/P(12,2)=12·11 = 132/.",
                 "solution": "Ordered selection of two distinct roles: /12/ choices for captain and /11/ for co-captain → /132/."
             },
             {
+                "id": 47,
                 "type": "short_answer",
                 "question": "In a race with /8/ runners, how many possible /1st/, /2nd/, /3rd/ place results?",
                 "answer": "/P(8,3)=8·7·6 = 336/.",
                 "solution": "Ordered top-/3/ permutations from /8/ competitors: /8P3 = 336/."
             },
             {
+                "id": 48,
                 "type": "short_answer",
                 "question": "A password: /5/ characters, each A–Z or /0–9/ (/36/ choices), repeats allowed. How many passwords?",
                 "answer": "/36^5 = 60,466,176/.",
                 "solution": "Each position has /36/ independent choices → /36^5/."
             },
             {
+                "id": 49,
                 "type": "short_answer",
                 "question": "Soccer team of /11/ chosen from /18/, then captain chosen from those /11/. How many ways?",
                 "answer": "/C(18,11)·11 = C(18,11)·11 = 31824·11 = 350,064/ (/C(18,11)=31,824/).",
                 "solution": "Choose /11/ players then pick captain from the chosen /11/: /C(18,11)·11/."
             },
             {
+                "id": 50,
                 "type": "short_answer",
                 "question": "A box: /7/ red, /5/ blue. Pick /4/ balls. How many ways to choose exactly /2/ red and /2/ blue (order doesn’t matter)?",
                 "answer": "/C(7,2)·C(5,2) = 21·10 = 210/.",
