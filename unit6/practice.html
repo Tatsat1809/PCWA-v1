@@ -585,34 +585,34 @@
                 "id": 43,
                 "type": "short_answer",
                 "question": "In expansion of /(2+x)^n/, coefficient of /x^3/ is /120/. What is /n/?",
-                "answer": "Coefficient: /C(n,3)·2^{n-3} = 120/. Try /n=5/: /C(5,3)=10/, /2^{2}=4/ → /40/. /n=6/: /C(6,3)=20/, /2^{3}=8/ → /160/. /n=5/ gives /40/, /n=6/ gives /160/; no integer /n/ between gives /120/. Try /n=7/: /C(7,3)=35/, /2^{4}=16/ → /560/. There's no /n/ integer producing /120/ with integer powers of /2/—so re-check: if coefficient is /120/ and /2^{n-3}=1/ then /C(n,3)=120/ ⇒ /n/ large. Alternatively, if the intention was coefficient of /x^3/ equals /120/ when expanded as /(x+2)^n/ maybe different conventions."
+                "answer": "Coefficient: \\(\\binom{n}{3}·2^{n-3} = 120\\). Try /n=5/: \\(\\binom{5}{3}=10\\), /2^{2}=4/ → /40/. /n=6/: \\(\\binom{6}{3}=20\\), /2^{3}=8/ → /160/. /n=5/ gives /40/, /n=6/ gives /160/; no integer /n/ between gives /120/. Try /n=7/: \\(\\binom{7}{3}=35\\), /2^{4}=16/ → /560/. There's no /n/ integer producing /120/ with integer powers of /2/—so re-check: if coefficient is /120/ and /2^{n-3}=1/ then /\\binom{n}{3}=120/ ⇒ /n/ large. Alternatively, if the intention was coefficient of /x^3/ equals /120/ when expanded as /(x+2)^n/ maybe different conventions."
             },
             {
                 "id": 44,
                 "type": "short_answer",
                 "question": "In /(x+3)^m/ the term containing /x^4/ has coefficient /126/. Find /m/. ",
-                "answer": "Coefficient: /C(m,4)·3^{m-4} =126/. Try /m=6/: /C(6,4)=15·3^{2}=15·9=135/. /m=7/: /C(7,4)=35·3^{3}=35·27=945/. /m=5/: /C(5,4)=5·3^{1}=15/. Since /126/ is small, check /m=4/: /C(4,4)=1·3^0=1/. There is no small integer /m/ satisfying this; possibly the coefficient /126/ corresponds to binomial coefficient alone /C(9,4)=126/ when /3^{m-4}=1/ ⇒ /m=4/ contradicts. If coefficient equals /126/ and base term factor is /1/, then /C(9,4)=126/ ⇒ /m=9/ and /3^{5}=243/ so too big. Clarify the problem; common intended answer: /m=9/ if coefficient refers to binomial coefficient only."
+                "answer": "Coefficient: \\(\\binom{m}{4}·3^{m-4} =126\\). Try /m=6/: \\(\\binom{6}{4}=15·3^{2}=15·9=135\\). /m=7/: \\(\\binom{7}{4}=35·3^{3}=35·27=945\\). /m=5/: \\(\\binom{5}{4}=5·3^{1}=15\\). Since /126/ is small, check /m=4/: \\(\\binom{4}{4}=1·3^0=1\\). There is no small integer /m/ satisfying this; possibly the coefficient /126/ corresponds to binomial coefficient alone \\(\\binom{9}{4}=126\\) when /3^{m-4}=1/ ⇒ /m=4/ contradicts. If coefficient equals /126/ and base term factor is /1/, then \\(\\binom{9}{4}=126\\) ⇒ /m=9/ and /3^{5}=243/ so too big. Clarify the problem; common intended answer: /m=9/ if coefficient refers to binomial coefficient only."
             },
             {
                 "id": 45,
                 "type": "short_answer",
                 "question": "In \\((1 + x/n)^n\\), approximate binomial term of /x^1/ as /n/ large.",
                 "answer": "Coefficient ~ /n ·/ \\((1/n)\\) /= 1/ for the linear term, so term ≈ /x/.",
-                "solution": "Using binomial expansion: /C(n,1)/ \\((1/n)\\) /x = n ·/ \\((1/n)\\) /x = x/. For large /n/ higher-order corrections are small; this connects to /e^x/ expansion."
+                "solution": "Using binomial expansion: \\(\\binom{n}{1}\\) \\((1/n)\\) /x = n ·/ \\((1/n)\\) /x = x/. For large /n/ higher-order corrections are small; this connects to /e^x/ expansion."
             },
             {
                 "id": 46,
                 "type": "short_answer",
                 "question": "A band has /12/ members. How many ways to select a captain and co-captain?",
-                "answer": "/P(12,2)=12·11 = 132/.",
+                "answer": "\\({}^{12}P_{2} = 12·11 = 132\\).",
                 "solution": "Ordered selection of two distinct roles: /12/ choices for captain and /11/ for co-captain → /132/."
             },
             {
                 "id": 47,
                 "type": "short_answer",
                 "question": "In a race with /8/ runners, how many possible /1st/, /2nd/, /3rd/ place results?",
-                "answer": "/P(8,3)=8·7·6 = 336/.",
-                "solution": "Ordered top-/3/ permutations from /8/ competitors: /8P3 = 336/."
+                "answer": "/{}^{8}P_{3}=8·7·6 = 336/.",
+                "solution": "Ordered top-/3/ permutations from /8/ competitors: /{}^{8}P_{3} = 336/."
             },
             {
                 "id": 48,
@@ -625,14 +625,14 @@
                 "id": 49,
                 "type": "short_answer",
                 "question": "Soccer team of /11/ chosen from /18/, then captain chosen from those /11/. How many ways?",
-                "answer": "/C(18,11)·11 = C(18,11)·11 = 31824·11 = 350,064/ (/C(18,11)=31,824/).",
-                "solution": "Choose /11/ players then pick captain from the chosen /11/: /C(18,11)·11/."
+                "answer": "\\(\\binom{18}{11}·11 = 31824·11 = 350,064\\) \\(\\binom{18}{11}=31,824\\)).",
+                "solution": "Choose /11/ players then pick captain from the chosen /11/: \\(\\binom{18}{11}·11\\)."
             },
             {
                 "id": 50,
                 "type": "short_answer",
                 "question": "A box: /7/ red, /5/ blue. Pick /4/ balls. How many ways to choose exactly /2/ red and /2/ blue (order doesn’t matter)?",
-                "answer": "/C(7,2)·C(5,2) = 21·10 = 210/.",
+                "answer": "\\(\\binom{7}{2}·\\binom{5}{2} = 21·10 = 210\\).",
                 "solution": "Choose /2/ reds from /7/ and /2/ blues from /5/, multiply independent choices."
             }
         ] 
