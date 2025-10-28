@@ -216,6 +216,7 @@
     <script>
         const questions = [
             {
+                "id": 1,
                 "type": "mcq",
                 "question": "State whether /f(x) = 3x^4 - 5x + 2/ is a polynomial. If yes, give its degree, leading term, leading coefficient, and constant term.",
                 "choices": [
@@ -228,6 +229,7 @@
                 "solution": "All exponents are nonnegative integers and coefficients are real, so it's a polynomial. Highest power is /4/ so degree /4/; leading term is /3x^4/, coefficient /3/, constant /2/."
             },
             {
+                "id": 2,
                 "type": "mcq",
                 "question": "Is \\(g(x) = x^{1/2} + 2\\) a polynomial? Explain briefly.",
                 "choices": [
@@ -240,6 +242,7 @@
                 "solution": "Polynomials require whole-number (nonnegative integer) exponents; /x^{1/2}/ (a square-root) is not allowed."
             },
             {
+                "id": 3,
                 "type": "mcq",
                 "question": "For /h(x) = -2x^5 + 4x^3 - x/, state the end behaviour as /x/ → /+/infinity and /x/ → /-/infinity.",
                 "choices": [
@@ -252,18 +255,21 @@
                 "solution": "Leading term is /-2x^5/ (odd degree, negative leading coefficient) so right end falls to /-∞/ and left end rises to /+∞/."
             },
             {
+                "id": 4,
                 "type": "short_answer",
                 "question": "Identify the terms, coefficients, and degree of /p(x) = 7 - 3x + x^2 - 0.5x^4/. State which part is not a polynomial if any.",
                 "answer": "Terms: /7, -3x, x^2, -0.5x^4/. Coefficients: /7, -3, 1, -0.5/. Degree: /4/. It's a polynomial.",
                 "solution": "All exponents are nonnegative integers; highest exponent is /4/ so degree /4/. All parts are valid polynomial terms."
             },
             {
+                "id": 5,
                 "type": "short_answer",
                 "question": "Give an example of a cubic polynomial with positive leading coefficient and x-intercept at /x = -2/.",
                 "answer": "One simple answer: /f(x) = (x + 2)(x - 1)(x - 3) = x^3 -2x^2 -5x +6./",
                 "solution": "Cubic with factor /(x+2)/ ensures intercept at -2; expanded form shown has leading coefficient 1 (positive)."
             },
             {
+                "id": 6,
                 "type": "mcq",
                 "question": "For /f(x) = x^3 - 4x^2 + 4x/, list all zeros and their multiplicities.",
                 "choices": [
@@ -276,6 +282,7 @@
                 "solution": "Factor: /x^3-4x^2+4x = x(x^2-4x+4)=x(x-2)^2/. So zeros at /0/ and /2/ with multiplicities /1/ and /2/ respectively."
             },
             {
+                "id": 7,
                 "type": "mcq",
                 "question": "For /p(x) = -x^4 + 2x^2 - 1/, describe the end behaviour and whether the graph opens up or down at each end.",
                 "choices": [
@@ -288,18 +295,21 @@
                 "solution": "Leading term /-x^4/ dominates: as /x→±∞/, /-x^4 → -∞/, so both left and right ends fall."
             },
             {
+                "id": 8,
                 "type": "short_answer",
                 "question": "Explain in one sentence what multiplicity of a root means and how it affects crossing/touching the x-axis.",
                 "answer": "Multiplicity is how many times a root repeats; odd multiplicity → graph crosses the x-axis, even multiplicity → graph touches and bounces off (does not cross).",
                 "solution": "A factor /(x-a)^k/ gives root /a/ with multiplicity /k/; parity of /k/ determines crossing (odd) or touching (even)."
             },
             {
+                "id": 9,
                 "type": "short_answer",
                 "question": "Sketch (conceptually) the end behaviour for (a) degree /3/ positive leading coefficient, (b) degree /4/ negative leading coefficient. Label ends.",
                 "answer": "(a) Left: -∞, Right: +∞. (b) Left: -∞, Right: -∞.",
                 "solution": "Cubic with positive leading coeff: odd degree, right rises, left falls. Quartic with negative leading coeff: even degree, both ends fall."
             },
             {
+                "id": 10,
                 "type": "mcq",
                 "question": "Without full sketching, state whether /y = 0.5 x^7 - x^3 + 1/ rises or falls as /x/ → +∞; and as /x/ → -∞.",
                 "choices": [
@@ -312,6 +322,7 @@
                 "solution": "Leading term /0.5x^7/ (odd degree, positive coefficient) so right end up, left end down."
             },
             {
+                "id": 11,
                 "type": "mcq",
                 "question": "Which of these has same end behaviour as /y = -2x^6 + .../ ?",
                 "choices": ["/-x^4 + .../", "/-3x^6 + .../", "/4x^7 + .../", "/x^6 + .../"],
@@ -319,150 +330,175 @@
                 "solution": "Compare degree and leading sign: /-3x^6/ has even degree and negative leading coefficient like /-2x^6/, so same end behaviour (both ends → -∞)."
             },
             {
+                "id": 12,
                 "type": "short_answer",
                 "question": "Sketch a possible graph for a quartic with zeros /x = -2 (mult 2)/, /x = 1 (mult 1)/, and positive leading coefficient. Mark intercept behavior.",
                 "answer": "Graph touches at /x=-2/ (bounce), crosses at /x=1/, both ends up (since even degree, positive leading coeff).",
                 "solution": "Factors: /(x+2)^2(x-1)/; multiplicity 2 at /-2/ → touch; multiplicity 1 at /1/ → cross; leading coeff positive ⇒ ends up."
             },
             {
+                "id": 13,
                 "type": "short_answer",
                 "question": "A polynomial of even degree has positive leading coefficient. Describe both ends of its graph.",
                 "answer": "Both ends rise to +∞.",
                 "solution": "Even degree means ends same direction; positive leading coefficient makes that direction upward."
             },
             {
+                "id": 14,
                 "type": "short_answer",
                 "question": "A polynomial of odd degree has negative leading coefficient. Describe both ends of its graph.",
                 "answer": "Left end rises to +∞, right end falls to -∞.",
                 "solution": "Odd degree → ends opposite; negative leading coeff flips usual orientation so right end down, left end up."
             },
             {
+                "id": 15,
                 "type": "short_answer",
                 "question": "Sketch /y = (x - 1)(x + 2)(x - 3)/. Mark x-intercepts and behavior at each root. State leading coefficient sign and end behaviour.",
                 "answer": "Intercepts at /x=1/, /-2/, /3/; all multiplicity 1 so graph crosses at each; leading coefficient +1 (odd degree 3) so left → -∞, right → +∞.",
                 "solution": "Expand first term gives positive leading coefficient 1; three simple roots → crosses at each; odd degree positive ⇒ left down, right up."
             },
             {
+                "id": 16,
                 "type": "short_answer",
                 "question": "Sketch /y = - (x + 1)^2 (x - 2)/. Show whether the graph crosses or touches at each root.",
                 "answer": "At /x=-1/ multiplicity 2 → touches (bounce); at /x=2/ multiplicity 1 → crosses. Leading coefficient negative → right end down, left end up.",
                 "solution": "Minus sign makes leading coeff negative. Even multiplicity at /-1/ ⇒ touch; odd at /2/ ⇒ cross."
             },
             {
+                "id": 17,
                 "type": "short_answer",
                 "question": "Sketch /y = x^4 - 4x^2/. Factor first, then sketch and state zeros and multiplicities.",
                 "answer": "Factor: /x^2(x^2-4)=x^2(x-2)(x+2)/. Zeros: /x=0/ (mult 2), /x=2/ (mult 1), /x=-2/ (mult 1). Ends up on both sides (even degree, positive leading coeff).",
                 "solution": "Factorization shows multiplicities; x=0 double root touches; others single so cross."
             },
             {
+                "id": 18,
                 "type": "short_answer",
                 "question": "Given /y = x^3 - 3x^2 - 9x + 27/, find rational zeros (if any) then sketch a rough graph showing intercepts.",
                 "answer": "Rational zeros: /x=3/ (check). Factor: /(x-3)(x^2+0x-9) = (x-3)(x^2-9)/ further → /(x-3)(x-3)(x+3) = (x-3)^2(x+3)/. Zeros: /3/ (mult 2), /-3/ (mult 1).",
                 "solution": "Use Rational Root Test: try /x=3/ gives /27-27-27+27=0/. Divide to find quadratic factor which factors to /(x-3)(x+3)/."
             },
             {
+                "id": 19,
                 "type": "short_answer",
                 "question": "Sketch /y = (x - 2)^3/. Indicate behavior at /x = 2/ and end behaviour.",
-                "answer": "At /x=2/ multiplicity 3 (odd) so graph crosses and flattens (point of inflection); end behaviour: left → -∞, right → +∞.",
+                "answer": "At /x=2/ multiplicity 3 (odd) so graph crosses and <b>flattens</b> (point of inflection); end behaviour: left → -∞, right → +∞.",
                 "solution": "Cubic with positive leading coefficient; odd multiplicity >1 causes flattening while still crossing."
             },
             {
+                "id": 20,
                 "type": "short_answer",
                 "question": "Sketch /y = -x^5 + 5x^3/. Label x-intercepts and end-behaviour.",
                 "answer": "Factor: /-x^3(x^2-5) = -x^3(x-√5)(x+√5)/. Zeros: /x=0/ (mult 3, crosses with inflection), /x=±√5/ (mult1). Leading coeff negative odd degree: left→+∞, right→-∞.",
                 "solution": "Factoring identifies intercepts and multiplicities; negative leading term with odd degree gives left up, right down."
             },
             {
+                "id": 21,
                 "type": "short_answer",
                 "question": "Given /y = (x + 3)(x - 1)^2/, sketch and clearly show whether the graph crosses or touches at /x = -3/ and /x = 1/. ",
                 "answer": "/x=-3/: cross (mult1). /x=1/: touch/bounce (mult2). Leading coeff positive (degree3 odd) so left→-∞, right→+∞.",
                 "solution": "Multiplicity determines behavior; squared factor at /x=1/ gives touch."
             },
             {
+                "id": 22,
                 "type": "short_answer",
                 "question": "Sketch /y = x(x^2 - 1)(x - 2)/. Identify all zeros and multiplicities.",
                 "answer": "Factor: /x(x-1)(x+1)(x-2)/. Zeros: /x=0,1,-1,2/ all multiplicity /1/ (all cross). Leading coeff positive degree /4/ even → both ends up.",
                 "solution": "Multiply out or read factors; each factor linear and distinct → simple zeros."
             },
             {
+                "id": 23,
                 "type": "short_answer",
                 "question": "Find a polynomial of least degree with zeros /x = -1/ (mult /2/) and /x = 3/, and leading coefficient /2/. Write in expanded form.",
                 "answer": "Function: /2(x+1)^2(x-3) = 2(x^2+2x+1)(x-3) = 2(x^3- x^2-5x-3) = 2x^3-2x^2-10x-6/.",
                 "solution": "Construct using factors and expand; multiply by /2/ to set leading coefficient."
             },
             {
+                "id": 24,
                 "type": "short_answer",
                 "question": "Construct a cubic polynomial with zeros /0/, /2/, and /-1/ and leading coefficient /-1/.",
                 "answer": "/f(x) = -1·x(x-2)(x+1) = -x(x^2-x-2) = -x^3 + x^2 + 2x/.",
                 "solution": "Use factors for given zeros and multiply by /-1/ for leading coefficient."
             },
             {
+                "id": 25,
                 "type": "short_answer",
                 "question": "Find a polynomial of degree /4/ with zeros /x = 1/ (mult /3/) and /x = -2/, leading coefficient /1/.",
                 "answer": "/f(x) = (x-1)^3(x+2)/. Expanded: /(x^3-3x^2+3x-1)(x+2) = x^4- x^3 -3x^2+5x-2/.",
                 "solution": "Use repeated factor for multiplicity /3/ and multiply then expand to standard form."
             },
             {
+                "id": 26,
                 "type": "short_answer",
                 "question": "Give an example of a quadratic polynomial with negative leading coefficient and no real zeros.",
                 "answer": "Example: /f(x) = -x^2 - 1/.",
                 "solution": "Discriminant /b^2-4ac = 0 -4( -1)(-1) = -4 < 0/ so no real roots; leading coefficient negative."
             },
             {
+                "id": 27,
                 "type": "short_answer",
                 "question": "Determine a monic polynomial with zeros at /x = 2/ and /x = 5/ (both simple). Expand to standard form.",
                 "answer": "/f(x) = (x-2)(x-5) = x^2 -7x +10/.",
                 "solution": "Monic means leading coefficient /1/; multiply linear factors and expand."
             },
             {
+                "id": 28,
                 "type": "short_answer",
                 "question": "Construct a polynomial with zeros /x = 0/ (mult 1), /x = 1/ (mult 2) and leading coefficient /3/.",
                 "answer": "/f(x) = 3·x·(x-1)^2 = 3x(x^2-2x+1) = 3x^3 -6x^2 +3x/.",
                 "solution": "Combine factors and multiply by /3/ to set leading coefficient."
             },
             {
+                "id": 29,
                 "type": "short_answer",
                 "question": "A graph shows zeros at /x = -2/ (touches), /x = 0/ (crosses), and /x = 3/ (crosses), and behaves like negative leading coefficient of degree /4/. Find a possible polynomial equation in factored form.",
                 "answer": "/f(x) = - (x+2)^2 x (x-3)/.",
                 "solution": "Multiplicity /2/ at /-2/ (touch), multiplicity /1/ at /0/ and /3/ (cross); negative leading coefficient and degree /4/ introduced by the negative sign."
             },
             {
+                "id": 30,
                 "type": "short_answer",
                 "question": "Given a graph with x-intercepts at /-1/, /2/ (touching) and y-intercept /4/, find a polynomial that matches these features (simplest integer coefficients).",
                 "answer": "Start with /f(x)=a(x+1)(x-2)^2/. Use y-intercept: /f(0)=a(1)(4)=4/ ⇒ /4a=4/ ⇒ /a=1/. So /f(x)=(x+1)(x-2)^2/.",
                 "solution": "Plug /x=0/ to find /a/; expansion optional."
             },
             {
+                "id": 31,
                 "type": "short_answer",
                 "question": "A graph shows a cubic with zeros /-3/, /1/, /4/ and passing through /(0, 12)/. Determine the equation.",
                 "answer": "/f(x)=a(x+3)(x-1)(x-4); f(0)=a(3)(-1)(-4)=12 ⇒ a·12=12 ⇒ a=1/. So /f(x)=(x+3)(x-1)(x-4)/.",
                 "solution": "Use factors and solve for a using given point."
             },
             {
+                "id": 32,
                 "type": "short_answer",
                 "question": "Determine a quartic polynomial with zeros /x = -2/ (mult /2/) and /x = 1/ (mult /2/) and y-intercept /8/.",
                 "answer": "/f(x)=a(x+2)^2(x-1)^2/. /f(0)=a(4)(1)=4a=8/ ⇒ /a=2/. So /f(x)=2(x+2)^2(x-1)^2/.",
                 "solution": "Use multiplicities, evaluate at 0 to find /a/."
             },
             {
+                "id": 33,
                 "type": "short_answer",
                 "question": "From a given sketch you observe a polynomial crosses at /x = -1/ and has a double root at /x = 2/ and leading coefficient \\(1/2\\). Write an equation that fits.",
-                "answer": "/f(x)= \\(1/2\\)(x+1)(x-2)^2/.",
+                "answer": "\\(f(x)= (1/2)(x+1)(x-2)^2\\).",
                 "solution": "Use indicated factors and leading coefficient; degree is /3/."
             },
             {
+                "id": 34,
                 "type": "short_answer",
                 "question": "A graph shows a degree /3/ polynomial with end behavior rising to the right, and zeros at /x = -2/ and /x = 3/ (both single), and y-intercept /-18/. Find the polynomial.",
                 "answer": "/f(x)=a(x+2)(x-3)(x-c)/ but degree /3/ with only two distinct roots means one root repeated or a third root unknown; simplest: include /(x - 0)/ as third root giving /f(x)=a(x+2)(x-3)x/. Use /f(0)=-18/ ⇒ /a·(2)(-3)·0 =0/ not /-18/ so choose third root such that /f(0)=-18/; better pick factor /(x - 1)/ and solve: /f(0)=a(2)(-3)(-1)=6a=-18 ⇒ a=-3/. So one possible polynomial: /-3(x+2)(x-3)(x-1)/.",
                 "solution": "Multiple polynomials fit; we provided a simple one with integer coefficients that satisfies the intercept and zeros given."
             },
             {
+                "id": 35,
                 "type": "short_answer",
                 "question": "Use synthetic division to divide /p(x) = 2x^3 - 5x^2 + x - 6 by (x - 2)/. Give quotient and remainder.",
                 "answer": "Quotient: /2x^2 - x -1/; Remainder: /-8/.",
                 "solution": "Synthetic with 2: coefficients /2/, /-5/, /1/, /-6/ → bring /2/, multiply /4/, add /-1/, multiply /-2/, add /-1/, multiply /-2/, add /-8/."
             },
             {
+                "id": 36,
                 "type": "mcq",
                 "question": "Use the Remainder Theorem: find remainder when /f(x) = x^4 - 3x + 2/ is divided by /(x + 1)/.",
                 "choices": [
@@ -475,6 +511,7 @@
                 "solution": "Remainder theorem: remainder equals /f(c)/ for divisor /(x-c)/. Here /c=-1/."
             },
             {
+                "id": 37,
                 "type": "mcq",
                 "question": "Verify whether /(x - 3)/ is a factor of /f(x) = x^3 - 6x^2 + 11x - 6/ using synthetic division.",
                 "choices": [
@@ -487,54 +524,63 @@
                 "solution": "Evaluate /f(3)=27-54+33-6=0/; synthetic division confirms quotient."
             },
             {
+                "id": 38,
                 "type": "short_answer",
                 "question": "Divide /f(x) = x^3 + x^2 - x - 1/ by /(x + 1)/ using synthetic division; state quotient and remainder.",
                 "answer": "Using /-1/: quotient /x^2+0x-1/, remainder /0/. So quotient /x^2 -1/, remainder /0/.",
                 "solution": "Synthetic: coefficients /1/, /1/, /-1/, /-1/ with /-1/ gives remainder /0/ and quotient /1/, /0/, /-1/."
             },
             {
+                "id": 39,
                 "type": "short_answer",
                 "question": "Given that /(x - 2)/ is a factor of /p(x) = x^3 + kx^2 - x - 6/, find k.",
                 "answer": "Since /p(2)=0/: /8 + 4k -2 -6 =0/ ⇒ /4k =0/ ⇒ /k=0/.",
                 "solution": "Plug /x=2/ into polynomial and solve for /k/."
             },
             {
+                "id": 40,
                 "type": "short_answer",
                 "question": "Use polynomial long division to divide /(2x^4 - x^3 + 3x - 5)/ by /(x^2 + 1)/. State quotient and remainder.",
                 "answer": "Quotient: /2x^2 - x -2/; Remainder: /5x -3/.",
                 "solution": "Divide leading terms: /2x^4 ÷ (x^2)=2x^2/, continue; final remainder degree /<2/ as shown."
             },
             {
+                "id": 41,
                 "type": "short_answer",
                 "question": "If /p(x)/ divided by /(x - 1)/ gives remainder 4, what is /p(1)/? (state theorem and answer)",
                 "answer": "By Remainder Theorem, /p(1)=4/.",
                 "solution": "Remainder theorem: remainder equals /p(c)/ for divisor /x-c/."
             },
             {
+                "id": 42,
                 "type": "short_answer",
                 "question": "Use synthetic division to factor /f(x) = x^3 - 4x^2 - x + 4/ given that /x = 4/ is a root. Give remaining quadratic factor.",
                 "answer": "Divide by /(x-4)/ gives quotient /x^2 +0x -1 = x^2 -1/.",
                 "solution": "Synthetic with /4/: coefficients /1/,/-4/,/-1/,/4/ → quotient /1/,/0/,/-1/ remainder /0/."
             },
             {
+                "id": 43,
                 "type": "short_answer",
                 "question": "Factor completely: /x^3 - 7x + 6/. Find zeros and multiplicities.",
                 "answer": "Factors: /(x-1)(x^2+x-6) = (x-1)(x-2)(x+3)/. Zeros: /1,2,-3/ all multiplicity /1/.",
                 "solution": "Try rational roots /±1,±2,±3/; /x=1/ works, then factor quadratic."
             },
             {
+                "id": 44,
                 "type": "short_answer",
                 "question": "Given /f(x) = x^4 - 5x^3 + 8x^2 - 5x + 1/, test whether /(x - 1)/ is a factor. If yes, factor further.",
                 "answer": "/f(1)=1-5+8-5+1=0/ so /(x-1)/ is a factor. Divide to get /(x-1)(x^3 -4x^2 +4x -1)/. Further factoring gives /(x-1)^2(x^2-2x+1) = (x-1)^4/",
                 "solution": "After synthetic division, continue factoring; students should show steps — result simplifies to /(x-1)^4/ only if algebra confirms; otherwise leave as /(x-1)/."
             },
             {
+                "id": 45,
                 "type": "short_answer",
                 "question": "Given polynomial /p(x) = x^3 + ax^2 + bx + 6/ and you know /(x + 1)/ is a factor and /p(2) = 0/, find /a/ and /b/.",
                 "answer": "/p(-1)=0/ ⇒ /-1 + a - b + 6 =0/ ⇒ /a - b +5=0/ ⇒ /a - b = -5/. /p(2)=0/ ⇒ /8+4a+2b+6=0/ ⇒ /4a+2b+14=0/ ⇒ /2a+b+7=0/ ⇒ /b = -2a -7/. Substitute: /a - (-2a-7) = -5/ ⇒ /3a+7 = -5/ ⇒ /3a = -12/ ⇒ /a=-4/. Then /b = -2(-4)-7 =8-7=1/.",
                 "solution": "Use the two conditions to form linear equations and solve for /a/ and /b/."
             },
             {
+                "id": 46,
                 "type": "mcq",
                 "question": "Find all real zeros of /f(x) = x^4 - 16/. Factor completely over reals.",
                 "choices": [
@@ -547,6 +593,7 @@
                 "solution": "Difference of squares; /x^2+4/ has no real roots."
             },
             {
+                "id": 47,
                 "type": "mcq",
                 "question": "If /(x - 2)/ is a factor of /x^3 + px^2 - 8x + 4/ and /(x - 1)/ is not, find /p/ using remainder theorem given /f(1) = 2/.",
                 "choices": [
@@ -559,78 +606,91 @@
                 "solution": "State contradiction if both conditions required; if only factor condition used, /p=1/."
             },
             {
+                "id": 48,
                 "type": "short_answer",
                 "question": "Factor /x^3 - 3x^2 - 4x + 12/ completely and give x-intercepts.",
                 "answer": "Factor by grouping: /x^2(x-3)-4(x-3)=(x-3)(x^2-4)=(x-3)(x-2)(x+2)/. Zeros: /3,2,-2/.",
                 "solution": "Group terms to factor the polynomial into linear factors."
             },
             {
+                "id": 49,
                 "type": "short_answer",
                 "question": "A toy manufacturer models profit P(x) by a cubic polynomial where x is thousands of units. If /P(0)=0/, /P(2)=10/, and /P/ has a double root at /x=5/, find a possible cubic model (use integer coefficients and scale to fit).",
                 "answer": "Let /P(x)=a x(x-5)^2/. Use /P(2)=10/: /a·2·9=18a=10/ ⇒ /a=10/18=5/9/. To use integers, multiply by 9: /P(x)=5x(x-5)^2/ gives /P(2)=90/ which is scaled; one acceptable integer-coefficient cubic is /P(x)=5x(x-5)^2/9/ but integer scaled example provided in solution.",
                 "solution": "Many models possible; core idea is to use factor /x/ (for /P(0)=0/) and /(x-5)^2/ for double root, then choose /a/ to fit /P(2)/."
             },
             {
+                "id": 50,
                 "type": "short_answer",
                 "question": "A polynomial function models the height /H(t)/ of a plant: /H(t) = at^3 - bt^2 + ct/. Given /H(0)=0/, /H(1)=2/, /H(2)=10/, find coefficients /a/, /b/, /c/. ",
                 "answer": "From /H(0)=0/ gives 0=0. /H(1)=a-b+c=2/. /H(2)=8a-4b+2c=10/. Solve: subtract twice first from second: (8a-4b+2c)-2(a-b+c)=10-4 ⇒ 6a-2b=6 ⇒ 3a-b=3. Also a-b+c=2 ⇒ c=2-a+b. Solve 3a-b=3 ⇒ b=3a-3. Substitute in a-b+c=2: a-(3a-3)+c=2 ⇒ -2a+3+c=2 ⇒ c=2a-1. Then b=3a-3. Use no more eqns; choose a from system? Actually solve: plug c into H(2) used earlier already. Taking a=1 gives b=0, c=1 fits: check H(2)=8-0+2=10 true. So a=1,b=0,c=1.",
                 "solution": "Set up system and solve; one solution is /a=1,b=0,c=1/ which satisfies all three conditions."
             },
             {
+                "id": 51,
                 "type": "short_answer",
                 "question": "An engineering problem gives stress function /S(x) = k(x - 1)(x - 3)^2/. If /S(0) = 12/, find /k/. ",
                 "answer": "/S(0)=k(-1)(9)= -9k =12 ⇒ k = -4/3/. ",
                 "solution": "Evaluate at /x=0/ and solve for /k/."
             },
             {
+                "id": 52,
                 "type": "short_answer",
                 "question": "For /p(x) = x^4 - 2x^2 + 1/, quickly determine if /x = 1/ is a root and its multiplicity without long division. Explain.",
                 "answer": "/p(1)=1-2+1=0/ so /x=1/ is a root. Factor: /p(x)=(x^2-1)^2=(x-1)^2(x+1)^2/ so /x=1/ has multiplicity 2.",
                 "solution": "Recognize perfect square: /x^4-2x^2+1=(x^2-1)^2/ then factor further."
             },
             {
+                "id": 53,
                 "type": "short_answer",
                 "question": "A polynomial has degree /3/, leading coefficient negative, and zeros at /x = -2, 0, 3/. Sketch possible graph and explain which intervals function is positive or negative.",
                 "answer": "With factors /-(x+2)x(x-3)/. Sign chart: intervals /(-∞,-2),( -2,0),(0,3),(3,∞)/ give signs /+, -, +, -/ respectively (students can compute).",
                 "solution": "Use factor sign changes across zeros and leading negative flips entire graph; list sign of each factor in intervals to determine overall sign."
             },
             {
+                "id": 54,
                 "type": "short_answer",
                 "question": "You have profit function /P(x) = -x^3 + 6x^2 + k/. Find /k/ such that /x = 3/ is a root. Then factor /P(x)/.",
                 "answer": "/P(3)= -27 +54 + k =27 + k must be 0 ⇒ k = -27/. Then /P(x)= -x^3 +6x^2 -27 = -(x^3-6x^2+27)/. Use factor /x-3/? Check /P(3)=0/; divide to get factors: synthetic with 3 gives quotient -x^2+? Students perform division resulting polynomial factorization: /P(x)= -(x-3)(x^2 -3x -9)/.",
                 "solution": "Set /P(3)=0/ to find /k/; then factor by synthetic division."
             },
             {
+                "id": 55,
                 "type": "short_answer",
                 "question": "Given /f(x) = x^4 - 5x^3 + 2x^2 + 8x - 12/, show that /(x - 3)/ is a factor, factor completely, and sketch rough graph indicating zeros.",
                 "answer": "/f(3)=81-135+18+24-12= -24?/ Actually compute: /81-135=-54; +18=-36; +24=-12; -12=-24/ not zero — try /x=3/ is not a factor. Using rational root test /x=2/:16-40+8+16-12=-12. /x=4/:256-320+32+32-12=-12. /x= -1/:1+5+2-8-12=-12. (This polynomial may not have integer roots).",
                 "solution": "Student should apply Rational Root Test and synthetic division; if /(x-3)/ is not a factor, show result. (Instructor: check polynomial; if intended to have /x=3/ as factor adjust coefficients)."
             },
             {
+                "id": 56,
                 "type": "short_answer",
                 "question": "A quartic polynomial has zeros at /x = -1/ (mult /2/) and /x = 2/ (mult /2/) and passes through /(0, 8)/. Find the polynomial.",
                 "answer": "/f(x)=a(x+1)^2(x-2)^2/. Evaluate at /0/: /a(1)(4)=4a=8 ⇒ a=2/. So /f(x)=2(x+1)^2(x-2)^2/. ",
                 "solution": "Use multiplicities and y-intercept to find /a/."
             },
             {
+                "id": 57,
                 "type": "short_answer",
                 "question": "Use synthetic division to divide /f(x) = 3x^4 - x^3 + 4x - 8/ by /(x - 2)/; then determine whether /(x - 2)/ is a factor and find all real zeros if possible.",
                 "answer": "Synthetic with 2 gives remainder 0? Perform: coeffs 3,-1,0,4,-8 → bring 3; *2=6 add 5 *2=10 add10 *2=20 add24 *2=48 add 40 remainder /32/ not /0/. So /(x-2)/ not a factor.",
                 "solution": "Carry out synthetic steps carefully; if remainder ≠0 then not a factor."
             },
             {
+                "id": 58,
                 "type": "short_answer",
                 "question": "Construct a degree /3/ polynomial with integer coefficients that has a double root at /x = 1/ and passes through /(0, -2)/. Expand fully.",
                 "answer": "/f(x)=a(x-1)^2(x-b)/ choose simplest /b=0/ (root at /0/? ) but double root only at /1/; choose factor /(x-2)/ as third root. Using /f(0)=-2/: /a(1)^2(-2)= -2a = -2 ⇒ a=1/. So /f(x)=(x-1)^2(x-2)= expand: (x^2-2x+1)(x-2)= x^3-4x^2+5x-2./",
                 "solution": "Pick an extra simple root and solve for /a/ using the point; many answers possible — expanded example given."
             },
             {
+                "id": 59,
                 "type": "short_answer",
                 "question": "Given polynomial /p(x) = x^4 - 2x^3 - 7x^2 + 8x + 12/: (a) Use rational root test and synthetic division to find all real zeros. (b) Factor /p(x)/ completely over the reals. (c) Sketch a labelled graph showing intercepts and end behaviour.",
                 "answer": "(a) Test /x=3: 81-54-63+24+12=0/ so /x=3/ is root. Synthetic division yields /(x-3)(x^3 + x^2 -4x -4)/. Then /x=2/ is root of cubic; factor to /(x-2)(x^2+3x+2)=(x-2)(x+1)(x+2)/. Full factorization /(x-3)(x-2)(x+1)(x+2)/. Zeros: /3/,/2/,/-1/,/-2/. (b) As above. (c) Degree even, leading coeff positive ⇒ both ends up; plot simple crossings at each zero.",
                 "solution": "Use Rational Root Test, try small integer roots, then synthetic divide repeatedly to factor completely."
             },
             {
+                "id": 60,
                 "type": "short_answer",
                 "question": "A beam deflection /D(x)/ is modelled by a quartic polynomial /D(x) = ax^4 + bx^3 + cx^2 + dx + e/ on /0 ≤ x ≤ L/. Given /D(0)=0/, /D(L)=0/, /D'(0)=0/, /D'(L)=0/ and the midpoint /x=/\\(L/2\\) has /D*/\\(L/2\\)/=H/. Explain (in steps) how you would set up equations to solve for coefficients; write the system (do not solve numerically).",
                 "answer": "Equations: /D(0)=e=0/. /D(L)=aL^4+bL^3+cL^2+dL+e=0/. /D'(x)=4ax^3+3bx^2+2cx+d/. So /D'(0)=d=0/. /D'(L)=4aL^3+3bL^2+2cL+d=0/. /D/(\\(L/2\\))/=a/\\(L/2\\)/^4/ + /b/\\(L/2\\)/^3/ + /c/\\(L/2\\)/^2/ + /d/\\(L/2\\) /+ e = H/. Use /e=0/ and /d=0/ to simplify remaining three equations in /a,b,c/. ",
