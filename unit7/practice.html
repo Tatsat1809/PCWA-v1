@@ -240,7 +240,7 @@
         "id": 3,
         "question": "Determine the exact value of \\(tan(15°)\\) using angle subtraction formulas.",
         "answer": "\\(2 - \\sqrt{3}\\)",
-        "solution": "\\(tan15 = tan(45°-30°) = (tan45 - tan30)/(1 + tan45tan30) = (1 - 1/\\sqrt{3})/(1 + 1×(1/\\sqrt{3})) = (\\sqrt{3}-1)/(\\sqrt{3}+1)\\). Rationalize: \\((\\sqrt{3}-1)^2)/(3-1) = (3 -2\\sqrt{3} +1)/2 = (4 - 2\\sqrt{3})/2 = 2 - \\sqrt{3}\\).",
+        "solution": "\\(tan15 = tan(45°-30°) = (tan45 - tan30)/(1 + tan45tan30) = (1 - 1/\\sqrt{3})/(1 + 1×(1/\\sqrt{3})) = (\\sqrt{3}-1)/(\\sqrt{3}+1)\\). Rationalize: \\(((\\sqrt{3}-1)^2)/(3-1) = (3 -2\\sqrt{3} +1)/2 = (4 - 2\\sqrt{3})/2 = 2 - \\sqrt{3}\\).",
         "mcq": true,
         "choices": [
           "\\(2 - \\sqrt{3}\\)",
@@ -342,23 +342,23 @@
         "id": 16,
         "question": "Express \\(sin(A + B) – sin(A – B)\\) in simplest form.",
         "answer": "/2cosAsinB/",
-        "solution": "Use sum-to-product: \\(sin(u) - sin(v) = 2 cos((u+v)/2) sin((u-v)/2)\\). Let /u=A+B/, /v=A-B/. Then \\((u+v)/2=A\\), \\((u-v)/2=B\\), so result /= 2cosAsinB/."
+        "solution": "Using the identities: /sin(A+B) = sinAcosB + cosAsinB/ and /sin(A-B) = sinAcosB - cosAsinB/, we have /sin(A+B) - sin(A-B) = (sinAcosB + cosAsinB) - (sinAcosB - cosAsinB) = 2cosAsinB/."
       },
       {
         "id": 17,
         "question": "Express \\(cos(A + B) + cos(A – B)\\) in simplest form.",
         "answer": "/2cosAcosB/",
-        "solution": "Use sum-to-product: \\(cos(u) + cos(v) = 2 cos((u+v)/2) cos((u-v)/2)\\). For /u=A+B/, /v=A-B/ gives /2cosAcosB/."
+        "solution": "Using the identities: /cos(A+B) = cosAcosB - sinAsinB/ and /cos(A-B) = cosAcosB + sinAsinB/, we have /cos(A+B) + cos(A-B) = (cosAcosB - sinAsinB) + (cosAcosB + sinAsinB) = 2cosAcosB/."
       },
       {
         "id": 18,
         "question": "Express /tan(A + B) – tan(A – B)/ in simplest form.",
         "answer": "\\(sin(2B) / (cos(A + B) cos(A - B))\\)",
-        "solution": "Use identity \\(tan(u) - tan(v) = sin(u-v)/(cos u cos v)\\). For /u=A+B/, /v=A-B/, /u-v=2B/, so \\(tan(A+B)-tan(A-B)=sin(2B)/[cos(A+B) cos(A-B)]\\)."
+        "solution": "Using the identities: \\(tan(A+B) = (tanA + tanB)/(1 - tanAtanB)\\) and \\(tan(A-B) = (tanA - tanB)/(1 + tanAtanB)\\), we have \\(tan(A+B) - tan(A-B) = (2tanB)(1+tan^{2}A)/(1 - tan^{2}A tan^{2}B)\\). Multiplying numerator and denominator by /cos^{2}A cos^{2}B/ gives \\(sin(2B)/(cos(A+B) cos(A-B))\\). "
       },
       {
         "id": 19,
-        "question": "Simplify/ sin(60°)cos(30°) + cos(60°)sin(30°)/.",
+        "question": "Simplify /sin(60°)cos(30°) + cos(60°)sin(30°)/.",
         "answer": "/1/",
         "solution": "Recognize /sin(u) cos(v) + cos(u) sin(v) = sin(u+v)/. Here /u=60°/, /v=30°/, so /sin(90°) = 1/."
       },
