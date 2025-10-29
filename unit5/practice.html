@@ -616,21 +616,21 @@
                 "id": 49,
                 "type": "short_answer",
                 "question": "A toy manufacturer models profit P(x) by a cubic polynomial where x is thousands of units. If /P(0)=0/, /P(2)=10/, and /P/ has a double root at /x=5/, find a possible cubic model (use integer coefficients and scale to fit).",
-                "answer": "Let /P(x)=a x(x-5)^2/. Use /P(2)=10/: /a·2·9=18a=10/ ⇒ /a=10/18=5/9/. To use integers, multiply by 9: /P(x)=5x(x-5)^2/ gives /P(2)=90/ which is scaled; one acceptable integer-coefficient cubic is /P(x)=5x(x-5)^2/9/ but integer scaled example provided in solution.",
+                "answer": "Let /P(x)=a x(x-5)^2/. Use /P(2)=10/: /a·2·9=18a=10/ ⇒ \\(a=10/18=5/9\\). To use integers, multiply by 9: /P(x)=5x(x-5)^2/ gives /P(2)=90/ which is scaled; one acceptable integer-coefficient cubic is \\(P(x)=5x(x-5)^2/9\\) but integer scaled example provided in solution.",
                 "solution": "Many models possible; core idea is to use factor /x/ (for /P(0)=0/) and /(x-5)^2/ for double root, then choose /a/ to fit /P(2)/."
             },
             {
                 "id": 50,
                 "type": "short_answer",
                 "question": "A polynomial function models the height /H(t)/ of a plant: /H(t) = at^3 - bt^2 + ct/. Given /H(0)=0/, /H(1)=2/, /H(2)=10/, find coefficients /a/, /b/, /c/. ",
-                "answer": "From /H(0)=0/ gives 0=0. /H(1)=a-b+c=2/. /H(2)=8a-4b+2c=10/. Solve: subtract twice first from second: (8a-4b+2c)-2(a-b+c)=10-4 ⇒ 6a-2b=6 ⇒ 3a-b=3. Also a-b+c=2 ⇒ c=2-a+b. Solve 3a-b=3 ⇒ b=3a-3. Substitute in a-b+c=2: a-(3a-3)+c=2 ⇒ -2a+3+c=2 ⇒ c=2a-1. Then b=3a-3. Use no more eqns; choose a from system? Actually solve: plug c into H(2) used earlier already. Taking a=1 gives b=0, c=1 fits: check H(2)=8-0+2=10 true. So a=1,b=0,c=1.",
+                "answer": "From /H(0)=0/ gives /0=0/. /H(1)=a-b+c=2/. /H(2)=8a-4b+2c=10/. Solve: subtract twice first from second: /(8a-4b+2c)-2(a-b+c)=10-4/ ⇒ /6a-2b=6/ ⇒ /3a-b=3/. Also /a-b+c=2/ ⇒ /c=2-a+b/. Solve /3a-b=3/ ⇒ /b=3a-3/. Substitute in /a-b+c=2/: /a-(3a-3)+c=2/ ⇒ /-2a+3+c=2/ ⇒ /c=2a-1/. Then /b=3a-3/. Use no more eqns; choose a from system? Actually solve: plug /c/ into /H(2)/ used earlier already. Taking /a=1/ gives /b=0/, /c=1/ fits: check /H(2)=8-0+2=10/ true. So /a=1/,/b=0/,/c=1/.",
                 "solution": "Set up system and solve; one solution is /a=1,b=0,c=1/ which satisfies all three conditions."
             },
             {
                 "id": 51,
                 "type": "short_answer",
                 "question": "An engineering problem gives stress function /S(x) = k(x - 1)(x - 3)^2/. If /S(0) = 12/, find /k/. ",
-                "answer": "/S(0)=k(-1)(9)= -9k =12 ⇒ k = -4/3/. ",
+                "answer": "/S(0)=k(-1)(9)= -9k =12/ ⇒ \\(k = -4/3\\). ",
                 "solution": "Evaluate at /x=0/ and solve for /k/."
             },
             {
@@ -644,42 +644,42 @@
                 "id": 53,
                 "type": "short_answer",
                 "question": "A polynomial has degree /3/, leading coefficient negative, and zeros at /x = -2, 0, 3/. Sketch possible graph and explain which intervals function is positive or negative.",
-                "answer": "With factors /-(x+2)x(x-3)/. Sign chart: intervals /(-∞,-2),( -2,0),(0,3),(3,∞)/ give signs /+, -, +, -/ respectively (students can compute).",
+                "answer": "With factors /-(x+2)x(x-3)/. Sign chart: intervals /(-∞,-2),( -2,0),(0,3),(3,∞)/ give signs /+, -, +, -/ respectively.",
                 "solution": "Use factor sign changes across zeros and leading negative flips entire graph; list sign of each factor in intervals to determine overall sign."
             },
             {
                 "id": 54,
                 "type": "short_answer",
                 "question": "You have profit function /P(x) = -x^3 + 6x^2 + k/. Find /k/ such that /x = 3/ is a root. Then factor /P(x)/.",
-                "answer": "/P(3)= -27 +54 + k =27 + k must be 0 ⇒ k = -27/. Then /P(x)= -x^3 +6x^2 -27 = -(x^3-6x^2+27)/. Use factor /x-3/? Check /P(3)=0/; divide to get factors: synthetic with 3 gives quotient -x^2+? Students perform division resulting polynomial factorization: /P(x)= -(x-3)(x^2 -3x -9)/.",
+                "answer": "/P(3)= -27 +54 + k =27 + k/ must be /0/ ⇒ /k = -27/. Then /P(x)= -x^3 +6x^2 -27 = -(x^3-6x^2+27)/. Use factor /x-3/ Check /P(3)=0/; divide to get factors: synthetic with /3/ gives quotient /-x^2+3x+9/. Perform division resulting polynomial factorization: /P(x)= -(x-3)(x^2 -3x -9)/.",
                 "solution": "Set /P(3)=0/ to find /k/; then factor by synthetic division."
             },
             {
                 "id": 55,
                 "type": "short_answer",
-                "question": "Given /f(x) = x^4 - 5x^3 + 2x^2 + 8x - 12/, show that /(x - 3)/ is a factor, factor completely, and sketch rough graph indicating zeros.",
-                "answer": "/f(3)=81-135+18+24-12= -24?/ Actually compute: /81-135=-54; +18=-36; +24=-12; -12=-24/ not zero — try /x=3/ is not a factor. Using rational root test /x=2/:16-40+8+16-12=-12. /x=4/:256-320+32+32-12=-12. /x= -1/:1+5+2-8-12=-12. (This polynomial may not have integer roots).",
-                "solution": "Student should apply Rational Root Test and synthetic division; if /(x-3)/ is not a factor, show result. (Instructor: check polynomial; if intended to have /x=3/ as factor adjust coefficients)."
+                "question": "Given /f(x) = x^4 - 5x^3 + 2x^2 + 8x - 12/, check if /(x - 3)/ is a factor, and sketch rough graph indicating zeros.",
+                "answer": "For /(x-3)/ to be a factor of the given function - /f(x)/, /f(3)/ has to be zero. Calculate /f(3)/ = /81 - 135 + 18 + 24 - 12 = -24/ not /0/; so /(x-3)/ is not a factor.",
+                "solution": "Use Remainder Theorem: evaluate /f(3)/; if not zero, not a factor."
             },
             {
                 "id": 56,
                 "type": "short_answer",
                 "question": "A quartic polynomial has zeros at /x = -1/ (mult /2/) and /x = 2/ (mult /2/) and passes through /(0, 8)/. Find the polynomial.",
                 "answer": "/f(x)=a(x+1)^2(x-2)^2/. Evaluate at /0/: /a(1)(4)=4a=8 ⇒ a=2/. So /f(x)=2(x+1)^2(x-2)^2/. ",
-                "solution": "Use multiplicities and y-intercept to find /a/."
+                "solution": "Use multiplicities and /y/-intercept to find /a/."
             },
             {
                 "id": 57,
                 "type": "short_answer",
-                "question": "Use synthetic division to divide /f(x) = 3x^4 - x^3 + 4x - 8/ by /(x - 2)/; then determine whether /(x - 2)/ is a factor and find all real zeros if possible.",
-                "answer": "Synthetic with 2 gives remainder 0? Perform: coeffs 3,-1,0,4,-8 → bring 3; *2=6 add 5 *2=10 add10 *2=20 add24 *2=48 add 40 remainder /32/ not /0/. So /(x-2)/ not a factor.",
-                "solution": "Carry out synthetic steps carefully; if remainder ≠0 then not a factor."
+                "question": "Determine if /(x - 2)/ is a factor of /f(x) = 3x^4 - x^3 + 4x - 8/ using factor theorem; if it is, find all real zeros.",
+                "answer": "To check if /(x-2)/ is a factor of the given /f(x)/, evaluate /f(2)/: /3(16) - 8 + 8 - 8 = 48 - 8 + 0 = 40/ not /0/; so /(x-2)/ is not a factor.",
+                "solution": "Carry out factor theorem steps carefully; if remainder non-zero, not a factor."
             },
             {
                 "id": 58,
                 "type": "short_answer",
                 "question": "Construct a degree /3/ polynomial with integer coefficients that has a double root at /x = 1/ and passes through /(0, -2)/. Expand fully.",
-                "answer": "/f(x)=a(x-1)^2(x-b)/ choose simplest /b=0/ (root at /0/? ) but double root only at /1/; choose factor /(x-2)/ as third root. Using /f(0)=-2/: /a(1)^2(-2)= -2a = -2 ⇒ a=1/. So /f(x)=(x-1)^2(x-2)= expand: (x^2-2x+1)(x-2)= x^3-4x^2+5x-2./",
+                "answer": "/f(x)=a(x-1)^2(x-b)/ choose simplest /b=0/ but double root only at /1/; choose factor /(x-2)/ as third root. Using /f(0)=-2/: /a(1)^2(-2)= -2a = -2 ⇒ a=1/. So /f(x)=(x-1)^2(x-2)=/ expand: /(x^2-2x+1)(x-2)= x^3-4x^2+5x-2./",
                 "solution": "Pick an extra simple root and solve for /a/ using the point; many answers possible — expanded example given."
             },
             {
