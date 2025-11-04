@@ -210,32 +210,32 @@
     const questions = [
       {
         "id": 1,
-        "question": "Graphs of \\(f(x)\\) and \\(g(x)\\) are given (as two curves). Sketch the graph of \\(h(x) = f(x) + g(x)\\). Describe the procedure to obtain \\(h(x)\\) from \\(f\\) and \\(g\\).",
+        "question": "Graphs of \\(f(x)\\) and \\(g(x)\\) are given (as two curves). Explain how to sketch the graph of \\(h(x) = f(x) + g(x)\\). Describe the procedure to obtain \\(h(x)\\) from \\(f\\) and \\(g\\).",
         "answer": "/h(x)/ is obtained by adding the /y/-values of /f/ and /g/ point-wise; draw the new curve accordingly.",
         "solution": "At each /x/, compute /y_h = y_f + y_g/. Plot a few key /x/-values (intersections, peaks, zeros) and connect smoothly. Where /f/ and /g/ both positive, /h/ is higher; where signs differ, /h/ is difference. No domain change unless one function undefined."
       },
-      {
+      { 
         "id": 2,
-        "question": "Given graphs of /f(x)/ and /g(x)/, sketch /h(x) = f(x) - g(x)/.",
+        "question": "Given graphs of /f(x)/ and /g(x)/, explain how to sketch /h(x) = f(x) - g(x)/.",
         "answer": "/h(x)/ obtained by subtracting /g/'s /y/-values from /f/'s at each /x/; plot resulting /y/-values.",
         "solution": "Compute /y_h = y_f - y_g/ pointwise. Mark zeros where /y_f = y_g/. If /f/ and /g/ cross, /h/ crosses zero there. Reflect /g/ across /x/-axis to get /-g/ then add to /f/."
       },
       {
         "id": 3,
-        "question": "Given graphs of /f(x)/ and /g(x)/, sketch /k(x) = f(x) × g(x)/.",
+        "question": "Given graphs of /f(x)/ and /g(x)/, explain how to sketch /k(x) = f(x) × g(x)/.",
         "answer": "/k(x)/ is pointwise product: multiply /y/-values of /f/ and /g/ at each /x/; sign is product of signs.",
         "solution": "Find zeros where either /f/ or /g/ is zero. Where both positive or both negative, product positive; where signs differ, product negative. Use key points and shape to sketch."
       },
       {
         "id": 4,
-        "question": "Given graphs of /f(x)/ and /g(x)/, sketch \\(h(x) = f(x)/g(x)\\). Indicate vertical asymptotes where /g(x)=0/.",
+        "question": "Given graphs of /f(x)/ and /g(x)/, explain how to sketch \\(h(x) = f(x)/g(x)\\). Indicate vertical asymptotes where /g(x)=0/.",
         "answer": "Plot \\(y = f/g\\) pointwise; vertical asymptotes at /x/ where /g=0/ (unless /f/ also /0/ and cancels).",
         "solution": "Compute \\(y_h = y_f / y_g\\). Vertical asymptotes at zeros of /g/ (unless removable). Horizontal behavior follows quotient of end-behavior. Mark sign changes and asymptotes."
       },
       {
         "id": 5,
         "question": "Suppose \\(f(x) = x^2 - 1\\) and \\(g(x) = \\sqrt{x}\\). Draw rough graphs of /f/ and /g/, then sketch /(f + g)(x)/.",
-        "answer": "/f/: parabola opening up with vertex /(0,-1)/; /g/: sqrt{} curve starting at /(0,0)/. \\((f+g)\\) exists for /x >= 0/; add /y/-values to sketch resulting curve starting at \\((0,-1)\\).",
+        "answer": "/f/: parabola opening up with vertex /(0,-1)/; /g/: Square root curve starting at /(0,0)/. \\((f+g)\\) exists for /x >= 0/; add /y/-values to sketch resulting curve starting at \\((0,-1)\\).",
         "solution": "Domain of /f+g/ is /x>=0/ because \\(\\sqrt{x}\\) requires /x>=0/. At /x=0/, /f+g = -1+0 = -1/. For /x/ large, /f/ dominates (parabola). Compute a few points: /x=0 -> -1/; /x=1/ -> /(1-1)+1=1/; /x=4/ -> /(16-1)+2=17/. Sketch accordingly."
       },
       {
@@ -246,7 +246,7 @@
       },
       {
         "id": 7,
-        "question": "Let \\(f(x) = (x - 1)/(x + 2)\\), /g(x) = x + 3/. Sketch both, then sketch \\((f/g)(x)\\). State non-permissible values.",
+        "question": "Let \\(f(x) = \\frac{(x - 1)}{(x + 2)}\\), /g(x) = x + 3/. Sketch both, then sketch \\((f/g)(x)\\). State non-permissible values.",
         "answer": "Non-permissible: /x ≠ -2/ (/f/ undefined) and /x ≠ -3/ (/g=0/ leading to division by zero). (\\(f/g\\)) has vertical asymptotes at /x=-2/ and /x=-3/ unless cancellation occurs (it doesn't).",
         "solution": "/f/ has vertical asymptote at /x=-2/, horizontal asymptote /y=1/. /g/ is line crossing /-3/ at /x=-3/. \\((f/g) = (x-1)/((x+2)(x+3))\\). Domain excludes /-2/ and /-3/. Zeros at /x=1/. Sketch using asymptotes and zeros."
       },
