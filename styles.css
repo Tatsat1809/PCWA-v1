@@ -375,6 +375,8 @@
   --color-link-hover: #1a237e;
   --color-scroll-btn-bg: #3949ab;
   --color-scroll-btn-text: #ffe082;
+  --color-disabled-bg: #cbd5e1;
+  --color-disabled-text: #64748b;
 }
 
 [data-theme="dark"] {
@@ -396,6 +398,8 @@
   --color-link-hover: #fffde7;
   --color-scroll-btn-bg: #222a5c;
   --color-scroll-btn-text: #ffe082;
+  --color-disabled-bg: #475569;
+  --color-disabled-text: #cbd5e1;
 }
 
 /* Scroll to Top Button */
@@ -744,6 +748,43 @@ h3 {
 
 .nav-btn:focus {
     transform: none;
+}
+
+/* Disabled nav button styling */
+.nav-btn:disabled {
+    background: var(--color-disabled-bg);
+    color: var(--color-disabled-text);
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    padding: 0.35rem 1.1rem;
+}
+
+.nav-btn:disabled:hover {
+    background: var(--color-disabled-bg);
+    transform: none;
+}
+
+/* Coming soon badge */
+.coming-soon-badge {
+    display: inline-block;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffe082;
+    color: #3949ab;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(255, 224, 130, 0.4);
+}
+
+[data-theme="dark"] .coming-soon-badge {
+    background-color: #ffe082;
+    color: #181a23;
+    box-shadow: 0 2px 6px rgba(255, 224, 130, 0.6);
 }
 
 /* Question Card */
