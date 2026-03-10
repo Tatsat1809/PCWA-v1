@@ -165,6 +165,9 @@
 </button>
 
 <script>
+  // Configuration: Set to true to enable the popup, false to disable it
+  const enablePopup = false;
+
   // Show/hide scroll-to-top button
   const scrollBtn = document.getElementById('scrollToTopBtn');
   window.addEventListener('scroll', function () {
@@ -229,6 +232,8 @@
 
 <script>
   window.addEventListener('load', function () {
+    if (!enablePopup) return; // Skip popup if disabled
+
     const popup = document.getElementById('popup');
     const popupContent = document.getElementById('popupContent');
     const scrollArrow = document.getElementById('scrollArrow');
